@@ -1,0 +1,3 @@
+2c5807aa1c99e4b7353997e53d92f6d11ab7dc5918e5ad54591fe9747284b190  TalosHelper-0.3.3-update.zip
+7e11930bb99b09421f3b9d6e958ab42a9dc35ed97ceaf700a31be96784564406  latest.json
+4f85ea98ff28a60b3f30c2e730bdc8e5219b0ad36dbe580c4774a2cb50a9ffbe  TalosHelper-Online-Update-0.3.3.zip
