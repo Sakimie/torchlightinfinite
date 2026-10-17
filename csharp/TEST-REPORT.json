@@ -1,0 +1,396 @@
+{
+  "schema": "talos-csharp-console-tests-v1",
+  "status": "passed",
+  "generatedAt": "2026-10-17T06:16:00.634283+00:00",
+  "environment": {
+    "platform": "Linux",
+    "sdk": "10.0.402",
+    "runtime": "Microsoft.NETCore.App 10.0.13",
+    "targetFramework": "net10.0",
+    "externalTestPackages": false
+  },
+  "command": "/workspace/.dotnet/dotnet run --project csharp/Talos.Tests/Talos.Tests.csproj -c Release -- --json --bootstrap-feed dist/csharp-0.4.0/latest.json --bootstrap-package dist/csharp-0.4.0/TalosHelper-CSharp-0.4.0-update.zip --public-key csharp/update-public-key.pem",
+  "summary": {
+    "passed": 47,
+    "failed": 0,
+    "skipped": 0,
+    "total": 47,
+    "groups": {
+      "core": 13,
+      "vision": 10,
+      "updates": 23,
+      "payload": 1
+    },
+    "milliseconds": 503.7636
+  },
+  "results": [
+    {
+      "Name": "core.requires confirmed complete 16-room observation",
+      "Passed": true,
+      "Milliseconds": 12.9788,
+      "Error": null
+    },
+    {
+      "Name": "core.reject unsupported mechanisms and malformed observed inmates",
+      "Passed": true,
+      "Milliseconds": 2.0216,
+      "Error": null
+    },
+    {
+      "Name": "core.swallow ring legality matches every species and rarity boundary",
+      "Passed": true,
+      "Milliseconds": 2.2273,
+      "Error": null
+    },
+    {
+      "Name": "core.skewer permits equal-tier rats and boosts any lawful rat meal",
+      "Passed": true,
+      "Milliseconds": 0.4329,
+      "Error": null
+    },
+    {
+      "Name": "core.muzzle after-meal three-person threshold and stacking",
+      "Passed": true,
+      "Milliseconds": 3.8846,
+      "Error": null
+    },
+    {
+      "Name": "core.usurp second event promotes exactly one inmate by two",
+      "Passed": true,
+      "Milliseconds": 7.0051,
+      "Error": null
+    },
+    {
+      "Name": "core.execution current interpretation is strictly lower primary-countered inmates",
+      "Passed": true,
+      "Milliseconds": 1.2682,
+      "Error": null
+    },
+    {
+      "Name": "core.instigation is one event and ignores nests or occupied slots",
+      "Passed": true,
+      "Milliseconds": 8.6201,
+      "Error": null
+    },
+    {
+      "Name": "core.eight phases expose only their legal action families",
+      "Passed": true,
+      "Milliseconds": 11.0269,
+      "Error": null
+    },
+    {
+      "Name": "core.daily action exhaustion and event restrictions cannot create extra meals",
+      "Passed": true,
+      "Milliseconds": 0.2361,
+      "Error": null
+    },
+    {
+      "Name": "core.pending rewards preserve and validate the underlying stage",
+      "Passed": true,
+      "Milliseconds": 0.3302,
+      "Error": null
+    },
+    {
+      "Name": "core.wraparound patrol range and known observation fields stay explicit",
+      "Passed": true,
+      "Milliseconds": 0.3874,
+      "Error": null
+    },
+    {
+      "Name": "core.scores are finite deterministic and inputs remain unchanged",
+      "Passed": true,
+      "Milliseconds": 40.1932,
+      "Error": null
+    },
+    {
+      "Name": "vision.crop preserves RGBA coordinates and original pixels",
+      "Passed": true,
+      "Milliseconds": 1.2061,
+      "Error": null
+    },
+    {
+      "Name": "vision.crop rejects out of range and nonfinite geometry",
+      "Passed": true,
+      "Milliseconds": 0.2168,
+      "Error": null
+    },
+    {
+      "Name": "vision.rejects truncated pixels and oversized dimensions before allocation",
+      "Passed": true,
+      "Milliseconds": 0.512,
+      "Error": null
+    },
+    {
+      "Name": "vision.resize is bilinear including alpha",
+      "Passed": true,
+      "Milliseconds": 0.1443,
+      "Error": null
+    },
+    {
+      "Name": "vision.match detects texture and rejects uniform/transparent evidence",
+      "Passed": true,
+      "Milliseconds": 2.6584,
+      "Error": null
+    },
+    {
+      "Name": "vision.unconfirmed legacy calibration never authorizes recognition",
+      "Passed": true,
+      "Milliseconds": 4.702,
+      "Error": null
+    },
+    {
+      "Name": "vision.blank screenshot stays unknown after layout confirmation",
+      "Passed": true,
+      "Milliseconds": 16.8106,
+      "Error": null
+    },
+    {
+      "Name": "vision.exact texture alias is mammoth while missing tier remains unknown",
+      "Passed": true,
+      "Milliseconds": 15.7626,
+      "Error": null
+    },
+    {
+      "Name": "vision.frame color prefill still requires manual review",
+      "Passed": true,
+      "Milliseconds": 9.787,
+      "Error": null
+    },
+    {
+      "Name": "vision.changed aspect ratio or duplicate centers invalidates calibration",
+      "Passed": true,
+      "Milliseconds": 0.5327,
+      "Error": null
+    },
+    {
+      "Name": "updates.offline bootstrap verifies and hashes every payload file",
+      "Passed": true,
+      "Milliseconds": 98.0018,
+      "Error": null
+    },
+    {
+      "Name": "updates.check and install authenticate exact payload bytes",
+      "Passed": true,
+      "Milliseconds": 12.1307,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject signature tampering and another publisher key",
+      "Passed": true,
+      "Milliseconds": 5.5343,
+      "Error": null
+    },
+    {
+      "Name": "updates.install reauthenticates a manifest from another service",
+      "Passed": true,
+      "Milliseconds": 1.9445,
+      "Error": null
+    },
+    {
+      "Name": "updates.corrupt ZIP bytes cannot replace existing active",
+      "Passed": true,
+      "Milliseconds": 7.1645,
+      "Error": null
+    },
+    {
+      "Name": "updates.Windows path aliases and traversal are rejected cross platform",
+      "Passed": true,
+      "Milliseconds": 20.6636,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject case-fold duplicates and file-directory collisions",
+      "Passed": true,
+      "Milliseconds": 3.0085,
+      "Error": null
+    },
+    {
+      "Name": "updates.manifest cannot replace shared host or runtime components",
+      "Passed": true,
+      "Milliseconds": 5.7605,
+      "Error": null
+    },
+    {
+      "Name": "updates.feed package file expanded-size and file-count limits reject signed excess",
+      "Passed": true,
+      "Milliseconds": 12.6296,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject duplicate and unlisted ZIP members",
+      "Passed": true,
+      "Milliseconds": 3.2526,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject ZIP symlink mode even when its bytes are signed",
+      "Passed": true,
+      "Milliseconds": 3.8424,
+      "Error": null
+    },
+    {
+      "Name": "updates.unsafe package URL and incompatible launcher fail before download",
+      "Passed": true,
+      "Milliseconds": 6.1472,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject final HTTP redirect target",
+      "Passed": true,
+      "Milliseconds": 1.3948,
+      "Error": null
+    },
+    {
+      "Name": "updates.cancelled install leaves old signed active intact",
+      "Passed": true,
+      "Milliseconds": 6.7414,
+      "Error": null
+    },
+    {
+      "Name": "updates.status active directory and rollback use no network",
+      "Passed": true,
+      "Milliseconds": 15.419,
+      "Error": null
+    },
+    {
+      "Name": "updates.bad active fails launch but can roll back to healthy signed version",
+      "Passed": true,
+      "Milliseconds": 11.8528,
+      "Error": null
+    },
+    {
+      "Name": "updates.bad historical version cannot be selected for rollback",
+      "Passed": true,
+      "Milliseconds": 11.6947,
+      "Error": null
+    },
+    {
+      "Name": "updates.signed same-version conflict cannot overwrite immutable files",
+      "Passed": true,
+      "Milliseconds": 9.6539,
+      "Error": null
+    },
+    {
+      "Name": "updates.signed compressed bomb is rejected before activation",
+      "Passed": true,
+      "Milliseconds": 6.7416,
+      "Error": null
+    },
+    {
+      "Name": "updates.cancellation immediately before commit preserves exact active state",
+      "Passed": true,
+      "Milliseconds": 12.8075,
+      "Error": null
+    },
+    {
+      "Name": "updates.unregistered partial release from an interrupted install can recover",
+      "Passed": true,
+      "Milliseconds": 11.3582,
+      "Error": null
+    },
+    {
+      "Name": "updates.symlink release parent cannot redirect writes outside data root",
+      "Passed": true,
+      "Milliseconds": 1.7571,
+      "Error": null
+    },
+    {
+      "Name": "updates.tampered signed state cannot authorize assembly loading",
+      "Passed": true,
+      "Milliseconds": 4.6991,
+      "Error": null
+    },
+    {
+      "Name": "payload.actual signed bootstrap installs offline and verifies all declared files",
+      "Passed": true,
+      "Milliseconds": 86.6184,
+      "Error": null
+    }
+  ],
+  "realSignedPayload": {
+    "status": "passed-offline-bootstrap-and-integrity-rejection",
+    "version": "0.4.0",
+    "fileCount": 159,
+    "packageUrl": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/fa7899bec1796fff931cc5e53fedcf2aa7d4231a/csharp/releases/0.4.0/TalosHelper-CSharp-0.4.0-update.zip",
+    "feed": {
+      "path": "dist/csharp-0.4.0/latest.json",
+      "bytes": 34038,
+      "sha256": "62e4465907beb2c72adff874ba93200902fdbd401b6487be055901f9e2398250"
+    },
+    "package": {
+      "path": "dist/csharp-0.4.0/TalosHelper-CSharp-0.4.0-update.zip",
+      "bytes": 1282648,
+      "sha256": "151152231e7742cdf11059f4c43f4b7b62dcd804a9662a8770c748a5dec40cc8"
+    },
+    "publicKey": {
+      "path": "csharp/update-public-key.pem",
+      "sha256": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72"
+    },
+    "networkRequests": 0,
+    "assembliesLoaded": false,
+    "windowsExeExecuted": false
+  },
+  "limitations": [
+    "Linux console tests only; Windows WPF, capture, F8, DPI and PE execution not performed.",
+    "Synthetic pixel fixtures do not measure real screenshot accuracy.",
+    "Rules/scoring checks do not train a policy or validate game rewards.",
+    "Muzzle timing and execution expansion scope are implementation assumptions requiring real-game confirmation.",
+    "Cancellation before commit and preconstructed partial-orphan fixtures are tested; arbitrary hardware power loss is not emulated."
+  ],
+  "resolvedDefects": [
+    {
+      "component": "Updates",
+      "issue": "CON .txt Windows device alias accepted",
+      "resolution": "Trim trailing ASCII spaces in stem before reserved-name validation; adversarial variants pass."
+    },
+    {
+      "component": "Core",
+      "issue": "office EventKind ignored by validation",
+      "resolution": "Office now rejects any event kind; regression covered."
+    }
+  ],
+  "sourceHashesAtLastRun": {
+    "Talos.Core/EngineCatalog.cs": "2f5589484ec27317f5d224e02f8971df1a21d1a544359583c23319912d820264",
+    "Talos.Core/GameAdvisor.cs": "28f40123de0591a174f5f3f1328f4e7d2026d8619cd2c15a749ca52f438e4a70",
+    "Talos.Core/GameRules.cs": "508988e407c3a6309447f9c6807e24a585523186e8fa8f475e13479a4bb0b933",
+    "Talos.Core/GameState.cs": "ec763e42e7189aac20dfa7405de608fa4ed1553ffa31ba9151ada388d85ae62f",
+    "Talos.Core/Talos.Core.csproj": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+    "Talos.Core/Vision/PixelOperations.cs": "c5a4ece9db3a54877c18be118936d7597badfbd32589b197631bb8fae18c88d2",
+    "Talos.Core/Vision/PixelTypes.cs": "2ff447963a00fc3fcc7915fbc5f5aec8cfc11ce2c2a560b85090a8396af5f5d4",
+    "Talos.Core/Vision/ScreenshotRecognizer.cs": "5c57bbf1149b722d23796688aa7155e4a34fb894d7f3ab36f5f4717a094c710c",
+    "Talos.Updates/Models.cs": "38b22e078fcd389124889d6dc2e30c1d98c5742e5595001492b8e1812b149ecc",
+    "Talos.Updates/Talos.Updates.csproj": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+    "Talos.Updates/UpdateService.cs": "4b8604adb767ce0d3351d301c332c0fdd28b4f07c09f28d38a20e030f0144fad",
+    "Talos.Tests/CoreChecks.cs": "bcfdab45a0287c52f95bf90878d8b5607db4ce925d077ac17aa9a238441bf1ae",
+    "Talos.Tests/PayloadChecks.cs": "ee03e338497f820955dde4cc41c175dfdd596cb97c5505203c609cff4626f628",
+    "Talos.Tests/Program.cs": "2aa769f368a135fb97f803630a1e18b7a366e39db82906417914c2b02c96e91e",
+    "Talos.Tests/Talos.Tests.csproj": "81bec8dda5b3c897d1f00d1f859ff64f63f0236cdd1151eeb1f68965860e7961",
+    "Talos.Tests/UpdateChecks.cs": "2b3affff5135aee77f1a5b89dcec11ad903fffcdf7628465fd7dd39caae2c603",
+    "Talos.Tests/UpdateFixture.cs": "88456f2d6b80caaebb737f47aa5c1a0844fe53ec3a8da1d8c3ddc6a0bca43710",
+    "Talos.Tests/VisionChecks.cs": "ed619b3da463f1e148af3daeb87c6bcc69e1a0040230fad9045d2e52bcd7113a"
+  },
+  "independentStrategyAudit": {
+    "owner": "reference_audit",
+    "report": "audit/strategy-parity-report.json",
+    "sha256": "d7c788743aa91e50ba5f8dcabada4fe0c725d974d55a3f834f40bd8d9ea60dcf",
+    "passed": true,
+    "counts": {
+      "parity": 680,
+      "reject": 34,
+      "card-correction": 27,
+      "ratway-correction": 4,
+      "execution-correction": 7,
+      "permission-correction": 3,
+      "chain-open-correction": 2,
+      "total": 757,
+      "failed": 0
+    },
+    "scope": "Constructed visible-state single-step legal actions and heuristic scores; no full-game training or accuracy claim.",
+    "executedByThisRunner": false
+  },
+  "sourceFingerprint": {
+    "sha256": "26aaa8976b5f18982b22c7a8f40928be15e57f2d2fc25f10b32f608eeea4ef66",
+    "encoding": "UTF-8: sorted relative path + NUL + lowercase SHA256 + LF for each sourceHashesAtLastRun entry"
+  },
+  "unresolvedBlockersObserved": []
+}
