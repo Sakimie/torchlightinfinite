@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "version": "0.4.2",
+  "actualHttpsTransport": true,
+  "signatureAlgorithm": "ES256",
+  "signedPayloadBytes": 1284563,
+  "signedPayloadSha256": "e06c636347377a294c3fb6f3dcd64ec0cb085989dd846aee310af74c92b288cf",
+  "windowsExeExecuted": false,
+  "windowsAssembliesLoaded": false,
+  "privateKeyRead": false,
+  "activeFilesVerified": true,
+  "upgradedFrom": "0.4.1",
+  "originalHostPreservesUpdate": true,
+  "offlineRollbackVersion": "0.4.1"
+}
