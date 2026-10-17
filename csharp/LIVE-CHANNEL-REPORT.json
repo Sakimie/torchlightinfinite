@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "version": "0.4.0",
+  "actualHttpsTransport": true,
+  "signatureAlgorithm": "ES256",
+  "signedPayloadBytes": 1282648,
+  "signedPayloadSha256": "151152231e7742cdf11059f4c43f4b7b62dcd804a9662a8770c748a5dec40cc8",
+  "windowsExeExecuted": false,
+  "windowsAssembliesLoaded": false,
+  "privateKeyRead": false,
+  "activeFilesVerified": true
+}
