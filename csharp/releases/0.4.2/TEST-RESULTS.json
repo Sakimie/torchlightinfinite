@@ -2,379 +2,379 @@
   {
     "Name": "core.requires confirmed complete 16-room observation",
     "Passed": true,
-    "Milliseconds": 19.3405,
+    "Milliseconds": 12.8178,
     "Error": null
   },
   {
     "Name": "core.reject unsupported mechanisms and malformed observed inmates",
     "Passed": true,
-    "Milliseconds": 3.2787,
+    "Milliseconds": 2.1972,
     "Error": null
   },
   {
     "Name": "core.swallow ring legality matches every species and rarity boundary",
     "Passed": true,
-    "Milliseconds": 2.5745,
+    "Milliseconds": 2.0183,
     "Error": null
   },
   {
     "Name": "core.skewer permits equal-tier rats and boosts any lawful rat meal",
     "Passed": true,
-    "Milliseconds": 0.6116,
+    "Milliseconds": 0.4906,
     "Error": null
   },
   {
     "Name": "core.muzzle after-meal three-person threshold and stacking",
     "Passed": true,
-    "Milliseconds": 5.9442,
+    "Milliseconds": 4.0577,
     "Error": null
   },
   {
     "Name": "core.usurp second event promotes exactly one inmate by two",
     "Passed": true,
-    "Milliseconds": 10.8848,
+    "Milliseconds": 7.8043,
     "Error": null
   },
   {
     "Name": "core.execution current interpretation is strictly lower primary-countered inmates",
     "Passed": true,
-    "Milliseconds": 2.0476,
+    "Milliseconds": 1.4451,
     "Error": null
   },
   {
     "Name": "core.instigation is one event and ignores nests or occupied slots",
     "Passed": true,
-    "Milliseconds": 15.5644,
+    "Milliseconds": 9.0303,
     "Error": null
   },
   {
     "Name": "core.eight phases expose only their legal action families",
     "Passed": true,
-    "Milliseconds": 13.1433,
+    "Milliseconds": 10.7768,
     "Error": null
   },
   {
     "Name": "core.daily action exhaustion and event restrictions cannot create extra meals",
     "Passed": true,
-    "Milliseconds": 0.2368,
+    "Milliseconds": 0.2302,
     "Error": null
   },
   {
     "Name": "core.pending rewards preserve and validate the underlying stage",
     "Passed": true,
-    "Milliseconds": 0.3427,
+    "Milliseconds": 0.343,
     "Error": null
   },
   {
     "Name": "core.wraparound patrol range and known observation fields stay explicit",
     "Passed": true,
-    "Milliseconds": 0.4084,
+    "Milliseconds": 0.3723,
     "Error": null
   },
   {
     "Name": "core.scores are finite deterministic and inputs remain unchanged",
     "Passed": true,
-    "Milliseconds": 44.2616,
+    "Milliseconds": 56.2858,
     "Error": null
   },
   {
     "Name": "vision.crop preserves RGBA coordinates and original pixels",
     "Passed": true,
-    "Milliseconds": 1.1946,
+    "Milliseconds": 1.5349,
     "Error": null
   },
   {
     "Name": "vision.crop rejects out of range and nonfinite geometry",
     "Passed": true,
-    "Milliseconds": 0.2168,
+    "Milliseconds": 0.2465,
     "Error": null
   },
   {
     "Name": "vision.rejects truncated pixels and oversized dimensions before allocation",
     "Passed": true,
-    "Milliseconds": 0.6223,
+    "Milliseconds": 0.4266,
     "Error": null
   },
   {
     "Name": "vision.resize is bilinear including alpha",
     "Passed": true,
-    "Milliseconds": 0.1604,
+    "Milliseconds": 0.1735,
     "Error": null
   },
   {
     "Name": "vision.match detects texture and rejects uniform/transparent evidence",
     "Passed": true,
-    "Milliseconds": 2.8266,
+    "Milliseconds": 3.4969,
     "Error": null
   },
   {
     "Name": "vision.unconfirmed legacy calibration never authorizes recognition",
     "Passed": true,
-    "Milliseconds": 5.5312,
+    "Milliseconds": 9.6058,
     "Error": null
   },
   {
     "Name": "vision.blank screenshot stays unknown after layout confirmation",
     "Passed": true,
-    "Milliseconds": 16.3897,
+    "Milliseconds": 21.036,
     "Error": null
   },
   {
     "Name": "vision.exact texture alias is mammoth while missing tier remains unknown",
     "Passed": true,
-    "Milliseconds": 15.6729,
+    "Milliseconds": 17.4653,
     "Error": null
   },
   {
     "Name": "vision.frame color prefill still requires manual review",
     "Passed": true,
-    "Milliseconds": 11.1992,
+    "Milliseconds": 10.1769,
     "Error": null
   },
   {
     "Name": "vision.changed aspect ratio or duplicate centers invalidates calibration",
     "Passed": true,
-    "Milliseconds": 0.8261,
+    "Milliseconds": 0.7016,
     "Error": null
   },
   {
     "Name": "updates.offline bootstrap verifies and hashes every payload file",
     "Passed": true,
-    "Milliseconds": 123.4922,
+    "Milliseconds": 103.6606,
     "Error": null
   },
   {
     "Name": "updates.check and install authenticate exact payload bytes",
     "Passed": true,
-    "Milliseconds": 16.249,
+    "Milliseconds": 15.2605,
     "Error": null
   },
   {
     "Name": "updates.reject signature tampering and another publisher key",
     "Passed": true,
-    "Milliseconds": 5.9647,
+    "Milliseconds": 7.2234,
     "Error": null
   },
   {
     "Name": "updates.install reauthenticates a manifest from another service",
     "Passed": true,
-    "Milliseconds": 1.9917,
+    "Milliseconds": 2.0406,
     "Error": null
   },
   {
     "Name": "updates.corrupt ZIP bytes cannot replace existing active",
     "Passed": true,
-    "Milliseconds": 9.0262,
+    "Milliseconds": 7.7168,
     "Error": null
   },
   {
     "Name": "updates.Windows path aliases and traversal are rejected cross platform",
     "Passed": true,
-    "Milliseconds": 30.4781,
+    "Milliseconds": 22.981,
     "Error": null
   },
   {
     "Name": "updates.reject case-fold duplicates and file-directory collisions",
     "Passed": true,
-    "Milliseconds": 4.3776,
+    "Milliseconds": 2.9952,
     "Error": null
   },
   {
     "Name": "updates.manifest cannot replace shared host or runtime components",
     "Passed": true,
-    "Milliseconds": 8.8916,
+    "Milliseconds": 5.4878,
     "Error": null
   },
   {
     "Name": "updates.feed package file expanded-size and file-count limits reject signed excess",
     "Passed": true,
-    "Milliseconds": 17.8437,
+    "Milliseconds": 13.5033,
     "Error": null
   },
   {
     "Name": "updates.reject duplicate and unlisted ZIP members",
     "Passed": true,
-    "Milliseconds": 4.7115,
+    "Milliseconds": 4.6708,
     "Error": null
   },
   {
     "Name": "updates.reject ZIP symlink mode even when its bytes are signed",
     "Passed": true,
-    "Milliseconds": 4.2712,
+    "Milliseconds": 4.5647,
     "Error": null
   },
   {
     "Name": "updates.unsafe package URL and incompatible launcher fail before download",
     "Passed": true,
-    "Milliseconds": 7.4172,
+    "Milliseconds": 6.9555,
     "Error": null
   },
   {
     "Name": "updates.reject final HTTP redirect target",
     "Passed": true,
-    "Milliseconds": 1.838,
+    "Milliseconds": 1.7611,
     "Error": null
   },
   {
     "Name": "updates.cancelled install leaves old signed active intact",
     "Passed": true,
-    "Milliseconds": 8.1762,
+    "Milliseconds": 10.5959,
     "Error": null
   },
   {
     "Name": "updates.status active directory and rollback use no network",
     "Passed": true,
-    "Milliseconds": 15.9976,
+    "Milliseconds": 21.7689,
     "Error": null
   },
   {
     "Name": "updates.bad active fails launch but can roll back to healthy signed version",
     "Passed": true,
-    "Milliseconds": 12.4116,
+    "Milliseconds": 11.5926,
     "Error": null
   },
   {
     "Name": "updates.bad historical version cannot be selected for rollback",
     "Passed": true,
-    "Milliseconds": 12.5538,
+    "Milliseconds": 12.9836,
     "Error": null
   },
   {
     "Name": "updates.signed same-version conflict cannot overwrite immutable files",
     "Passed": true,
-    "Milliseconds": 9.9503,
+    "Milliseconds": 9.4643,
     "Error": null
   },
   {
     "Name": "updates.signed compressed bomb is rejected before activation",
     "Passed": true,
-    "Milliseconds": 6.6111,
+    "Milliseconds": 8.4782,
     "Error": null
   },
   {
     "Name": "updates.cancellation immediately before commit preserves exact active state",
     "Passed": true,
-    "Milliseconds": 14.343,
+    "Milliseconds": 13.3929,
     "Error": null
   },
   {
     "Name": "updates.unregistered partial release from an interrupted install can recover",
     "Passed": true,
-    "Milliseconds": 14.4478,
+    "Milliseconds": 11.6945,
     "Error": null
   },
   {
     "Name": "updates.symlink release parent cannot redirect writes outside data root",
     "Passed": true,
-    "Milliseconds": 2.1826,
+    "Milliseconds": 1.7399,
     "Error": null
   },
   {
     "Name": "updates.tampered signed state cannot authorize assembly loading",
     "Passed": true,
-    "Milliseconds": 6.6042,
-    "Error": null
-  },
-  {
-    "Name": "storage.data path follows the application directory independently of CWD",
-    "Passed": true,
-    "Milliseconds": 4.0676,
-    "Error": null
-  },
-  {
-    "Name": "storage.full signed legacy state releases calibration and logs copy without changing source",
-    "Passed": true,
-    "Milliseconds": 23.2663,
-    "Error": null
-  },
-  {
-    "Name": "storage.moving the complete application keeps signed versions usable offline and rollback independent",
-    "Passed": true,
-    "Milliseconds": 19.46,
-    "Error": null
-  },
-  {
-    "Name": "storage.any existing portable user data prevents merging or overwriting legacy",
-    "Passed": true,
-    "Milliseconds": 11.0796,
-    "Error": null
-  },
-  {
-    "Name": "storage.initialized portable signed state is preserved instead of legacy merge",
-    "Passed": true,
-    "Milliseconds": 14.9404,
-    "Error": null
-  },
-  {
-    "Name": "storage.missing legacy and an empty data directory initialize locally",
-    "Passed": true,
-    "Milliseconds": 0.5299,
-    "Error": null
-  },
-  {
-    "Name": "storage.cancelled migration preserves source and leaves no partially committed data",
-    "Passed": true,
-    "Milliseconds": 11.0517,
-    "Error": null
-  },
-  {
-    "Name": "storage.cancellation during a real staged copy removes partial output",
-    "Passed": true,
-    "Milliseconds": 378.8036,
-    "Error": null
-  },
-  {
-    "Name": "storage.transient locks stages backups and incomplete files are not migrated",
-    "Passed": true,
-    "Milliseconds": 13.6326,
-    "Error": null
-  },
-  {
-    "Name": "storage.oversized or key-like copied files fail during planning without reading contents",
-    "Passed": true,
-    "Milliseconds": 1.9297,
-    "Error": null
-  },
-  {
-    "Name": "storage.source copy error cleans stage and does not commit partial data",
-    "Passed": true,
-    "Milliseconds": 7.9623,
-    "Error": null
-  },
-  {
-    "Name": "storage.portable and legacy lock contention cannot copy or change active data",
-    "Passed": true,
-    "Milliseconds": 23.6526,
-    "Error": null
-  },
-  {
-    "Name": "storage.nested source and destination are rejected without recursive copying",
-    "Passed": true,
-    "Milliseconds": 1.0481,
-    "Error": null
-  },
-  {
-    "Name": "storage.symbolic source root copied file and release directory are refused",
-    "Passed": true,
-    "Milliseconds": 2.6522,
-    "Error": null
-  },
-  {
-    "Name": "storage.symbolic application directory and data target are refused",
-    "Passed": true,
-    "Milliseconds": 0.8985,
-    "Error": null
-  },
-  {
-    "Name": "storage.unwritable application directory fails explicitly without external fallback on Linux",
-    "Passed": true,
-    "Milliseconds": 1.0581,
+    "Milliseconds": 5.1674,
     "Error": null
   },
   {
     "Name": "payload.actual signed bootstrap installs offline and verifies all declared files",
     "Passed": true,
-    "Milliseconds": 74.0072,
+    "Milliseconds": 103.7095,
+    "Error": null
+  },
+  {
+    "Name": "storage.data path follows the application directory independently of CWD",
+    "Passed": true,
+    "Milliseconds": 3.5481,
+    "Error": null
+  },
+  {
+    "Name": "storage.full signed legacy state releases calibration and logs copy without changing source",
+    "Passed": true,
+    "Milliseconds": 22.8811,
+    "Error": null
+  },
+  {
+    "Name": "storage.moving the complete application keeps signed versions usable offline and rollback independent",
+    "Passed": true,
+    "Milliseconds": 18.1385,
+    "Error": null
+  },
+  {
+    "Name": "storage.any existing portable user data prevents merging or overwriting legacy",
+    "Passed": true,
+    "Milliseconds": 9.3883,
+    "Error": null
+  },
+  {
+    "Name": "storage.initialized portable signed state is preserved instead of legacy merge",
+    "Passed": true,
+    "Milliseconds": 12.7932,
+    "Error": null
+  },
+  {
+    "Name": "storage.missing legacy and an empty data directory initialize locally",
+    "Passed": true,
+    "Milliseconds": 0.4481,
+    "Error": null
+  },
+  {
+    "Name": "storage.cancelled migration preserves source and leaves no partially committed data",
+    "Passed": true,
+    "Milliseconds": 7.861,
+    "Error": null
+  },
+  {
+    "Name": "storage.cancellation during a real staged copy removes partial output",
+    "Passed": true,
+    "Milliseconds": 334.463,
+    "Error": null
+  },
+  {
+    "Name": "storage.transient locks stages backups and incomplete files are not migrated",
+    "Passed": true,
+    "Milliseconds": 12.4291,
+    "Error": null
+  },
+  {
+    "Name": "storage.oversized or key-like copied files fail during planning without reading contents",
+    "Passed": true,
+    "Milliseconds": 1.5496,
+    "Error": null
+  },
+  {
+    "Name": "storage.source copy error cleans stage and does not commit partial data",
+    "Passed": true,
+    "Milliseconds": 13.0286,
+    "Error": null
+  },
+  {
+    "Name": "storage.portable and legacy lock contention cannot copy or change active data",
+    "Passed": true,
+    "Milliseconds": 20.6075,
+    "Error": null
+  },
+  {
+    "Name": "storage.nested source and destination are rejected without recursive copying",
+    "Passed": true,
+    "Milliseconds": 0.5777,
+    "Error": null
+  },
+  {
+    "Name": "storage.symbolic source root copied file and release directory are refused",
+    "Passed": true,
+    "Milliseconds": 1.5064,
+    "Error": null
+  },
+  {
+    "Name": "storage.symbolic application directory and data target are refused",
+    "Passed": true,
+    "Milliseconds": 0.8857,
+    "Error": null
+  },
+  {
+    "Name": "storage.unwritable application directory fails explicitly without external fallback on Linux",
+    "Passed": true,
+    "Milliseconds": 0.7105,
     "Error": null
   }
 ]
