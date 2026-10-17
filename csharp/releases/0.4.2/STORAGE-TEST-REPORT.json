@@ -1,0 +1,508 @@
+{
+  "schema": "talos-csharp-storage-tests-v1",
+  "version": "0.4.2",
+  "status": "passed",
+  "generatedAt": "2026-10-17T07:00:18.950568+00:00",
+  "environment": {
+    "platform": "Linux",
+    "sdk": "10.0.402",
+    "runtime": "Microsoft.NETCore.App 10.0.13",
+    "targetFramework": "net10.0",
+    "uid": 1000,
+    "externalTestPackages": false
+  },
+  "command": "/workspace/.dotnet/dotnet run --project csharp/Talos.Tests/Talos.Tests.csproj -c Release -- --json --bootstrap-feed dist/csharp-0.4.2/latest.json --bootstrap-package dist/csharp-0.4.2/TalosHelper-CSharp-0.4.2-update.zip --public-key csharp/update-public-key.pem",
+  "summary": {
+    "total": 63,
+    "passed": 63,
+    "failed": 0,
+    "skipped": 0,
+    "groups": {
+      "core": 13,
+      "vision": 10,
+      "updates": 23,
+      "storage": 16,
+      "payload": 1
+    },
+    "milliseconds": 1042.9588
+  },
+  "storageResults": [
+    {
+      "Name": "storage.data path follows the application directory independently of CWD",
+      "Passed": true,
+      "Milliseconds": 3.5481,
+      "Error": null
+    },
+    {
+      "Name": "storage.full signed legacy state releases calibration and logs copy without changing source",
+      "Passed": true,
+      "Milliseconds": 22.8811,
+      "Error": null
+    },
+    {
+      "Name": "storage.moving the complete application keeps signed versions usable offline and rollback independent",
+      "Passed": true,
+      "Milliseconds": 18.1385,
+      "Error": null
+    },
+    {
+      "Name": "storage.any existing portable user data prevents merging or overwriting legacy",
+      "Passed": true,
+      "Milliseconds": 9.3883,
+      "Error": null
+    },
+    {
+      "Name": "storage.initialized portable signed state is preserved instead of legacy merge",
+      "Passed": true,
+      "Milliseconds": 12.7932,
+      "Error": null
+    },
+    {
+      "Name": "storage.missing legacy and an empty data directory initialize locally",
+      "Passed": true,
+      "Milliseconds": 0.4481,
+      "Error": null
+    },
+    {
+      "Name": "storage.cancelled migration preserves source and leaves no partially committed data",
+      "Passed": true,
+      "Milliseconds": 7.861,
+      "Error": null
+    },
+    {
+      "Name": "storage.cancellation during a real staged copy removes partial output",
+      "Passed": true,
+      "Milliseconds": 334.463,
+      "Error": null
+    },
+    {
+      "Name": "storage.transient locks stages backups and incomplete files are not migrated",
+      "Passed": true,
+      "Milliseconds": 12.4291,
+      "Error": null
+    },
+    {
+      "Name": "storage.oversized or key-like copied files fail during planning without reading contents",
+      "Passed": true,
+      "Milliseconds": 1.5496,
+      "Error": null
+    },
+    {
+      "Name": "storage.source copy error cleans stage and does not commit partial data",
+      "Passed": true,
+      "Milliseconds": 13.0286,
+      "Error": null
+    },
+    {
+      "Name": "storage.portable and legacy lock contention cannot copy or change active data",
+      "Passed": true,
+      "Milliseconds": 20.6075,
+      "Error": null
+    },
+    {
+      "Name": "storage.nested source and destination are rejected without recursive copying",
+      "Passed": true,
+      "Milliseconds": 0.5777,
+      "Error": null
+    },
+    {
+      "Name": "storage.symbolic source root copied file and release directory are refused",
+      "Passed": true,
+      "Milliseconds": 1.5064,
+      "Error": null
+    },
+    {
+      "Name": "storage.symbolic application directory and data target are refused",
+      "Passed": true,
+      "Milliseconds": 0.8857,
+      "Error": null
+    },
+    {
+      "Name": "storage.unwritable application directory fails explicitly without external fallback on Linux",
+      "Passed": true,
+      "Milliseconds": 0.7105,
+      "Error": null
+    }
+  ],
+  "retainedRegressionResults": [
+    {
+      "Name": "core.requires confirmed complete 16-room observation",
+      "Passed": true,
+      "Milliseconds": 12.8178,
+      "Error": null
+    },
+    {
+      "Name": "core.reject unsupported mechanisms and malformed observed inmates",
+      "Passed": true,
+      "Milliseconds": 2.1972,
+      "Error": null
+    },
+    {
+      "Name": "core.swallow ring legality matches every species and rarity boundary",
+      "Passed": true,
+      "Milliseconds": 2.0183,
+      "Error": null
+    },
+    {
+      "Name": "core.skewer permits equal-tier rats and boosts any lawful rat meal",
+      "Passed": true,
+      "Milliseconds": 0.4906,
+      "Error": null
+    },
+    {
+      "Name": "core.muzzle after-meal three-person threshold and stacking",
+      "Passed": true,
+      "Milliseconds": 4.0577,
+      "Error": null
+    },
+    {
+      "Name": "core.usurp second event promotes exactly one inmate by two",
+      "Passed": true,
+      "Milliseconds": 7.8043,
+      "Error": null
+    },
+    {
+      "Name": "core.execution current interpretation is strictly lower primary-countered inmates",
+      "Passed": true,
+      "Milliseconds": 1.4451,
+      "Error": null
+    },
+    {
+      "Name": "core.instigation is one event and ignores nests or occupied slots",
+      "Passed": true,
+      "Milliseconds": 9.0303,
+      "Error": null
+    },
+    {
+      "Name": "core.eight phases expose only their legal action families",
+      "Passed": true,
+      "Milliseconds": 10.7768,
+      "Error": null
+    },
+    {
+      "Name": "core.daily action exhaustion and event restrictions cannot create extra meals",
+      "Passed": true,
+      "Milliseconds": 0.2302,
+      "Error": null
+    },
+    {
+      "Name": "core.pending rewards preserve and validate the underlying stage",
+      "Passed": true,
+      "Milliseconds": 0.343,
+      "Error": null
+    },
+    {
+      "Name": "core.wraparound patrol range and known observation fields stay explicit",
+      "Passed": true,
+      "Milliseconds": 0.3723,
+      "Error": null
+    },
+    {
+      "Name": "core.scores are finite deterministic and inputs remain unchanged",
+      "Passed": true,
+      "Milliseconds": 56.2858,
+      "Error": null
+    },
+    {
+      "Name": "vision.crop preserves RGBA coordinates and original pixels",
+      "Passed": true,
+      "Milliseconds": 1.5349,
+      "Error": null
+    },
+    {
+      "Name": "vision.crop rejects out of range and nonfinite geometry",
+      "Passed": true,
+      "Milliseconds": 0.2465,
+      "Error": null
+    },
+    {
+      "Name": "vision.rejects truncated pixels and oversized dimensions before allocation",
+      "Passed": true,
+      "Milliseconds": 0.4266,
+      "Error": null
+    },
+    {
+      "Name": "vision.resize is bilinear including alpha",
+      "Passed": true,
+      "Milliseconds": 0.1735,
+      "Error": null
+    },
+    {
+      "Name": "vision.match detects texture and rejects uniform/transparent evidence",
+      "Passed": true,
+      "Milliseconds": 3.4969,
+      "Error": null
+    },
+    {
+      "Name": "vision.unconfirmed legacy calibration never authorizes recognition",
+      "Passed": true,
+      "Milliseconds": 9.6058,
+      "Error": null
+    },
+    {
+      "Name": "vision.blank screenshot stays unknown after layout confirmation",
+      "Passed": true,
+      "Milliseconds": 21.036,
+      "Error": null
+    },
+    {
+      "Name": "vision.exact texture alias is mammoth while missing tier remains unknown",
+      "Passed": true,
+      "Milliseconds": 17.4653,
+      "Error": null
+    },
+    {
+      "Name": "vision.frame color prefill still requires manual review",
+      "Passed": true,
+      "Milliseconds": 10.1769,
+      "Error": null
+    },
+    {
+      "Name": "vision.changed aspect ratio or duplicate centers invalidates calibration",
+      "Passed": true,
+      "Milliseconds": 0.7016,
+      "Error": null
+    },
+    {
+      "Name": "updates.offline bootstrap verifies and hashes every payload file",
+      "Passed": true,
+      "Milliseconds": 103.6606,
+      "Error": null
+    },
+    {
+      "Name": "updates.check and install authenticate exact payload bytes",
+      "Passed": true,
+      "Milliseconds": 15.2605,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject signature tampering and another publisher key",
+      "Passed": true,
+      "Milliseconds": 7.2234,
+      "Error": null
+    },
+    {
+      "Name": "updates.install reauthenticates a manifest from another service",
+      "Passed": true,
+      "Milliseconds": 2.0406,
+      "Error": null
+    },
+    {
+      "Name": "updates.corrupt ZIP bytes cannot replace existing active",
+      "Passed": true,
+      "Milliseconds": 7.7168,
+      "Error": null
+    },
+    {
+      "Name": "updates.Windows path aliases and traversal are rejected cross platform",
+      "Passed": true,
+      "Milliseconds": 22.981,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject case-fold duplicates and file-directory collisions",
+      "Passed": true,
+      "Milliseconds": 2.9952,
+      "Error": null
+    },
+    {
+      "Name": "updates.manifest cannot replace shared host or runtime components",
+      "Passed": true,
+      "Milliseconds": 5.4878,
+      "Error": null
+    },
+    {
+      "Name": "updates.feed package file expanded-size and file-count limits reject signed excess",
+      "Passed": true,
+      "Milliseconds": 13.5033,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject duplicate and unlisted ZIP members",
+      "Passed": true,
+      "Milliseconds": 4.6708,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject ZIP symlink mode even when its bytes are signed",
+      "Passed": true,
+      "Milliseconds": 4.5647,
+      "Error": null
+    },
+    {
+      "Name": "updates.unsafe package URL and incompatible launcher fail before download",
+      "Passed": true,
+      "Milliseconds": 6.9555,
+      "Error": null
+    },
+    {
+      "Name": "updates.reject final HTTP redirect target",
+      "Passed": true,
+      "Milliseconds": 1.7611,
+      "Error": null
+    },
+    {
+      "Name": "updates.cancelled install leaves old signed active intact",
+      "Passed": true,
+      "Milliseconds": 10.5959,
+      "Error": null
+    },
+    {
+      "Name": "updates.status active directory and rollback use no network",
+      "Passed": true,
+      "Milliseconds": 21.7689,
+      "Error": null
+    },
+    {
+      "Name": "updates.bad active fails launch but can roll back to healthy signed version",
+      "Passed": true,
+      "Milliseconds": 11.5926,
+      "Error": null
+    },
+    {
+      "Name": "updates.bad historical version cannot be selected for rollback",
+      "Passed": true,
+      "Milliseconds": 12.9836,
+      "Error": null
+    },
+    {
+      "Name": "updates.signed same-version conflict cannot overwrite immutable files",
+      "Passed": true,
+      "Milliseconds": 9.4643,
+      "Error": null
+    },
+    {
+      "Name": "updates.signed compressed bomb is rejected before activation",
+      "Passed": true,
+      "Milliseconds": 8.4782,
+      "Error": null
+    },
+    {
+      "Name": "updates.cancellation immediately before commit preserves exact active state",
+      "Passed": true,
+      "Milliseconds": 13.3929,
+      "Error": null
+    },
+    {
+      "Name": "updates.unregistered partial release from an interrupted install can recover",
+      "Passed": true,
+      "Milliseconds": 11.6945,
+      "Error": null
+    },
+    {
+      "Name": "updates.symlink release parent cannot redirect writes outside data root",
+      "Passed": true,
+      "Milliseconds": 1.7399,
+      "Error": null
+    },
+    {
+      "Name": "updates.tampered signed state cannot authorize assembly loading",
+      "Passed": true,
+      "Milliseconds": 5.1674,
+      "Error": null
+    },
+    {
+      "Name": "payload.actual signed bootstrap installs offline and verifies all declared files",
+      "Passed": true,
+      "Milliseconds": 103.7095,
+      "Error": null
+    }
+  ],
+  "sourceHashes": {
+    "Talos.Core/EngineCatalog.cs": "2f5589484ec27317f5d224e02f8971df1a21d1a544359583c23319912d820264",
+    "Talos.Core/GameAdvisor.cs": "28f40123de0591a174f5f3f1328f4e7d2026d8619cd2c15a749ca52f438e4a70",
+    "Talos.Core/GameRules.cs": "508988e407c3a6309447f9c6807e24a585523186e8fa8f475e13479a4bb0b933",
+    "Talos.Core/GameState.cs": "ec763e42e7189aac20dfa7405de608fa4ed1553ffa31ba9151ada388d85ae62f",
+    "Talos.Core/Talos.Core.csproj": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+    "Talos.Core/Vision/PixelOperations.cs": "c5a4ece9db3a54877c18be118936d7597badfbd32589b197631bb8fae18c88d2",
+    "Talos.Core/Vision/PixelTypes.cs": "2ff447963a00fc3fcc7915fbc5f5aec8cfc11ce2c2a560b85090a8396af5f5d4",
+    "Talos.Core/Vision/ScreenshotRecognizer.cs": "5c57bbf1149b722d23796688aa7155e4a34fb894d7f3ab36f5f4717a094c710c",
+    "Talos.Storage/PortableStorage.cs": "c3416b8d3f4ab31b6df5404ac773202aa8d91cd95f7a96c34eb59e40d60c6f99",
+    "Talos.Storage/Talos.Storage.csproj": "e2c08643e21eba9123e4b319840fec508efc44b473a7cab491d6188e5f6905ca",
+    "Talos.Updates/Models.cs": "38b22e078fcd389124889d6dc2e30c1d98c5742e5595001492b8e1812b149ecc",
+    "Talos.Updates/Talos.Updates.csproj": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+    "Talos.Updates/UpdateService.cs": "6606e92b25d304b86369ec6350c2667801d5aee7f824b005216f550b1423806c",
+    "Talos.Tests/CoreChecks.cs": "bcfdab45a0287c52f95bf90878d8b5607db4ce925d077ac17aa9a238441bf1ae",
+    "Talos.Tests/PayloadChecks.cs": "ee03e338497f820955dde4cc41c175dfdd596cb97c5505203c609cff4626f628",
+    "Talos.Tests/Program.cs": "4e8a58c7f40deebfcce61377ef192eb8b32863b6b6ac1b96682acf67431f1353",
+    "Talos.Tests/StorageChecks.cs": "ebbfcb74599cdcf60903dba308c1182738a38712feb43accff792983804c98b4",
+    "Talos.Tests/Talos.Tests.csproj": "3b2664384f980952b868fd4213fe0430db151e6dc609cca85a9a4e6270e260e7",
+    "Talos.Tests/UpdateChecks.cs": "2b3affff5135aee77f1a5b89dcec11ad903fffcdf7628465fd7dd39caae2c603",
+    "Talos.Tests/UpdateFixture.cs": "88456f2d6b80caaebb737f47aa5c1a0844fe53ec3a8da1d8c3ddc6a0bca43710",
+    "Talos.Tests/VisionChecks.cs": "ed619b3da463f1e148af3daeb87c6bcc69e1a0040230fad9045d2e52bcd7113a"
+  },
+  "dependencyLockSha256": "7ca470e637f799214b12857612d3954cef9af04db0261e91c0011f7da81abfcf",
+  "sourceFingerprint": {
+    "algorithm": "SHA256",
+    "encoding": "UTF-8: sorted relative path + NUL + lowercase file SHA256 + LF",
+    "sha256": "b1c5e45a2e8fdf3e9998a6b08ff441e979c3e18a12f3479250f8f4d8e2f27f68"
+  },
+  "migrationFixture": {
+    "publisher": "Fresh ephemeral ECDSA P-256 QA key generated by the .NET test process",
+    "versions": [
+      "0.4.0",
+      "0.4.1"
+    ],
+    "legacyFiles": "Authenticated state.json, both inert signed releases, vision-calibration.json, and logs; original bytes checked before/after",
+    "payloadExecution": false,
+    "networkRequests": 0,
+    "privatePublisherKeyRead": false
+  },
+  "interruptionObserver": {
+    "method": "Already-running dedicated filesystem polling observer cancels when the real staging-copy output is created. Migration runs on a dedicated worker.",
+    "resolvedTestIssue": "The initial recursive FileSystemWatcher observer could miss files inside newly-created stage directories and was replaced; those failing attempts are not reported as product failures or passing checks.",
+    "subsequentFullSuiteRuns": [
+      {
+        "total": 63,
+        "passed": 63,
+        "sha256": "30f84b67adb5cf3329d314e2d56ade977ade3e8edd66ee09b780d5a9f748ba42"
+      },
+      {
+        "total": 63,
+        "passed": 63,
+        "sha256": "2d2ec5263b4a0db622ec92bf63dd58384a4312b270a1cb3bc8803e5be00f8750"
+      }
+    ],
+    "uniqueChecksRemain": 63
+  },
+  "coverage": [
+    "Absolute appDirectory/data is independent of CWD; no CWD fallback created.",
+    "Stable legacy files copied, original files byte-identical, transient/unknown files not merged.",
+    "Moving entire application directory preserves signed-version validation and local rollback.",
+    "Any existing user data or initialized portable state prevents all legacy merging.",
+    "Pre-cancel, true 128MiB staged-copy cancellation, and source sharing violation leave no partial data/stage.",
+    "Destination and production legacy lock contention reject busy or respect cancellation, and release for retry.",
+    "Overlapping source/destination, symlink roots/ancestors/files/directories/data targets are rejected.",
+    "Unwritable application directory fails explicitly under Linux UID 1000; no AppData fallback.",
+    "Sparse file exceeding the 256MiB individual-file cap and blocked QA .pem placeholder reject during planning without reading contents."
+  ],
+  "unresolvedBlockersObserved": [],
+  "limitations": [
+    "Linux console execution only; Windows WPF/host startup, ACLs, reparse-point behavior and EXE execution were not run.",
+    "The Host must pass its executable directory as appDirectory; that wiring is outside this filesystem test runner.",
+    "Cancellation and reconstructed failure cases exercise cleanup boundaries, not arbitrary hardware power loss.",
+    "Storage tests use authenticated inert QA releases; they do not load assemblies or claim game accuracy/rewards."
+  ],
+  "realSignedPayloadCheck": {
+    "scope": "Final 0.4.2 signed feed and payload from dist; native offline bootstrap, every declared file hash, then tampered App.dll rejected.",
+    "version": "0.4.2",
+    "fileCount": 159,
+    "feed": {
+      "path": "dist/csharp-0.4.2/latest.json",
+      "bytes": 34150,
+      "sha256": "ff648f0fb7298487ecd6008538353e1d6d302374a1f2c5f921efb2404257bee4"
+    },
+    "payload": {
+      "path": "dist/csharp-0.4.2/TalosHelper-CSharp-0.4.2-update.zip",
+      "bytes": 1284563,
+      "sha256": "e06c636347377a294c3fb6f3dcd64ec0cb085989dd846aee310af74c92b288cf"
+    },
+    "publicKey": {
+      "path": "csharp/update-public-key.pem",
+      "sha256": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72"
+    },
+    "networkRequests": 0,
+    "assembliesLoaded": false,
+    "windowsExeExecuted": false
+  }
+}

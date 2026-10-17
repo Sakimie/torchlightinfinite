@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "windowsExeExecuted": false,
+  "scope": "Static PE/bundle/resource verification on Linux; Windows UI, capture, hotkeys and execution were not tested.",
+  "executableBytes": 62500392,
+  "executableSha256": "313d2af95eb3dbfdb04e39cfce7fd4dd936dad961e11580d33daaf5307cddf45",
+  "bundleVersion": "6.0",
+  "embeddedFiles": 380,
+  "bundleFlags": 0,
+  "noBundleExtractionRequired": true,
+  "bundleEntryTypes": {
+    "1": 378,
+    "4": 1,
+    "3": 1
+  },
+  "externalNative": {
+    "PresentationNative_cor3.dll": "091609705a031d5832f21548291c2670f06eadd781d465d3e1a5fad3772adc91",
+    "wpfgfx_cor3.dll": "ad1c9dbbc2fcc2b274145727e8f04d5adf49a0c9ae4d1a3c33ec969fcd5b4bf1",
+    "D3DCompiler_47_cor3.dll": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb",
+    "PenImc_cor3.dll": "007cb9a6781801c5ed071127314d12b40f8778356b1bce4316309a1be8c42c51",
+    "vcruntime140_cor3.dll": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+  },
+  "nativeRuntimeMode": "statically-linked-singlefilehost",
+  "staticRuntimeEvidence": {
+    "runtimeVersion": "10.0.13",
+    "linkedLibraries": [
+      "coreclr.dll",
+      "clrjit.dll"
+    ],
+    "runtimePackDropFromSingleFile": true,
+    "officialNativeTextMatches": true,
+    "nativeTextBytes": 6714880,
+    "nativeTextSha256": "d723320c56a8f1b508569988ecff339630f135d8adc0e5d1d1e504716a4d7bee",
+    "runtimeExports": [
+      "CLRJitAttachState",
+      "g_CLREngineMetrics",
+      "g_dacTable",
+      "DotNetRuntimeInfo",
+      "DotNetRuntimeContractDescriptor"
+    ]
+  },
+  "runtimeDependenciesBundled": [
+    "System.Private.CoreLib.dll",
+    "PresentationFramework.dll",
+    "PresentationCore.dll",
+    "WindowsBase.dll",
+    "Talos.Updates.dll",
+    "TalosHelper.dll"
+  ],
+  "includedFrameworks": [
+    {
+      "name": "Microsoft.NETCore.App",
+      "version": "10.0.13"
+    },
+    {
+      "name": "Microsoft.WindowsDesktop.App",
+      "version": "10.0.13"
+    }
+  ],
+  "resources": {
+    "Talos.PublicKey": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72",
+    "Talos.BootstrapFeed": "ff648f0fb7298487ecd6008538353e1d6d302374a1f2c5f921efb2404257bee4",
+    "Talos.BootstrapPackage": "e06c636347377a294c3fb6f3dcd64ec0cb085989dd846aee310af74c92b288cf"
+  }
+}
