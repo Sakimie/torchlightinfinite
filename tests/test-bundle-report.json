@@ -1,0 +1,13 @@
+{
+  "schema": "talos-update-test-bundle-v1",
+  "applicationVersion": "0.3.2",
+  "launcherChannelVersion": "0.3.3",
+  "file": "TalosHelper-0.3.2-Update-Test.zip",
+  "bytes": 10399115,
+  "sha256": "3e622e069c2044ac5afed9038d907afc58b6ba0a0866d4d8cac7319074b28ca6",
+  "sourceOldSha256": "ee30df0b0aee7922b871ed9ca1ca6ef1dfcb296da217dfdad32dcd8ee653d145",
+  "sourceLauncherSha256": "4f85ea98ff28a60b3f30c2e730bdc8e5219b0ad36dbe580c4774a2cb50a9ffbe",
+  "feedUrl": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/talos-updates/latest.json",
+  "requiresOriginalRuntime": true,
+  "useCopiedDirectory": true
+}
