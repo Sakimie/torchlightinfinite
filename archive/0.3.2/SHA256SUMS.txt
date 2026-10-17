@@ -1,0 +1,2 @@
+ee30df0b0aee7922b871ed9ca1ca6ef1dfcb296da217dfdad32dcd8ee653d145  TalosHelper-Online-Update-0.3.2.zip
+3e622e069c2044ac5afed9038d907afc58b6ba0a0866d4d8cac7319074b28ca6  TalosHelper-0.3.2-Update-Test.zip
