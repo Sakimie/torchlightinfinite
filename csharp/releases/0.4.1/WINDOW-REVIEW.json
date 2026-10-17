@@ -1,0 +1,88 @@
+{
+  "schema": "talos-window-source-review-v1",
+  "version": "0.4.1",
+  "reviewedAtUtc": "2026-10-17T06:50:11.886758+00:00",
+  "status": "no-blockers-found-in-source-review",
+  "passed": true,
+  "scope": "Independent read-only WPF window-lifecycle source review. Renderer reports a successful Release cross-build; this audit did not run Windows or execute the WPF UI.",
+  "windowsUiExecuted": false,
+  "windowsExeExecuted": false,
+  "sourceEditedByReviewer": false,
+  "sourceHashes": {
+    "csharp/Talos.App/MainWindow.cs": "2a6f31389cf56b0521a3a5071f11c5f501b27330d6018ed6534e293a8da78ff5",
+    "csharp/Talos.App/UpdateWindow.cs": "0a92f5155ecfac58eb41fc6ac31a2c3e2a49efcb22448dacc6d5cbf7bbcd9a61"
+  },
+  "checks": [
+    {
+      "id": "idle-return",
+      "location": "UpdateWindow.Controls / CancelOrReturn",
+      "finding": "空闲时取消/返回按钮可用并调用Close；忙碌时明确取消当前操作，已请求取消时防止重复操作。"
+    },
+    {
+      "id": "native-close-and-escape",
+      "location": "UpdateWindow constructor / Closed / PreviewKeyDown",
+      "finding": "X和Escape覆盖关闭/取消入口；Closed先标记closed并递增epoch，再请求异步取消。"
+    },
+    {
+      "id": "commit-result-is-authoritative",
+      "location": "UpdateWindow.RunAsync / install / rollback / ImportLocalAsync",
+      "finding": "安装、回退和离线导入使用applyCommittedResult:true；后台已正常返回实际UpdateStatus时，即使随后请求取消，也应用已提交状态，不伪装成未安装。check/status仍拒绝取消后的结果。"
+    },
+    {
+      "id": "no-ui-from-update-worker",
+      "location": "UpdateWindow.RunAsync",
+      "finding": "worker只返回UI Action；await回到Dispatcher后，先检查closed和operationEpoch，再执行UI更新。"
+    },
+    {
+      "id": "late-progress-is-dropped",
+      "location": "UpdateWindow.NewProgress",
+      "finding": "进度排队和执行时检查关闭、epoch、busy及取消状态，不覆盖关闭或取消后的UI。"
+    },
+    {
+      "id": "safe-cancellation-disposal",
+      "location": "UpdateWindow.RequestCancellation / RunAsync finally / DisposeService",
+      "finding": "CancelAsync回调完成后释放本次CTS；只清除同一work引用。关闭期间不抢先Dispose仍在使用的UpdateService，待worker收尾后释放。"
+    },
+    {
+      "id": "single-owned-update-window",
+      "location": "MainWindow.ShowUpdates",
+      "finding": "重复打开复用一个owned UpdateWindow；更新窗ShowInTaskbar=false且ResizeMode.NoResize，避免额外任务栏按钮和可操作的最小化/最大化框。"
+    },
+    {
+      "id": "preserve-owner-state",
+      "location": "MainWindow.ShowUpdates / ReturnFromUpdates / StateChanged",
+      "finding": "记录打开前的非Minimized状态；关闭后恢复保存状态并激活主窗，不强制改为Normal，因此保留原Maximized。"
+    },
+    {
+      "id": "old-window-cannot-steal-new-window-focus",
+      "location": "MainWindow.ShowUpdates Closed callback / ReturnFromUpdates",
+      "finding": "Closed验证实例身份；恢复操作在排队前及ContextIdle执行时双检generation和当前updateWindow为空。新窗口使旧恢复回调失效。"
+    },
+    {
+      "id": "shutdown-does-not-resurrect-owner",
+      "location": "MainWindow.Closing / ReturnFromUpdates",
+      "finding": "Closing早于Closed记录退出意图，恢复路径同时拒绝closing、closed及Dispatcher shutdown，避免owned窗口关闭时复活主窗。"
+    },
+    {
+      "id": "compact-mode-keeps-owner-hidden",
+      "location": "MainWindow.ShowCompact / ReturnFromUpdates",
+      "finding": "compactMode阻止关闭更新窗的恢复回调强行展开主窗；展开时只在Minimized状态恢复最近非最小化状态。"
+    },
+    {
+      "id": "capture-temporary-hide-is-respected",
+      "location": "MainWindow.CaptureAsync / ReturnFromUpdates",
+      "finding": "截图时显式隐藏当前可见更新窗；finally仅恢复同一实例且不激活。关闭更新窗的恢复请求在captureBusy时延后，收尾后再做generation检查。"
+    }
+  ],
+  "unresolvedBlockersObserved": [],
+  "rootCauseEvidence": {
+    "idleButton": "0.4.0 Controls explicitly used cancel.IsEnabled=busy; idle cancellation had no close behaviour.",
+    "ownerMinimized": "No explicit minimize instruction was found in 0.4.0. The exact Windows native focus/ownership cause was not reproduced on Linux. 0.4.1 explicitly restores prior owner state and constrains owned-window lifecycle."
+  },
+  "runtimeAcceptanceStillRequired": [
+    "Windows: open from Maximized and Normal main windows, then close using X and idle return; confirm prior state and focus.",
+    "Windows: reopen updates immediately after closing; confirm one window and no delayed owner-focus steal.",
+    "Windows: cancel/close during check or install, including cancellation after commit; confirm actual active version and no late UI callbacks.",
+    "Windows: close the application or enter compact mode/capture while updates is open; confirm no unwanted owner restoration."
+  ]
+}

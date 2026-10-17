@@ -1,0 +1,284 @@
+[
+  {
+    "Name": "core.requires confirmed complete 16-room observation",
+    "Passed": true,
+    "Milliseconds": 13.9639,
+    "Error": null
+  },
+  {
+    "Name": "core.reject unsupported mechanisms and malformed observed inmates",
+    "Passed": true,
+    "Milliseconds": 2.4961,
+    "Error": null
+  },
+  {
+    "Name": "core.swallow ring legality matches every species and rarity boundary",
+    "Passed": true,
+    "Milliseconds": 1.949,
+    "Error": null
+  },
+  {
+    "Name": "core.skewer permits equal-tier rats and boosts any lawful rat meal",
+    "Passed": true,
+    "Milliseconds": 0.428,
+    "Error": null
+  },
+  {
+    "Name": "core.muzzle after-meal three-person threshold and stacking",
+    "Passed": true,
+    "Milliseconds": 5.1684,
+    "Error": null
+  },
+  {
+    "Name": "core.usurp second event promotes exactly one inmate by two",
+    "Passed": true,
+    "Milliseconds": 7.3516,
+    "Error": null
+  },
+  {
+    "Name": "core.execution current interpretation is strictly lower primary-countered inmates",
+    "Passed": true,
+    "Milliseconds": 1.4512,
+    "Error": null
+  },
+  {
+    "Name": "core.instigation is one event and ignores nests or occupied slots",
+    "Passed": true,
+    "Milliseconds": 9.263,
+    "Error": null
+  },
+  {
+    "Name": "core.eight phases expose only their legal action families",
+    "Passed": true,
+    "Milliseconds": 12.0811,
+    "Error": null
+  },
+  {
+    "Name": "core.daily action exhaustion and event restrictions cannot create extra meals",
+    "Passed": true,
+    "Milliseconds": 0.2227,
+    "Error": null
+  },
+  {
+    "Name": "core.pending rewards preserve and validate the underlying stage",
+    "Passed": true,
+    "Milliseconds": 0.406,
+    "Error": null
+  },
+  {
+    "Name": "core.wraparound patrol range and known observation fields stay explicit",
+    "Passed": true,
+    "Milliseconds": 0.3475,
+    "Error": null
+  },
+  {
+    "Name": "core.scores are finite deterministic and inputs remain unchanged",
+    "Passed": true,
+    "Milliseconds": 41.574,
+    "Error": null
+  },
+  {
+    "Name": "vision.crop preserves RGBA coordinates and original pixels",
+    "Passed": true,
+    "Milliseconds": 1.2306,
+    "Error": null
+  },
+  {
+    "Name": "vision.crop rejects out of range and nonfinite geometry",
+    "Passed": true,
+    "Milliseconds": 0.2623,
+    "Error": null
+  },
+  {
+    "Name": "vision.rejects truncated pixels and oversized dimensions before allocation",
+    "Passed": true,
+    "Milliseconds": 0.4667,
+    "Error": null
+  },
+  {
+    "Name": "vision.resize is bilinear including alpha",
+    "Passed": true,
+    "Milliseconds": 0.154,
+    "Error": null
+  },
+  {
+    "Name": "vision.match detects texture and rejects uniform/transparent evidence",
+    "Passed": true,
+    "Milliseconds": 2.7465,
+    "Error": null
+  },
+  {
+    "Name": "vision.unconfirmed legacy calibration never authorizes recognition",
+    "Passed": true,
+    "Milliseconds": 4.9955,
+    "Error": null
+  },
+  {
+    "Name": "vision.blank screenshot stays unknown after layout confirmation",
+    "Passed": true,
+    "Milliseconds": 16.6557,
+    "Error": null
+  },
+  {
+    "Name": "vision.exact texture alias is mammoth while missing tier remains unknown",
+    "Passed": true,
+    "Milliseconds": 16.1289,
+    "Error": null
+  },
+  {
+    "Name": "vision.frame color prefill still requires manual review",
+    "Passed": true,
+    "Milliseconds": 12.5132,
+    "Error": null
+  },
+  {
+    "Name": "vision.changed aspect ratio or duplicate centers invalidates calibration",
+    "Passed": true,
+    "Milliseconds": 0.6622,
+    "Error": null
+  },
+  {
+    "Name": "updates.offline bootstrap verifies and hashes every payload file",
+    "Passed": true,
+    "Milliseconds": 123.1136,
+    "Error": null
+  },
+  {
+    "Name": "updates.check and install authenticate exact payload bytes",
+    "Passed": true,
+    "Milliseconds": 30.5264,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject signature tampering and another publisher key",
+    "Passed": true,
+    "Milliseconds": 10.3879,
+    "Error": null
+  },
+  {
+    "Name": "updates.install reauthenticates a manifest from another service",
+    "Passed": true,
+    "Milliseconds": 2.08,
+    "Error": null
+  },
+  {
+    "Name": "updates.corrupt ZIP bytes cannot replace existing active",
+    "Passed": true,
+    "Milliseconds": 11.3852,
+    "Error": null
+  },
+  {
+    "Name": "updates.Windows path aliases and traversal are rejected cross platform",
+    "Passed": true,
+    "Milliseconds": 23.3543,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject case-fold duplicates and file-directory collisions",
+    "Passed": true,
+    "Milliseconds": 3.1364,
+    "Error": null
+  },
+  {
+    "Name": "updates.manifest cannot replace shared host or runtime components",
+    "Passed": true,
+    "Milliseconds": 5.7042,
+    "Error": null
+  },
+  {
+    "Name": "updates.feed package file expanded-size and file-count limits reject signed excess",
+    "Passed": true,
+    "Milliseconds": 12.8161,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject duplicate and unlisted ZIP members",
+    "Passed": true,
+    "Milliseconds": 3.6568,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject ZIP symlink mode even when its bytes are signed",
+    "Passed": true,
+    "Milliseconds": 3.4218,
+    "Error": null
+  },
+  {
+    "Name": "updates.unsafe package URL and incompatible launcher fail before download",
+    "Passed": true,
+    "Milliseconds": 41.1419,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject final HTTP redirect target",
+    "Passed": true,
+    "Milliseconds": 2.6086,
+    "Error": null
+  },
+  {
+    "Name": "updates.cancelled install leaves old signed active intact",
+    "Passed": true,
+    "Milliseconds": 10.3374,
+    "Error": null
+  },
+  {
+    "Name": "updates.status active directory and rollback use no network",
+    "Passed": true,
+    "Milliseconds": 26.0984,
+    "Error": null
+  },
+  {
+    "Name": "updates.bad active fails launch but can roll back to healthy signed version",
+    "Passed": true,
+    "Milliseconds": 17.8609,
+    "Error": null
+  },
+  {
+    "Name": "updates.bad historical version cannot be selected for rollback",
+    "Passed": true,
+    "Milliseconds": 22.6284,
+    "Error": null
+  },
+  {
+    "Name": "updates.signed same-version conflict cannot overwrite immutable files",
+    "Passed": true,
+    "Milliseconds": 8.1865,
+    "Error": null
+  },
+  {
+    "Name": "updates.signed compressed bomb is rejected before activation",
+    "Passed": true,
+    "Milliseconds": 9.3318,
+    "Error": null
+  },
+  {
+    "Name": "updates.cancellation immediately before commit preserves exact active state",
+    "Passed": true,
+    "Milliseconds": 18.3332,
+    "Error": null
+  },
+  {
+    "Name": "updates.unregistered partial release from an interrupted install can recover",
+    "Passed": true,
+    "Milliseconds": 12.7501,
+    "Error": null
+  },
+  {
+    "Name": "updates.symlink release parent cannot redirect writes outside data root",
+    "Passed": true,
+    "Milliseconds": 1.8943,
+    "Error": null
+  },
+  {
+    "Name": "updates.tampered signed state cannot authorize assembly loading",
+    "Passed": true,
+    "Milliseconds": 4.9359,
+    "Error": null
+  },
+  {
+    "Name": "payload.actual signed bootstrap installs offline and verifies all declared files",
+    "Passed": true,
+    "Milliseconds": 88.9438,
+    "Error": null
+  }
+]

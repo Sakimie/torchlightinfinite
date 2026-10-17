@@ -1,0 +1,2 @@
+3c36d5311989becfec65a25b215352a6945b5a9ac9a281601aeceec662aacffe  TalosHelper-CSharp-0.4.1-update.zip
+7a917de916ff7d44279c171cf87437ed016150ae626bd91be18fe79113b0f625  latest.json

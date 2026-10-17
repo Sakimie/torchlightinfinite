@@ -1,4 +1,6 @@
-# TalosHelper C# 测试版 0.4.0
+# TalosHelper C# 测试版
+
+最新应用更新为 **0.4.1**，修复更新窗口的取消、关闭和主窗口恢复行为。[更新说明](https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.4.1-csharp-preview)。已有 0.4.0 完整包的用户可直接在程序内检查、安装并重启，无需重下完整包；首次使用仍下载下方 0.4.0 完整包后更新。应用更新 ZIP 不能独立运行。
 
 Windows 10/11 x64 桌面助手，支持截图、逐格核对、本地策略建议、置顶悬浮窗，以及手动检查更新。程序、截图识别、规则和更新器均使用 C#；开发机的 Python/Node 构建工具不随产品分发。
 
