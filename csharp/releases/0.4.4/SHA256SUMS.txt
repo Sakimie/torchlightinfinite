@@ -1,0 +1,4 @@
+bc8fdca22b4cd3a30a166f5e1a4dd8f66bfb03960b35d1977ba0aca7ba2aa5d7  TalosHelper-CSharp-0.4.4-Windows-x64.zip
+5322d691d04b6fb18036e50031451f395606c1d4086626555b8c97c0d2298a23  TalosHelper-CSharp-0.4.4-Offline-Update.zip
+00dcf68ca36e65e27284ff5c81ef151ee6fc9ec10a23bbe3b0ea753c2097477c  TalosHelper-CSharp-0.4.4-update.zip
+73e3a0514c43785cc74d3d23c7722dc96b10f8d8d62a63882fe0d18321fa14b7  latest.json

@@ -1,0 +1,133 @@
+{
+  "schema": "talos-capture-review-v1",
+  "version": "0.4.4",
+  "createdAtUtc": "2026-10-17T07:42:25.372234+00:00",
+  "scope": "NativeCapture standalone WPF cross-build, exact-source useful-pixel predicate checks, read-only automatic UI capture flow inspection",
+  "source": {
+    "path": "csharp/Talos.App/NativeCapture.cs",
+    "sha256": "7e391173e6ae7f311e2e6117654ba447fd4ed64f55619c52f170d8aeac0ae9c4",
+    "usefulPixelsMethodSha256": "3356d8eb0f7484519be23cc33968deb701f7803890db5f9528b25edf9e119bd1"
+  },
+  "environment": {
+    "host": "Linux",
+    "sdk": "10.0.402",
+    "sdkPath": "/workspace/.dotnet/dotnet",
+    "networkUsed": false
+  },
+  "standaloneBuild": {
+    "command": "DOTNET_CLI_HOME=/workspace/.dotnet-cli TMPDIR=/workspace/.dotnet-tmp /workspace/.dotnet/dotnet build /tmp/talos-nativecapture-check/CaptureCheck.csproj --configuration Release --no-restore --nologo -p:ProjectAssetsFile=/workspace/torchlightinfinite/csharp/Talos.App/obj/project.assets.json",
+    "actualTarget": "net10.0-windows WPF class library containing the unchanged production NativeCapture.cs only; compile on Linux, not Windows execution",
+    "projectPath": "/tmp/talos-nativecapture-check/CaptureCheck.csproj",
+    "projectSha256": "0bffa0d1039e6edd9f366baf98ac6edbcdf9b5863c7729475f269d1277e4b3c5",
+    "artifactPath": "/tmp/talos-nativecapture-check/bin/Release/net10.0-windows/CaptureCheck.dll",
+    "artifactSha256": "601f010d7607344f593bb9367811aa835d9d48cb964a03087f9cfc9a3f98962e",
+    "exitCode": 0,
+    "warnings": 0,
+    "errors": 0
+  },
+  "usefulPixelsChecks": {
+    "command": "DOTNET_CLI_HOME=/workspace/.dotnet-cli TMPDIR=/workspace/.dotnet-tmp /workspace/.dotnet/dotnet run --project /tmp/talos-vision-check/VisionCheck.csproj --configuration Release --no-restore --nologo",
+    "actualTarget": "net10.0 console harness on Linux, with HasUsefulPixels extracted unchanged from the production source; no Win32/WPF screenshot methods executed",
+    "programPath": "/tmp/talos-vision-check/Program.cs",
+    "programSha256": "9f7e0b1e2d35c42c59435e24a6f68f3876f26ee312177b5a76bdfd1cf59b40ab",
+    "artifactPath": "/tmp/talos-vision-check/bin/Release/net10.0/VisionCheck.dll",
+    "artifactSha256": "4c1e96e49c08100d31aae0d4bdb8bfb79984f9fd00447d3e4e9415b3c040ab08",
+    "exitCode": 0,
+    "passed": 6,
+    "failed": 0,
+    "cases": [
+      {
+        "case": "black image",
+        "expected": false,
+        "actual": false
+      },
+      {
+        "case": "uniform white image",
+        "expected": false,
+        "actual": false
+      },
+      {
+        "case": "uniform gray image",
+        "expected": false,
+        "actual": false
+      },
+      {
+        "case": "sparse bright speck on black",
+        "expected": false,
+        "actual": false
+      },
+      {
+        "case": "non-flat synthetic frame",
+        "expected": true,
+        "actual": true
+      },
+      {
+        "case": "empty pixel array",
+        "expected": false,
+        "actual": false
+      }
+    ]
+  },
+  "staticCaptureFlowReview": {
+    "files": [
+      {
+        "path": "csharp/Talos.App/MainWindow.cs",
+        "sha256": "4224f1067871ddc6e465abf2888922e413dba7d2d2c47f88f9fb9f0be5506f16"
+      },
+      {
+        "path": "csharp/Talos.App/MainWindow.Follow.cs",
+        "sha256": "8633f3a889dccacbda5947325b713d45bf163c31b6e50a95157330cadf9baee6"
+      },
+      {
+        "path": "csharp/Talos.App/OverlayWindow.cs",
+        "sha256": "ee5d37e407bbc5b8daa2151a553be12518e986a1470a859123f05da8ae4ebd45"
+      }
+    ],
+    "checked": [
+      "Automatic flow checks CanAutoCapture before hiding helper windows.",
+      "Main, update window and overlay are hidden before a cancellable 180ms settle delay.",
+      "Automatic worker calls CaptureGame, which rechecks window identity, foreground and captured frame validity.",
+      "Main/update restoration uses ShowActivated=false; overlay constructor also sets ShowActivated=false.",
+      "No direct Activate call exists in the ordinary automatic capture/restore branch.",
+      "Unknown recognition fields are not marked confirmed; screenshots invalidate old advice and require manual review.",
+      "The accepted-frame bool prevents failed/cancelled capture from being described as a successful new screenshot.",
+      "An attempted automatic capture consumes its trigger; failure does not requeue it or cause indefinite timer retries."
+    ],
+    "followUpReportedToRenderer": {
+      "status": "resolved",
+      "items": [
+        {
+          "issue": "Capture failure was announced as a new screenshot.",
+          "resolution": "CaptureSnapshotAsync returns Task<bool>; FollowTick displays success only when a new frame was actually accepted."
+        },
+        {
+          "issue": "An attempted but failed automatic capture requeued the same trigger for indefinite timer retries.",
+          "resolution": "FollowTick consumes readyFollowTrigger before attempting capture and does not put it back on failure. A failed attempt waits for the next log event or manual F8; a not-yet-attempted trigger may still wait while the game is not foreground."
+        }
+      ]
+    },
+    "status": "passed-static-review"
+  },
+  "limitations": [
+    "No Windows UI, hotkey, DPI, actual game, DirectX, foreground switching or occlusion test was executed on this Linux machine.",
+    "PrintWindow is a synchronous Win32 call and cannot be guaranteed cancellable; IsHungAppWindow is a preflight mitigation, not a hard timeout.",
+    "Process identity is bound by HWND plus PID, using the existing Chinese/English title selection; no unverified executable-name allowlist was invented.",
+    "Screen fallback is conservative and may reject usable scenes; these checks do not prove complete prevention of all possible occlusion or rendering artifacts.",
+    "Flat-frame predicate tests do not measure game OCR or screenshot recognition accuracy."
+  ],
+  "applicationCrossBuild": {
+    "command": "DOTNET_CLI_HOME=/workspace/.dotnet-cli TMPDIR=/workspace/.dotnet-tmp /workspace/.dotnet/dotnet build csharp/Talos.App/Talos.App.csproj --configuration Release --no-restore --nologo",
+    "target": "Full Talos.App net10.0-windows WPF assembly cross-built on Linux",
+    "exitCode": 0,
+    "warnings": 0,
+    "errors": 0,
+    "artifact": "csharp/Talos.App/bin/Release/net10.0-windows/Talos.App.dll",
+    "windowsExecuted": false,
+    "scope": "Earlier successful development cross-build, recorded before final UI freeze. This is not the final delivery assembly or final delivery build record.",
+    "artifactSha256AtRecordedBuild": "898130ebf182ef26c0294f338d3fa1123adb7df8a5b000c3df6c6010ed03a8f3",
+    "isFinalDeliveryBuild": false,
+    "finalDeliveryBuildOwner": "root",
+    "finalDeliveryBuildNote": "Root executes and records the final full application/payload build after the final UI freeze; no final delivery binary validation is claimed by this earlier record."
+  },
+  "reviewedAtUtc": "2026-10-17T07:51:12.154398+00:00"
+}

@@ -1,0 +1,125 @@
+{
+  "schema": "talos-real-offline-update-validation-v1",
+  "passed": true,
+  "baselineVersion": "0.4.2",
+  "importedVersion": "0.4.4",
+  "restartWithOldBootstrapVersion": "0.4.4",
+  "oldBootstrapStateByteIdentical": true,
+  "rolledBackVersion": "0.4.2",
+  "baselineFiles": 159,
+  "importedFiles": 159,
+  "rollbackFiles": 159,
+  "userCalibrationPreserved": true,
+  "networkRequests": 0,
+  "inputs": [
+    {
+      "path": "/workspace/torchlightinfinite/csharp/update-public-key.pem",
+      "bytes": 178,
+      "sha256": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72"
+    },
+    {
+      "path": "/workspace/torchlightinfinite/dist/csharp-0.4.2/latest.json",
+      "bytes": 34150,
+      "sha256": "ff648f0fb7298487ecd6008538353e1d6d302374a1f2c5f921efb2404257bee4"
+    },
+    {
+      "path": "/workspace/torchlightinfinite/dist/csharp-0.4.2/TalosHelper-CSharp-0.4.2-update.zip",
+      "bytes": 1284563,
+      "sha256": "e06c636347377a294c3fb6f3dcd64ec0cb085989dd846aee310af74c92b288cf"
+    },
+    {
+      "path": "/workspace/torchlightinfinite/dist/csharp-0.4.4/latest.json",
+      "bytes": 34402,
+      "sha256": "73e3a0514c43785cc74d3d23c7722dc96b10f8d8d62a63882fe0d18321fa14b7"
+    },
+    {
+      "path": "/workspace/torchlightinfinite/dist/csharp-0.4.4/TalosHelper-CSharp-0.4.4-update.zip",
+      "bytes": 1335511,
+      "sha256": "00dcf68ca36e65e27284ff5c81ef151ee6fc9ec10a23bbe3b0ea753c2097477c"
+    }
+  ],
+  "updaterAssemblySha256": "a94d1d55df518c774af3f0293fa049ffc81a498096731025d0ceb7391618f4ba",
+  "windowsExeExecuted": false,
+  "windowsUiExecuted": false,
+  "wpfAssembliesLoaded": false,
+  "privateKeyRead": false,
+  "generatedAt": "2026-10-17T07:52:48.504187+00:00",
+  "version": "0.4.4",
+  "testSuite": {
+    "report": "test-results.json",
+    "sha256": "5a4a6199e4e2d95b171ae8678d4052b546e72bdf00263a20adbff52f640e4b6a",
+    "passed": 109,
+    "failed": 0,
+    "skipped": 0,
+    "groups": {
+      "core": 13,
+      "vision": 10,
+      "updates": 23,
+      "storage": 16,
+      "simulation": 20,
+      "rollout": 6,
+      "following": 20,
+      "payload": 1
+    },
+    "milliseconds": 1844.924,
+    "execution": "Existing frozen suite in an isolated temporary output directory with Talos.Core.dll replaced by the exact authenticated 0.4.4 payload assembly. No WPF assembly is loaded.",
+    "testedPackagedCoreSha256": "6e11762ac9e6efdfa37b2b3069476c661d9ae93302b7417793e5bc5864c67582"
+  },
+  "uiSeenBindingStaticReview": {
+    "schema": "talos-ui-seen-binding-static-check-v1",
+    "passed": true,
+    "checkedAt": "2026-10-17T07:49:39.188313+00:00",
+    "checks": {
+      "observableEditorProperty": true,
+      "editorToGameState": true,
+      "loadFromGameState": true,
+      "twoWayGridBinding": true,
+      "screenshotStartsUnconfirmed": true
+    },
+    "sourceHashes": {
+      "Talos.App/UiModels.cs": "a85c7caf97d905f2970e02ca69740bcf6dba451d5a56fa7652b9c54dc6ab1fc9",
+      "Talos.App/MainWindow.cs": "4224f1067871ddc6e465abf2888922e413dba7d2d2c47f88f9fb9f0be5506f16"
+    },
+    "scope": "Read-only static field-flow check; no WPF or Windows execution"
+  },
+  "sourceHashes": {
+    "Talos.Core/EngineCatalog.cs": "0192720474c03cbb53f01975e473f8ab6846bd8cf3ce57220b3d3c66c325d478",
+    "Talos.Core/Following/LogFollowModels.cs": "f8de358f1fbf8ca88d8d5fdb8462d6b058ad713f62449759873bd3f569401f06",
+    "Talos.Core/Following/LogFollowService.cs": "064cd2b2cbc10008227bd7b598fc15a576ff05eda52947afda0fb944fb1d8c3f",
+    "Talos.Core/Following/LogLineMatcher.cs": "929a3049107ac1715797dc8f8466d15e32020ccfd01efd7efa1ca4b6ab0d4a87",
+    "Talos.Core/Following/LogTailReader.cs": "6c509115f5210c0f2a2a28f1ea3a89c7ab4ca4398e9410b925830c68ed9dbdce",
+    "Talos.Core/Following/LogTriggerCoalescer.cs": "8c54bb20fada09d741bf6230bc3a2e7ea903d0212cfdf39b6532da3d2fe1c500",
+    "Talos.Core/GameAdvisor.cs": "4b3eb05927f4cf054d29e0a30947fa294e2922a0cfa7a17c8c75491f3491b59b",
+    "Talos.Core/GameRules.cs": "508988e407c3a6309447f9c6807e24a585523186e8fa8f475e13479a4bb0b933",
+    "Talos.Core/GameState.cs": "36b3b2fb373ed14db8fe910431831b05780971d50c00da7e2daa3b7e67f66504",
+    "Talos.Core/RolloutAdvisor.cs": "a013d2b9f18b437a3b89464afda804bb5f8e1e1051b1ac014d34e2134cb1475f",
+    "Talos.Core/Simulation/SimulationEngine.cs": "87186384dedff90b183e8bd1f8730870e88685fc092f2bca390d04d51d10ad96",
+    "Talos.Core/Simulation/SimulationOptions.cs": "4df70c637d216c386e4dff9273c57daab319e9d539e8ceba99d36e59e45123c2",
+    "Talos.Core/Vision/PixelOperations.cs": "c5a4ece9db3a54877c18be118936d7597badfbd32589b197631bb8fae18c88d2",
+    "Talos.Core/Vision/PixelTypes.cs": "2ff447963a00fc3fcc7915fbc5f5aec8cfc11ce2c2a560b85090a8396af5f5d4",
+    "Talos.Core/Vision/ScreenshotRecognizer.cs": "5c57bbf1149b722d23796688aa7155e4a34fb894d7f3ab36f5f4717a094c710c",
+    "Talos.Tests/CoreChecks.cs": "bcfdab45a0287c52f95bf90878d8b5607db4ce925d077ac17aa9a238441bf1ae",
+    "Talos.Tests/FollowingChecks.cs": "2d454960df2e973cddfc9babe3fe5ca8e591fdfd7fdf17d8951765d2ad75e0f9",
+    "Talos.Tests/PayloadChecks.cs": "ee03e338497f820955dde4cc41c175dfdd596cb97c5505203c609cff4626f628",
+    "Talos.Tests/Program.cs": "c57ba38ceb844d98095d9706bc1d1d8b73352b6312943f54a064198c6f4a273e",
+    "Talos.Tests/SimulationChecks.cs": "195d7bf00670fc1510c71c3a22dc803c30d5a4778a5a8f5a51ee096da8100513",
+    "Talos.Tests/StorageChecks.cs": "ebbfcb74599cdcf60903dba308c1182738a38712feb43accff792983804c98b4",
+    "Talos.Tests/UpdateChecks.cs": "2b3affff5135aee77f1a5b89dcec11ad903fffcdf7628465fd7dd39caae2c603",
+    "Talos.Tests/UpdateFixture.cs": "88456f2d6b80caaebb737f47aa5c1a0844fe53ec3a8da1d8c3ddc6a0bca43710",
+    "Talos.Tests/VisionChecks.cs": "ed619b3da463f1e148af3daeb87c6bcc69e1a0040230fad9045d2e52bcd7113a"
+  },
+  "wpfBuild": {
+    "status": "passed-cross-build-only",
+    "warnings": 0,
+    "errors": 0,
+    "buildLogSha256": "01903a63b00d1a3c2ad46bfe424d0604ea354c2ed9a7403f1cf06b3888fa1bd6",
+    "windowsExecuted": false
+  },
+  "limits": [
+    "The 109 count includes the real signed payload check; it is not 109 plus one.",
+    "Linux .NET console and Windows-targeted compilation only; no Windows host, WPF window, screenshot, hotkey, or DPI execution.",
+    "Full-game rollouts and rule checks validate the local approximate model, not real-game reward gains or probabilities. No old training returns are inherited.",
+    "Log matching uses constructed local phrases; real game-client log coverage has not been measured.",
+    "Network was never used for these checks; no GitHub publication or URL availability is claimed."
+  ]
+}

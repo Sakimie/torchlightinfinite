@@ -1,0 +1,11 @@
+{
+  "version": "0.4.4",
+  "file": "TalosHelper-CSharp-0.4.4-Offline-Update.zip",
+  "bytes": 1303632,
+  "sha256": "5322d691d04b6fb18036e50031451f395606c1d4086626555b8c97c0d2298a23",
+  "payloadSha256": "00dcf68ca36e65e27284ff5c81ef151ee6fc9ec10a23bbe3b0ea753c2097477c",
+  "feedSha256": "73e3a0514c43785cc74d3d23c7722dc96b10f8d8d62a63882fe0d18321fa14b7",
+  "minimumExistingInstallation": "0.4.2",
+  "published": false,
+  "requiresNetworkForImport": false
+}

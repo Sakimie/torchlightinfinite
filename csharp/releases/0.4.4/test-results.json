@@ -1,0 +1,656 @@
+[
+  {
+    "Name": "core.requires confirmed complete 16-room observation",
+    "Passed": true,
+    "Milliseconds": 14.0058,
+    "Error": null
+  },
+  {
+    "Name": "core.reject unsupported mechanisms and malformed observed inmates",
+    "Passed": true,
+    "Milliseconds": 2.1726,
+    "Error": null
+  },
+  {
+    "Name": "core.swallow ring legality matches every species and rarity boundary",
+    "Passed": true,
+    "Milliseconds": 2.1144,
+    "Error": null
+  },
+  {
+    "Name": "core.skewer permits equal-tier rats and boosts any lawful rat meal",
+    "Passed": true,
+    "Milliseconds": 0.5621,
+    "Error": null
+  },
+  {
+    "Name": "core.muzzle after-meal three-person threshold and stacking",
+    "Passed": true,
+    "Milliseconds": 4.0326,
+    "Error": null
+  },
+  {
+    "Name": "core.usurp second event promotes exactly one inmate by two",
+    "Passed": true,
+    "Milliseconds": 8.0623,
+    "Error": null
+  },
+  {
+    "Name": "core.execution current interpretation is strictly lower primary-countered inmates",
+    "Passed": true,
+    "Milliseconds": 1.3223,
+    "Error": null
+  },
+  {
+    "Name": "core.instigation is one event and ignores nests or occupied slots",
+    "Passed": true,
+    "Milliseconds": 9.5996,
+    "Error": null
+  },
+  {
+    "Name": "core.eight phases expose only their legal action families",
+    "Passed": true,
+    "Milliseconds": 12.0761,
+    "Error": null
+  },
+  {
+    "Name": "core.daily action exhaustion and event restrictions cannot create extra meals",
+    "Passed": true,
+    "Milliseconds": 0.2234,
+    "Error": null
+  },
+  {
+    "Name": "core.pending rewards preserve and validate the underlying stage",
+    "Passed": true,
+    "Milliseconds": 0.5446,
+    "Error": null
+  },
+  {
+    "Name": "core.wraparound patrol range and known observation fields stay explicit",
+    "Passed": true,
+    "Milliseconds": 0.3604,
+    "Error": null
+  },
+  {
+    "Name": "core.scores are finite deterministic and inputs remain unchanged",
+    "Passed": true,
+    "Milliseconds": 41.9437,
+    "Error": null
+  },
+  {
+    "Name": "vision.crop preserves RGBA coordinates and original pixels",
+    "Passed": true,
+    "Milliseconds": 1.8643,
+    "Error": null
+  },
+  {
+    "Name": "vision.crop rejects out of range and nonfinite geometry",
+    "Passed": true,
+    "Milliseconds": 0.2478,
+    "Error": null
+  },
+  {
+    "Name": "vision.rejects truncated pixels and oversized dimensions before allocation",
+    "Passed": true,
+    "Milliseconds": 0.5087,
+    "Error": null
+  },
+  {
+    "Name": "vision.resize is bilinear including alpha",
+    "Passed": true,
+    "Milliseconds": 0.1413,
+    "Error": null
+  },
+  {
+    "Name": "vision.match detects texture and rejects uniform/transparent evidence",
+    "Passed": true,
+    "Milliseconds": 3.1966,
+    "Error": null
+  },
+  {
+    "Name": "vision.unconfirmed legacy calibration never authorizes recognition",
+    "Passed": true,
+    "Milliseconds": 5.1159,
+    "Error": null
+  },
+  {
+    "Name": "vision.blank screenshot stays unknown after layout confirmation",
+    "Passed": true,
+    "Milliseconds": 15.0772,
+    "Error": null
+  },
+  {
+    "Name": "vision.exact texture alias is mammoth while missing tier remains unknown",
+    "Passed": true,
+    "Milliseconds": 15.6907,
+    "Error": null
+  },
+  {
+    "Name": "vision.frame color prefill still requires manual review",
+    "Passed": true,
+    "Milliseconds": 10.8993,
+    "Error": null
+  },
+  {
+    "Name": "vision.changed aspect ratio or duplicate centers invalidates calibration",
+    "Passed": true,
+    "Milliseconds": 0.7364,
+    "Error": null
+  },
+  {
+    "Name": "updates.offline bootstrap verifies and hashes every payload file",
+    "Passed": true,
+    "Milliseconds": 109.085,
+    "Error": null
+  },
+  {
+    "Name": "updates.check and install authenticate exact payload bytes",
+    "Passed": true,
+    "Milliseconds": 16.0419,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject signature tampering and another publisher key",
+    "Passed": true,
+    "Milliseconds": 7.0196,
+    "Error": null
+  },
+  {
+    "Name": "updates.install reauthenticates a manifest from another service",
+    "Passed": true,
+    "Milliseconds": 2.5236,
+    "Error": null
+  },
+  {
+    "Name": "updates.corrupt ZIP bytes cannot replace existing active",
+    "Passed": true,
+    "Milliseconds": 12.5476,
+    "Error": null
+  },
+  {
+    "Name": "updates.Windows path aliases and traversal are rejected cross platform",
+    "Passed": true,
+    "Milliseconds": 29.3419,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject case-fold duplicates and file-directory collisions",
+    "Passed": true,
+    "Milliseconds": 4.6544,
+    "Error": null
+  },
+  {
+    "Name": "updates.manifest cannot replace shared host or runtime components",
+    "Passed": true,
+    "Milliseconds": 7.8881,
+    "Error": null
+  },
+  {
+    "Name": "updates.feed package file expanded-size and file-count limits reject signed excess",
+    "Passed": true,
+    "Milliseconds": 12.614,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject duplicate and unlisted ZIP members",
+    "Passed": true,
+    "Milliseconds": 4.4093,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject ZIP symlink mode even when its bytes are signed",
+    "Passed": true,
+    "Milliseconds": 5.5002,
+    "Error": null
+  },
+  {
+    "Name": "updates.unsafe package URL and incompatible launcher fail before download",
+    "Passed": true,
+    "Milliseconds": 7.3828,
+    "Error": null
+  },
+  {
+    "Name": "updates.reject final HTTP redirect target",
+    "Passed": true,
+    "Milliseconds": 1.4586,
+    "Error": null
+  },
+  {
+    "Name": "updates.cancelled install leaves old signed active intact",
+    "Passed": true,
+    "Milliseconds": 12.2488,
+    "Error": null
+  },
+  {
+    "Name": "updates.status active directory and rollback use no network",
+    "Passed": true,
+    "Milliseconds": 24.7445,
+    "Error": null
+  },
+  {
+    "Name": "updates.bad active fails launch but can roll back to healthy signed version",
+    "Passed": true,
+    "Milliseconds": 23.3682,
+    "Error": null
+  },
+  {
+    "Name": "updates.bad historical version cannot be selected for rollback",
+    "Passed": true,
+    "Milliseconds": 20.9862,
+    "Error": null
+  },
+  {
+    "Name": "updates.signed same-version conflict cannot overwrite immutable files",
+    "Passed": true,
+    "Milliseconds": 14.6406,
+    "Error": null
+  },
+  {
+    "Name": "updates.signed compressed bomb is rejected before activation",
+    "Passed": true,
+    "Milliseconds": 8.3584,
+    "Error": null
+  },
+  {
+    "Name": "updates.cancellation immediately before commit preserves exact active state",
+    "Passed": true,
+    "Milliseconds": 25.654,
+    "Error": null
+  },
+  {
+    "Name": "updates.unregistered partial release from an interrupted install can recover",
+    "Passed": true,
+    "Milliseconds": 21.0752,
+    "Error": null
+  },
+  {
+    "Name": "updates.symlink release parent cannot redirect writes outside data root",
+    "Passed": true,
+    "Milliseconds": 2.1671,
+    "Error": null
+  },
+  {
+    "Name": "updates.tampered signed state cannot authorize assembly loading",
+    "Passed": true,
+    "Milliseconds": 10.0274,
+    "Error": null
+  },
+  {
+    "Name": "storage.data path follows the application directory independently of CWD",
+    "Passed": true,
+    "Milliseconds": 6.1073,
+    "Error": null
+  },
+  {
+    "Name": "storage.full signed legacy state releases calibration and logs copy without changing source",
+    "Passed": true,
+    "Milliseconds": 40.4501,
+    "Error": null
+  },
+  {
+    "Name": "storage.moving the complete application keeps signed versions usable offline and rollback independent",
+    "Passed": true,
+    "Milliseconds": 37.9092,
+    "Error": null
+  },
+  {
+    "Name": "storage.any existing portable user data prevents merging or overwriting legacy",
+    "Passed": true,
+    "Milliseconds": 17.1213,
+    "Error": null
+  },
+  {
+    "Name": "storage.initialized portable signed state is preserved instead of legacy merge",
+    "Passed": true,
+    "Milliseconds": 23.6565,
+    "Error": null
+  },
+  {
+    "Name": "storage.missing legacy and an empty data directory initialize locally",
+    "Passed": true,
+    "Milliseconds": 2.0883,
+    "Error": null
+  },
+  {
+    "Name": "storage.cancelled migration preserves source and leaves no partially committed data",
+    "Passed": true,
+    "Milliseconds": 24.6185,
+    "Error": null
+  },
+  {
+    "Name": "storage.cancellation during a real staged copy removes partial output",
+    "Passed": true,
+    "Milliseconds": 430.5204,
+    "Error": null
+  },
+  {
+    "Name": "storage.transient locks stages backups and incomplete files are not migrated",
+    "Passed": true,
+    "Milliseconds": 30.9862,
+    "Error": null
+  },
+  {
+    "Name": "storage.oversized or key-like copied files fail during planning without reading contents",
+    "Passed": true,
+    "Milliseconds": 4.477,
+    "Error": null
+  },
+  {
+    "Name": "storage.source copy error cleans stage and does not commit partial data",
+    "Passed": true,
+    "Milliseconds": 30.5012,
+    "Error": null
+  },
+  {
+    "Name": "storage.portable and legacy lock contention cannot copy or change active data",
+    "Passed": true,
+    "Milliseconds": 49.0238,
+    "Error": null
+  },
+  {
+    "Name": "storage.nested source and destination are rejected without recursive copying",
+    "Passed": true,
+    "Milliseconds": 1.1585,
+    "Error": null
+  },
+  {
+    "Name": "storage.symbolic source root copied file and release directory are refused",
+    "Passed": true,
+    "Milliseconds": 5.7099,
+    "Error": null
+  },
+  {
+    "Name": "storage.symbolic application directory and data target are refused",
+    "Passed": true,
+    "Milliseconds": 1.2285,
+    "Error": null
+  },
+  {
+    "Name": "storage.unwritable application directory fails explicitly without external fallback on Linux",
+    "Passed": true,
+    "Milliseconds": 0.8087,
+    "Error": null
+  },
+  {
+    "Name": "simulation.confirmation unknown rooms and unsupported mechanisms are never sampled away",
+    "Passed": true,
+    "Milliseconds": 2.0418,
+    "Error": null
+  },
+  {
+    "Name": "simulation.day twenty terminates without entering a twenty-first day",
+    "Passed": true,
+    "Milliseconds": 2.8024,
+    "Error": null
+  },
+  {
+    "Name": "simulation.skewer rat eating a mammoth banks a rainbow and consumes the daily action",
+    "Passed": true,
+    "Milliseconds": 4.1,
+    "Error": null
+  },
+  {
+    "Name": "simulation.muzzle counts population after eating and before banking",
+    "Passed": true,
+    "Milliseconds": 1.3028,
+    "Error": null
+  },
+  {
+    "Name": "simulation.usurp second stage upgrades only one prisoner by two and advances waiting stages",
+    "Passed": true,
+    "Milliseconds": 8.8619,
+    "Error": null
+  },
+  {
+    "Name": "simulation.instigation adds exactly one unknown event without leaking its identity",
+    "Passed": true,
+    "Milliseconds": 0.5799,
+    "Error": null
+  },
+  {
+    "Name": "simulation.whip rolls on eating and cannot upgrade a newly opened prisoner",
+    "Passed": true,
+    "Milliseconds": 5.2974,
+    "Error": null
+  },
+  {
+    "Name": "simulation.ring side openings suppress primary-opening tools",
+    "Passed": true,
+    "Milliseconds": 1.3296,
+    "Error": null
+  },
+  {
+    "Name": "simulation.chain path side openings preserve known rarity without primary bonuses",
+    "Passed": true,
+    "Milliseconds": 1.219,
+    "Error": null
+  },
+  {
+    "Name": "simulation.due nests hatch as rare rats without primary-opening effects",
+    "Passed": true,
+    "Milliseconds": 2.0858,
+    "Error": null
+  },
+  {
+    "Name": "simulation.pending choices preserve their underlying chain stage and action usage",
+    "Passed": true,
+    "Milliseconds": 0.6217,
+    "Error": null
+  },
+  {
+    "Name": "simulation.a gift that banks the event-room prisoner preserves the pending global event",
+    "Passed": true,
+    "Milliseconds": 1.7963,
+    "Error": null
+  },
+  {
+    "Name": "simulation.a reclosed door keeps its new event while the interrupted old event resolves",
+    "Passed": true,
+    "Milliseconds": 0.2816,
+    "Error": null
+  },
+  {
+    "Name": "simulation.input and returned observations are detached and hidden futures remain private",
+    "Passed": true,
+    "Milliseconds": 1.9855,
+    "Error": null
+  },
+  {
+    "Name": "simulation.confirmed seen doors without event markers never invent an event on entry",
+    "Passed": true,
+    "Milliseconds": 1.6075,
+    "Error": null
+  },
+  {
+    "Name": "simulation.unseen event existence stays hidden until the route reveals its marker or destination",
+    "Passed": true,
+    "Milliseconds": 4.8771,
+    "Error": null
+  },
+  {
+    "Name": "simulation.scouted rarity lower bounds constrain sampling without inventing revealed species",
+    "Passed": true,
+    "Milliseconds": 1.0199,
+    "Error": null
+  },
+  {
+    "Name": "simulation.rejecting an illegal first action does not consume random state",
+    "Passed": true,
+    "Milliseconds": 0.5774,
+    "Error": null
+  },
+  {
+    "Name": "simulation.complete seeded games always expose legal visible actions and end by day twenty",
+    "Passed": true,
+    "Milliseconds": 217.0572,
+    "Error": null
+  },
+  {
+    "Name": "simulation.incomplete action-limited trajectories fail instead of returning partial rewards",
+    "Passed": true,
+    "Milliseconds": 0.5087,
+    "Error": null
+  },
+  {
+    "Name": "rollout.actual terminal outcomes distinguish eating from ending on the last day",
+    "Passed": true,
+    "Milliseconds": 13.5757,
+    "Error": null
+  },
+  {
+    "Name": "rollout.common seeds reproduce full trajectories means variance and paired gap error",
+    "Passed": true,
+    "Milliseconds": 13.3707,
+    "Error": null
+  },
+  {
+    "Name": "rollout.one complete round leaves uncertainty unknown instead of claiming zero error",
+    "Passed": true,
+    "Milliseconds": 0.3657,
+    "Error": null
+  },
+  {
+    "Name": "rollout.invalid inputs and incomplete playouts never silently fall back to heuristics",
+    "Passed": true,
+    "Milliseconds": 0.3832,
+    "Error": null
+  },
+  {
+    "Name": "rollout.time budget commits only complete paired rounds or reports no result",
+    "Passed": true,
+    "Milliseconds": 1.5303,
+    "Error": null
+  },
+  {
+    "Name": "rollout.cancellation stops computation and never changes the observed board",
+    "Passed": true,
+    "Milliseconds": 10.9366,
+    "Error": null
+  },
+  {
+    "Name": "following.matcher needs domain and action semantics including custom phrases",
+    "Passed": true,
+    "Milliseconds": 3.3188,
+    "Error": null
+  },
+  {
+    "Name": "following.coalescing waits for a quiet window and emits once",
+    "Passed": true,
+    "Milliseconds": 0.7066,
+    "Error": null
+  },
+  {
+    "Name": "following.continuous log activity expires without a forced unstable trigger",
+    "Passed": true,
+    "Milliseconds": 0.2588,
+    "Error": null
+  },
+  {
+    "Name": "following.tail starts at EOF and shares the file with the writer",
+    "Passed": true,
+    "Milliseconds": 8.6617,
+    "Error": null
+  },
+  {
+    "Name": "following.tail preserves split UTF8 characters and CRLF without premature half lines",
+    "Passed": true,
+    "Milliseconds": 4.1035,
+    "Error": null
+  },
+  {
+    "Name": "following.pre-connection partial log line is not replayed when it later completes",
+    "Passed": true,
+    "Milliseconds": 2.8686,
+    "Error": null
+  },
+  {
+    "Name": "following.decoder handles one new byte per poll across a multibyte character",
+    "Passed": true,
+    "Milliseconds": 11.2566,
+    "Error": null
+  },
+  {
+    "Name": "following.missing log waits then reads a newly created file from its beginning",
+    "Passed": true,
+    "Milliseconds": 2.442,
+    "Error": null
+  },
+  {
+    "Name": "following.truncation and replacing the log reset stale decoder state",
+    "Passed": true,
+    "Milliseconds": 3.1606,
+    "Error": null
+  },
+  {
+    "Name": "following.same-size overwrite with an unchanged prefix detects the changed tail anchor",
+    "Passed": true,
+    "Milliseconds": 2.5325,
+    "Error": null
+  },
+  {
+    "Name": "following.read budget skips old backlog and discards the leading partial line",
+    "Passed": true,
+    "Milliseconds": 2.9787,
+    "Error": null
+  },
+  {
+    "Name": "following.overlong lines are dropped whole instead of becoming false log events",
+    "Passed": true,
+    "Milliseconds": 4.0406,
+    "Error": null
+  },
+  {
+    "Name": "following.cancelled reads do not advance the tail or corrupt the next line",
+    "Passed": true,
+    "Milliseconds": 3.1445,
+    "Error": null
+  },
+  {
+    "Name": "following.service defaults disabled and only new scoped lines produce a delayed hint",
+    "Passed": true,
+    "Milliseconds": 10.4776,
+    "Error": null
+  },
+  {
+    "Name": "following.service stop and cancellation cannot return a stale pending trigger",
+    "Passed": true,
+    "Milliseconds": 4.8506,
+    "Error": null
+  },
+  {
+    "Name": "following.public poll status and trigger never expose source log text",
+    "Passed": true,
+    "Milliseconds": 24.0268,
+    "Error": null
+  },
+  {
+    "Name": "following.a temporarily locked existing log recovers at EOF without replaying history",
+    "Passed": true,
+    "Milliseconds": 3.8821,
+    "Error": null
+  },
+  {
+    "Name": "following.an overlong unterminated line immediately requires review and cancels pending hints",
+    "Passed": true,
+    "Milliseconds": 3.7694,
+    "Error": null
+  },
+  {
+    "Name": "following.a read gap invalidates a pending batch instead of triggering from stale history",
+    "Passed": true,
+    "Milliseconds": 4.5232,
+    "Error": null
+  },
+  {
+    "Name": "following.reset or missing logs require review even without matching a game event",
+    "Passed": true,
+    "Milliseconds": 3.0858,
+    "Error": null
+  },
+  {
+    "Name": "payload.actual signed bootstrap installs offline and verifies all declared files",
+    "Passed": true,
+    "Milliseconds": 200.1184,
+    "Error": null
+  }
+]

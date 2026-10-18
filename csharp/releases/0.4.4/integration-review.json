@@ -1,0 +1,205 @@
+{
+  "schema": "talos-csharp-integration-review-v1",
+  "version": "0.4.4",
+  "passed": true,
+  "reviewType": "Independent read-only source review and assertions over actual UI branches; no mirrored UI state machine.",
+  "windowsExeExecuted": false,
+  "windowsUiExecuted": false,
+  "networkUsed": false,
+  "privateKeyRead": false,
+  "sourceHashes": {
+    "Talos.App/MainWindow.cs": "4224f1067871ddc6e465abf2888922e413dba7d2d2c47f88f9fb9f0be5506f16",
+    "Talos.App/MainWindow.Follow.cs": "8633f3a889dccacbda5947325b713d45bf163c31b6e50a95157330cadf9baee6",
+    "Talos.App/MainWindow.Advice.cs": "9acde2c3c92dfbbd5027f9e7c1060ba95f2478d074d27f1ec5adad27e995836a",
+    "Talos.App/NativeCapture.cs": "7e391173e6ae7f311e2e6117654ba447fd4ed64f55619c52f170d8aeac0ae9c4",
+    "Talos.App/OverlayWindow.cs": "ee5d37e407bbc5b8daa2151a553be12518e986a1470a859123f05da8ae4ebd45",
+    "Talos.Core/GameState.cs": "36b3b2fb373ed14db8fe910431831b05780971d50c00da7e2daa3b7e67f66504",
+    "Talos.Core/GameAdvisor.cs": "4b3eb05927f4cf054d29e0a30947fa294e2922a0cfa7a17c8c75491f3491b59b",
+    "Talos.Core/GameRules.cs": "508988e407c3a6309447f9c6807e24a585523186e8fa8f475e13479a4bb0b933",
+    "Talos.Core/EngineCatalog.cs": "0192720474c03cbb53f01975e473f8ab6846bd8cf3ce57220b3d3c66c325d478",
+    "Talos.Core/RolloutAdvisor.cs": "a013d2b9f18b437a3b89464afda804bb5f8e1e1051b1ac014d34e2134cb1475f",
+    "Talos.Core/Simulation/SimulationEngine.cs": "87186384dedff90b183e8bd1f8730870e88685fc092f2bca390d04d51d10ad96",
+    "Talos.Core/Simulation/SimulationOptions.cs": "4df70c637d216c386e4dff9273c57daab319e9d539e8ceba99d36e59e45123c2",
+    "Talos.Core/Following/LogFollowModels.cs": "f8de358f1fbf8ca88d8d5fdb8462d6b058ad713f62449759873bd3f569401f06",
+    "Talos.Core/Following/LogFollowService.cs": "064cd2b2cbc10008227bd7b598fc15a576ff05eda52947afda0fb944fb1d8c3f",
+    "Talos.Core/Following/LogLineMatcher.cs": "929a3049107ac1715797dc8f8466d15e32020ccfd01efd7efa1ca4b6ab0d4a87",
+    "Talos.Core/Following/LogTailReader.cs": "6c509115f5210c0f2a2a28f1ea3a89c7ab4ca4398e9410b925830c68ed9dbdce",
+    "Talos.Core/Following/LogTriggerCoalescer.cs": "8c54bb20fada09d741bf6230bc3a2e7ea903d0212cfdf39b6532da3d2fe1c500",
+    "Talos.App/UiModels.cs": "a85c7caf97d905f2970e02ca69740bcf6dba451d5a56fa7652b9c54dc6ab1fc9"
+  },
+  "assertions": [
+    {
+      "name": "automatic_capture_failure_consumes_hint_once",
+      "passed": true,
+      "evidence": "MainWindow.Follow.cs:139-150: pending hint cleared before capture; false branch does not enqueue it again."
+    },
+    {
+      "name": "log_changes_or_read_gaps_invalidate_prior_advice",
+      "passed": true,
+      "evidence": "MainWindow.Follow.cs:111-115 consumes the actual service review flag and cancels prior work."
+    },
+    {
+      "name": "service_marks_all_observed_log_discontinuities",
+      "passed": true,
+      "evidence": "LogFollowService.cs returns RequiresReview on rotation/truncation/missing file/read gaps/overlong lines/timeout/IO failure."
+    },
+    {
+      "name": "following_is_explicit_and_disabled_at_start",
+      "passed": true,
+      "evidence": "InitializeFollowing loads preferences and installs a timer handler; it does not start the timer or session. Checked event explicitly calls StartFollowing."
+    },
+    {
+      "name": "following_session_and_shutdown_guard",
+      "passed": true,
+      "evidence": "FollowTick continuation checks session identity/token/generation; Closing stops the follower and cancels capture/advice."
+    },
+    {
+      "name": "selected_window_retains_process_identity",
+      "passed": true,
+      "evidence": "NativeCapture checks PID before/after capture and excludes the helper; RefreshSources compares HWND and PID."
+    },
+    {
+      "name": "automatic_capture_rejects_full_screen_and_nonforeground",
+      "passed": true,
+      "evidence": "CanAutoCapture rejects zero HWND and nonforeground; CaptureGame repeats eligibility around pixel reading."
+    },
+    {
+      "name": "capture_result_is_not_reported_as_new_without_frame",
+      "passed": true,
+      "evidence": "The actual capture API returns a guarded bool; FollowTick distinguishes false from a new screenshot."
+    },
+    {
+      "name": "stale_advice_does_not_publish_after_cancel_or_change",
+      "passed": true,
+      "evidence": "MainWindow.Advice.cs:24-42 clears the prior result before Task.Run and guards publication with cancellation/revision/closing."
+    },
+    {
+      "name": "manual_confirmation_stays_mandatory",
+      "passed": true,
+      "evidence": "Pending log hints block recommendation; input collection plus core validation requires manual confirmation after every invalidation/new frame."
+    },
+    {
+      "name": "failed_simulation_does_not_silently_use_instant_mode",
+      "passed": true,
+      "evidence": "Immediate scoring occurs only in the explicitly selected ternary branch. Simulation exceptions display incomplete status; zero paired rounds throw."
+    },
+    {
+      "name": "only_complete_terminal_trajectories_enter_paired_statistics",
+      "passed": true,
+      "evidence": "Rollout catches budget expiry before committing a candidate batch; PlayoutCore only returns Vault after terminal state and throws at action cap."
+    },
+    {
+      "name": "statistics_distinguish_total_outcome_and_uncertainty",
+      "passed": true,
+      "evidence": "Outcome is total terminal Vault including current captures; n<2 does not invent zero standard error. UI names total rather than marginal gain."
+    },
+    {
+      "name": "unseen_information_is_not_exposed_as_observed",
+      "passed": true,
+      "evidence": "Observe gates potential event existence and type on Seen; private tier/species also require confirmed/scouted knowledge. Continuation policy only receives Observe()."
+    },
+    {
+      "name": "log_reader_is_readonly_and_handles_transient_locked_start",
+      "passed": true,
+      "evidence": "Game log is opened read-only/shared. A file locked during connection recovers at EOF rather than replaying preconnection history."
+    },
+    {
+      "name": "new_runtime_paths_have_no_network_client_or_remote_site_loader",
+      "passed": true,
+      "evidence": "New core/follow/capture/advice sources contain no HTTP/socket/browser-loader entry points. Existing updater networking remains explicit UI actions."
+    },
+    {
+      "name": "new_managed_settings_remain_beneath_launch_data_root",
+      "passed": true,
+      "evidence": "Follow preferences are stored atomically at LaunchContext.DataRoot/log-follow.json; calibration remains under the same existing data root."
+    },
+    {
+      "name": "stable_host_updater_storage_sources_preserved",
+      "passed": true,
+      "evidence": "Compared stable product source hashes with delivered 0.4.3 build report; no stable-host/updater/storage source changes."
+    },
+    {
+      "name": "append_does_not_use_linux_ctime_as_rotation_identity",
+      "passed": true,
+      "evidence": "LogTailReader:71-80 uses length/prefix/offset anchors. Ordinary appends preserve incomplete UTF8 decoder state; no ctime-based false rotation reset."
+    },
+    {
+      "name": "pending_global_event_survives_actor_removed_by_reward",
+      "passed": true,
+      "evidence": "GameAdvisor permits nonoffice events without a remaining actor. NormalizePhase no longer drops an unresolved event when that actor banks; actor-only effects explicitly no-op while global effects continue."
+    },
+    {
+      "name": "resealed_current_room_future_marker_survives_pending_global_event",
+      "passed": true,
+      "evidence": "FromObserved deduplicates only the same/unknown current incident on an open room. A resealed door future marker is preserved independently; ResolveEvent clears ActiveEvent rather than that new marker."
+    },
+    {
+      "name": "seen_roundtrips_through_actual_editor_and_new_frames_reset_it",
+      "passed": true,
+      "evidence": "Main table explicitly exposes event-presence knowledge, LoadState preserves it, UiModels.ToState collects it, and each new screenshot resets it for human review. Tooltip distinguishes this from knowing inmate quality."
+    },
+    {
+      "name": "unseen_sampling_does_not_override_confirmed_event_absence",
+      "passed": true,
+      "evidence": "Only unseen unmarked locked doors receive the approximate 5% hidden event sample; Seen=true/Event=false remains confirmed absence. Observe hides sampled presence until revealed."
+    }
+  ],
+  "unchangedStableSources": {
+    "Talos.Host/Program.cs": true,
+    "Talos.Host/Talos.Host.csproj": true,
+    "Talos.Storage/PortableStorage.cs": true,
+    "Talos.Storage/Talos.Storage.csproj": true,
+    "Talos.Updates/Models.cs": true,
+    "Talos.Updates/Talos.Updates.csproj": true,
+    "Talos.Updates/UpdateService.cs": true
+  },
+  "resolvedFindings": [
+    {
+      "issue": "HWND-only capture identity and source refresh could accept a recycled handle.",
+      "resolution": "CaptureTarget now records PID, capture revalidates it, helper process is excluded, refresh compares HWND and PID."
+    },
+    {
+      "issue": "Automatic capture failure requeued an unchanged trigger and retried every 750 ms.",
+      "resolution": "Trigger is consumed before the attempt. Failed capture waits for a new log event or manual F8; a not-yet-attempted background hint may wait for foreground."
+    },
+    {
+      "issue": "A successful log read could contain discontinuities without a matched event.",
+      "resolution": "RequiresReview covers truncation/rotation/missing/IO/read gaps/overlong lines/settle timeout and the UI clears old advice."
+    },
+    {
+      "issue": "An actor banked by a queued gift could cause the still-pending global event to disappear.",
+      "resolution": "Nonoffice event states may have no remaining actor; event normalization retains ActiveEvent until accept/skip. Actor-only effects explicitly have no actor effect."
+    },
+    {
+      "issue": "A newly resealed current room could hold a future marker alongside an earlier unresolved event.",
+      "resolution": "Current incident deduplication is restricted to an open room same/unknown marker; resolving the outer event does not erase the new future marker."
+    },
+    {
+      "issue": "Linux ctime can change during ordinary appends and falsely reset a partially decoded log.",
+      "resolution": "Reader uses length/prefix/offset content anchors and keeps UTF8 decoder state for ordinary appends."
+    },
+    {
+      "issue": "Event-presence knowledge was not preserved by the editor, and private sampled event presence must not leak.",
+      "resolution": "Seen is now an explicit editor field with LoadState/ToState roundtrip and new-frame reset; hidden sampling respects confirmed absence and Observe gates presence/type on Seen."
+    }
+  ],
+  "reviewedIntegration": [
+    "Ordinary twenty-day simulator phases: patrol/manage/office/event/tool/gift/chain/ratway, terminal completion and supported mechanics validation.",
+    "Finite paired rollout sampling, model-private hidden information, full-round commits, cancellation, time/action limits and no silent heuristic fallback.",
+    "Explicit opt-in read-only log following, bounded incremental decoding, local-only preferences and generation-safe UI consumption.",
+    "Game-window capture identity, foreground/minimized/cloaked checks, pixel rejection, GDI cleanup and conditional screen fallback.",
+    "Closing/cancel/source change/import/new screenshot/manual edits invalidate old recommendations; manual confirmation remains required.",
+    "Final delta review: no-actor pending global events, resealed-door future markers, Seen UI roundtrip/private event presence, and append-safe log rotation checks."
+  ],
+  "remainingLimitations": [
+    "Linux source review and cross-build do not establish actual Windows screenshot, focus, DPI, overlay, hotkey or dialog behavior.",
+    "PrintWindow is a synchronous native call and cannot be fully interrupted by CancellationToken; preflight hung-window checks reduce but do not eliminate stalls.",
+    "Screen fallback obstruction checks are conservative and are not a universal protection against every overlay/rendering case.",
+    "Window title plus the explicitly selected HWND/PID is not cryptographic verification of the game executable.",
+    "Built-in log phrases are independently written candidates, not validated country/client log signatures; unknown logs may require custom local phrases or manual F8.",
+    "Rollout means and standard errors apply only to the approximate supported-rule model; future unsupported tools/mechanics, real-game probability error and global optimality are not covered.",
+    "Log rotation/replacement recognition uses bounded content anchors and length, not a perfect cross-platform OS file identity; replacements indistinguishable at sampled anchors cannot be universally detected."
+  ],
+  "finalDeltaReviewed": true,
+  "assertionCount": 23
+}
