@@ -1,0 +1,37 @@
+{
+  "schema": "talos-publication-v1",
+  "repository": "Sakimie/torchlightinfinite",
+  "version": "0.3.3",
+  "release_url": "https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.3.3",
+  "draft": false,
+  "commit": "55836c2436dfd74744cdd6e8aa0f7ad2a87d0ace",
+  "repository_public": true,
+  "delivery": "public-git-branch",
+  "public_download_verified": true,
+  "urls": {
+    "TalosHelper-Online-Update-0.3.3.zip": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/55836c2436dfd74744cdd6e8aa0f7ad2a87d0ace/TalosHelper-Online-Update-0.3.3.zip",
+    "latest.json": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/talos-updates/latest.json",
+    "package": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/c44a86a4f52e2f8919cdc71e7349897cf2049ba0/releases/0.3.3/TalosHelper-0.3.3-update.zip",
+    "SHA256SUMS.txt": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/55836c2436dfd74744cdd6e8aa0f7ad2a87d0ace/SHA256SUMS.txt"
+  },
+  "artifacts": [
+    {
+      "file": "TalosHelper-0.3.3-update.zip",
+      "bytes": 5261277,
+      "sha256": "2c5807aa1c99e4b7353997e53d92f6d11ab7dc5918e5ad54591fe9747284b190"
+    },
+    {
+      "file": "latest.json",
+      "bytes": 3363,
+      "sha256": "7e11930bb99b09421f3b9d6e958ab42a9dc35ed97ceaf700a31be96784564406"
+    },
+    {
+      "file": "TalosHelper-Online-Update-0.3.3.zip",
+      "bytes": 10398912,
+      "sha256": "4f85ea98ff28a60b3f30c2e730bdc8e5219b0ad36dbe580c4774a2cb50a9ffbe"
+    }
+  ],
+  "authorized": true,
+  "published": true,
+  "liveVerificationReport": "online-update/public-channel-validation.json"
+}

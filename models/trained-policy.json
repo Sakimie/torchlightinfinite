@@ -1,0 +1,144 @@
+{
+  "version": 2,
+  "engineVersion": "local-offline-v2",
+  "engineSourceHash": "913b1569a97b75756cdf3b65c10ee0a45b4fe06bc78a3c8cb6d94ef0b1ed248b",
+  "ruleVersion": "offline-guide-v2",
+  "params": {
+    "wOpen": 1,
+    "wNow": 1,
+    "wWalk": 0.65,
+    "wStep": 0.25,
+    "wInstigate": 0.6,
+    "wCrow": 1,
+    "wChain": 1,
+    "wStair": 0.2,
+    "swapMaxTier": 2,
+    "minDevour": 0,
+    "stopMargin": 0,
+    "rainbowMult": 2,
+    "tierBase": 2
+  },
+  "training": {
+    "objective": "Ordinary 20-day drill: maximize vaulted Rainbows, rewards enabled, empty scenario, one random starting tool offer.",
+    "selected": "open-low",
+    "improved": true,
+    "seedSplits": {
+      "calibration": "OFFLINE20-CALIBRATE-V3",
+      "search": "OFFLINE20-TRAIN-V3",
+      "validation": "OFFLINE20-VALID-V3",
+      "holdout": "OFFLINE20-HOLDOUT-V3"
+    },
+    "configuration": {
+      "threads": 4,
+      "trainGames": 2000,
+      "validationGames": 6000,
+      "holdoutGames": 20000,
+      "muzzleTiming": "after",
+      "startTools": 1,
+      "rewards": true,
+      "days": 20
+    },
+    "fullGameEvaluations": 102100,
+    "holdout": {
+      "baseline": {
+        "n": 20000,
+        "mean": 2.34295,
+        "standardDeviation": 1.802331189705748,
+        "standardError": 0.012744406061849522,
+        "confidence95": [
+          2.317970964118775,
+          2.3679290358812253
+        ],
+        "zeroRate": 0.1501,
+        "histogram": {
+          "0": 3002,
+          "1": 4129,
+          "2": 4802,
+          "3": 3564,
+          "4": 2170,
+          "5": 1192,
+          "6": 623,
+          "7": 270,
+          "8": 135,
+          "9": 67,
+          "10": 28,
+          "11": 14,
+          "12": 3,
+          "13": 1
+        }
+      },
+      "candidate": {
+        "id": "open-low",
+        "n": 20000,
+        "mean": 2.47745,
+        "standardDeviation": 1.7516120874054875,
+        "standardError": 0.012385767850127438,
+        "confidence95": [
+          2.4531738950137503,
+          2.50172610498625
+        ],
+        "zeroRate": 0.1236,
+        "histogram": {
+          "0": 2472,
+          "1": 3784,
+          "2": 4753,
+          "3": 4094,
+          "4": 2457,
+          "5": 1322,
+          "6": 632,
+          "7": 264,
+          "8": 139,
+          "9": 56,
+          "10": 20,
+          "11": 4,
+          "13": 3
+        }
+      },
+      "pairedCandidateMinusBaseline": {
+        "n": 20000,
+        "mean": 0.1345,
+        "standardDeviation": 1.6197348323247387,
+        "standardError": 0.011453254836608784,
+        "confidence95": [
+          0.1120516205202468,
+          0.1569483794797532
+        ],
+        "zeroRate": 0.44955,
+        "histogram": {
+          "0": 8991,
+          "1": 3139,
+          "2": 1600,
+          "3": 778,
+          "4": 364,
+          "5": 126,
+          "6": 63,
+          "7": 24,
+          "8": 13,
+          "9": 4,
+          "10": 1,
+          "12": 1,
+          "-2": 1238,
+          "-3": 556,
+          "-1": 2698,
+          "-4": 225,
+          "-5": 98,
+          "-6": 49,
+          "-7": 16,
+          "-8": 8,
+          "-9": 6,
+          "-10": 1,
+          "-11": 1
+        }
+      }
+    },
+    "generatedAt": "2026-10-17T04:11:30.794Z"
+  },
+  "limitations": [
+    "这是自有近似规则与有限采样策略，不能证明真实游戏中的绝对最优。",
+    "开门、替换、事件概率采用明确的练习假设，需要真实对局校准。",
+    "口枷人数按吞噬后计算，时点未确认。",
+    "不使用第三方识图特征，首次离线识图需要用户校准牢房位置并学习已确认样本。",
+    "游戏控制信息如天数、当前位置、目的地、刑具及任务需要人工确认，不声称已具备中文OCR。",
+    "主动寻猎、三个未确认事件和特殊开局不在当前验证范围。"
+  ]
+}

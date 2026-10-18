@@ -1,0 +1,228 @@
+{
+  "schema": "talos-tk-node-integration-v1",
+  "passed": true,
+  "platform": "linux",
+  "python": "3.12.14",
+  "windowsExeExecuted": false,
+  "realGameScreenshotAccuracyClaimed": false,
+  "testScope": "Patched Python entry under Tkinter/Xvfb + real local Node adapter. Constructed fields and synthetic frame-change stimuli only; no Windows EXE or real game tested.",
+  "checks": {
+    "actual_update_zip_exists": {
+      "passed": true,
+      "detail": "/workspace/torchlightinfinite/dist/TalosHelper-v0.3.1-Offline-Update.zip"
+    },
+    "update_zip_crc": {
+      "passed": true
+    },
+    "original_pyz_bytes_preserved": {
+      "passed": true
+    },
+    "patched_window_title": {
+      "passed": true,
+      "detail": "塔罗斯助手 · 0.3.1 截图策略接入试用"
+    },
+    "helper_tamper_rejected_before_execution": {
+      "passed": true,
+      "detail": [
+        {
+          "title": "0.3.1 更新组件",
+          "text": "截图策略组件加载失败：升级组件校验失败，请重新解压完整的 0.3.1 更新包。"
+        }
+      ]
+    },
+    "helper_hash_verified_by_patched_entry": {
+      "passed": true
+    },
+    "no_unconfirmed_calculation": {
+      "passed": true,
+      "detail": "请先勾选“已逐格核对当前画面和控制信息”。"
+    },
+    "missing_day_rejected": {
+      "passed": true,
+      "detail": "请手动填写当前第几天（1–20）。"
+    },
+    "unknown_room_rejected": {
+      "passed": true,
+      "detail": "请逐格确认4号类型；旧版空白不能区分未开启和空房。"
+    },
+    "unknown_usurp_rejected": {
+      "passed": true,
+      "detail": "请确认僭越进度：尚未触发其一 / 下一次其二、其三、其四 / 其四已完成。"
+    },
+    "unsupportedToolPresent_rejected": {
+      "passed": true,
+      "detail": "持有未列出的刑具（例如捕兽夹），本补丁尚未支持其效果，不能遗漏后推荐。"
+    },
+    "unsupportedEventPresent_rejected": {
+      "passed": true,
+      "detail": "当前为未列出的事件（例如有福同享、宿敌、同罪移押），本补丁尚不支持，不能忽略后推荐。"
+    },
+    "control_edit_clears_confirmation": {
+      "passed": true
+    },
+    "review_pin_toggle": {
+      "passed": true
+    },
+    "real_node_result_rendered": {
+      "passed": true,
+      "detail": {
+        "primary": {
+          "label": "吞噬5号牢房的囚犯",
+          "action": {
+            "type": "devour",
+            "to": 4
+          }
+        },
+        "uiOutput": "已核对局面 · 普通20天 / 绮彩优先\n来源：无图手工 / 示例研究（非游戏实况）\n当前策略：修正规则基线（历史参数复验未胜出）\n\n建议：吞噬5号牢房的囚犯\n• 本地读取原v0.3的固定版本源码，原文件保持不变。\n• 已在内存中修正僭越II一人升两阶、煽动一个事件、口枷人数不超过三；口枷按吞噬后人数判断仍是待实机确认的时点假设。\n• 旧工具组合收益表已停用；历史参数不等于在修正规则下已验证。\n• 截图和操作阶段必须先人工核对；建议不保证真实游戏的绝对最优。\n• 已读取与当前源码及历史策略哈希匹配的新规则独立验证报告；结论只适用于报告的模拟范围。\n• 当前为单步规则策略建议，未将启发式评分当作成功率或预期彩数。\n\n本地近似规则建议；未知房间和随机事件会影响结果，不保证实机最优。\n仅提供建议，不会点击或操作游戏。"
+      }
+    },
+    "manual_without_image_is_labeled": {
+      "passed": true,
+      "detail": "已核对局面 · 普通20天 / 绮彩优先\n来源：无图手工 / 示例研究（非游戏实况）\n当前策略：修正规则基线（历史参数复验未胜出）\n\n建议：吞噬5号牢房的囚犯\n• 本地读取原v0.3的固定版本源码，原文件保持不变。\n• 已在内存中修正僭越II一人升两阶、煽动一个事件、口枷人数不超过三；口枷按吞噬后人数判断仍是待实机确认"
+    },
+    "overlay_created": {
+      "passed": true
+    },
+    "overlay_uses_real_action": {
+      "passed": true
+    },
+    "validated_baseline_selection_is_visible": {
+      "passed": true,
+      "detail": {
+        "ready": true,
+        "selected": "baseline",
+        "generatedAt": "2026-10-17T04:40:33.822Z",
+        "reason": "已读取与当前源码及历史策略哈希匹配的新规则独立验证报告；结论只适用于报告的模拟范围。"
+      }
+    },
+    "new_frame_and_failed_recognition_expire_advice": {
+      "passed": true,
+      "detail": {
+        "status": "识别失败：QA synthetic frame used only to test invalidation",
+        "output": "新画面正在识别，旧建议已清除；识别结果仍需人工核对。\n\n点击“计算下一步”，完整核对当前画面和控制信息后再获取建议。\n本地近似规则建议；未知房间和随机事件会影响结果，不保证实机最优。"
+      }
+    },
+    "review_window_opens": {
+      "passed": true
+    },
+    "late_node_reply_cannot_overwrite_new_frame": {
+      "passed": true,
+      "detail": "新画面正在识别，旧建议已清除；识别结果仍需人工核对。\n\n点击“计算下一步”，完整核对当前画面和控制信息后再获取建议。\n本地近似规则建议；未知房间和随机事件会影响结果，不保证实机最优。"
+    },
+    "worker_threads_finish_after_close": {
+      "passed": true,
+      "detail": [
+        "MainThread"
+      ]
+    },
+    "close_with_pending_delivery": {
+      "passed": true,
+      "detail": []
+    },
+    "no_worker_tk_variable_writes": {
+      "passed": true,
+      "detail": []
+    },
+    "no_thread_or_tk_callback_errors": {
+      "passed": true,
+      "detail": {
+        "threads": [],
+        "tk": []
+      }
+    },
+    "no_network_requests": {
+      "passed": true,
+      "detail": []
+    },
+    "original_exe_unchanged": {
+      "passed": true
+    }
+  },
+  "errors": [],
+  "originalExeSha256": "412b6fe55026d69eb150f65eabbd1e4b72b8aea74be776e5eadbfb9f35f01503",
+  "updateZipSha256": "ba2eb28a83e4714b5c4052d41a11f88cb87b2fca3d3c92eb80ba84e84c159ff8",
+  "updateZipBytes": 5267486,
+  "helperSha256": "b6283f4f251f1b5af01e5e8c0deab14067aa68e9485561c446f9d4e91d084b0e",
+  "updatedExeSha256": "2a61a4cce380bc1688c6c4edc3c990db9da7668392ed226810a8fd1db60f8d6d",
+  "nodeRuntime": "Linux system node symlink under temporary runtime/node.exe; Windows runtime not executed",
+  "fontEnvironment": {
+    "tkVersion": "9.0.4",
+    "requestedFamily": "Microsoft YaHei UI",
+    "actual": {
+      "family": "fixed",
+      "size": 9,
+      "weight": "normal",
+      "slant": "roman",
+      "underline": 0,
+      "overstrike": 0
+    },
+    "chineseTextWidth": 52,
+    "note": "Linux/Xvfb font substitution only; does not establish Windows font metrics."
+  },
+  "recognitionEvents": [
+    {
+      "stage": "recognize_raise",
+      "thread": 140717444556480
+    },
+    {
+      "stage": "recognize_raise",
+      "thread": 140717436163776
+    }
+  ],
+  "recognitionStimulus": "Controlled recognize failure only; actual app.analyze and original finish_analysis are exercised. No OCR accuracy claim.",
+  "artifacts": [
+    {
+      "path": "/workspace/torchlightinfinite/artifacts/talos-v031-review.png",
+      "width": 1120,
+      "height": 800,
+      "purpose": "Actual Tk application layout check only; not a game screenshot or OCR validation."
+    },
+    {
+      "path": "/workspace/torchlightinfinite/artifacts/talos-v031-overlay.png",
+      "width": 420,
+      "height": 200,
+      "purpose": "Actual Tk application layout check only; not a game screenshot or OCR validation."
+    }
+  ],
+  "overlayTopmostValueUnderXvfb": true,
+  "nodeCalls": 3,
+  "threadErrors": [],
+  "tkErrors": [],
+  "networkAttempts": [],
+  "layoutInspection": {
+    "performedOn": "Actual Tk windows rendered under the self-created Linux Xvfb display",
+    "fontSubstitution": "Task-local X11 core GNU Unifont; application fonts and source were not changed",
+    "fontPackageVerification": {
+      "package": "xfonts-unifont",
+      "version": "1:15.1.01-1",
+      "sha256": "a29319a86fbe606401bb00474ea099963c570be393dfa5b9e6a748927c8a2184",
+      "packageIndexSha256": "7778d3e3f303b7ddb8ce0fe7c8d57473a076c6bf2e8f241f75421d2396352498",
+      "verified": "sqv Debian archive keyring → InRelease → Packages.xz → .deb"
+    },
+    "overlayActionVisibleOnFirstLine": true,
+    "windowsFontMetricsAndDpiVerified": false,
+    "scope": "UI readability only. These are not game screenshots or OCR accuracy measurements."
+  },
+  "resolvedLegacyCallbackFinding": {
+    "oldHelperSha256": "152439c73beec22603ace001c304a71ef195500e31674ee72b12b599df8076cd",
+    "observed": "Old recognition worker returned root.after(0, callback), but callback did not dispatch under this Tk 9 core build; busy remained true. No exception was emitted.",
+    "evidence": [
+      {
+        "stage": "recognize_raise",
+        "thread": 139679431911104
+      },
+      {
+        "stage": "worker_after_enter",
+        "thread": 139679431911104,
+        "ms": "0",
+        "callback": "App.analyze.<locals>.worker.<locals>.<lambda>"
+      },
+      {
+        "stage": "worker_after_return",
+        "thread": 139679431911104,
+        "timerId": "after#0"
+      }
+    ],
+    "resolutionVerified": "Current helper queues recognition results to the Tk main thread; the real app.analyze failure path clears busy and invalidates old recommendations."
+  }
+}

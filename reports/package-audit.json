@@ -1,0 +1,114 @@
+{
+  "auditedAt": "2026-10-17T04:19:43.807134+00:00",
+  "artifact": "dist/Torchlight-Coach-Offline-0.2.0-Windows-x64.zip",
+  "bytes": 153584341,
+  "sha256": "65b885bffa08971b3544d447f88e3852b8104f7f812c12795fad6d42b8afebbf",
+  "platform": "Windows x64",
+  "windowsRuntimeExecuted": false,
+  "scope": "Static Windows ZIP/PE/ASAR audit; Linux Electron offline execution is separately tested.",
+  "zip": {
+    "crcValid": true,
+    "entries": 76,
+    "duplicateOrUnsafePaths": false
+  },
+  "executable": {
+    "name": "典狱助手.exe",
+    "machine": "AMD64",
+    "mzAndPeValid": true
+  },
+  "electronRuntime": {
+    "dlls": [
+      "d3dcompiler_47.dll",
+      "dxcompiler.dll",
+      "dxil.dll",
+      "ffmpeg.dll",
+      "vk_swiftshader.dll",
+      "vulkan-1.dll"
+    ],
+    "assets": [
+      "icudtl.dat",
+      "resources.pak",
+      "chrome_100_percent.pak",
+      "chrome_200_percent.pak",
+      "snapshot_blob.bin",
+      "v8_context_snapshot.bin",
+      "locales/zh-CN.pak",
+      "locales/en-US.pak"
+    ],
+    "electronLicensePresent": true,
+    "chromiumLicensesPresent": true,
+    "chineseDocumentationPresent": true
+  },
+  "asarSha256": "da490ff96f42ea2ea64e9bc1f4c44a336cc4815c1fed5e41a49d200faf38e336",
+  "model": {
+    "version": 2,
+    "engineVersion": "local-offline-v2",
+    "ruleVersion": "offline-guide-v2",
+    "engineSourceHash": "913b1569a97b75756cdf3b65c10ee0a45b4fe06bc78a3c8cb6d94ef0b1ed248b",
+    "modelSha256": "2309da2de8593a62a5705f8091635b299704bf2c3826daf62debdd6a9051180f",
+    "fullGameEvaluations": 102100,
+    "engineAndReportMatch": true
+  },
+  "asar": {
+    "files": 40,
+    "integritySha256Checked": 40,
+    "ownedFiles": [
+      "desktop/main.js",
+      "desktop/preload.js",
+      "desktop/worker.js",
+      "lib/offline-engine.js",
+      "lib/offline-solver.js",
+      "lib/offline-vision.js",
+      "lib/runtime.js",
+      "lib/service.js",
+      "models/trained-policy.json",
+      "package.json",
+      "renderer/app.js",
+      "renderer/index.html",
+      "renderer/styles.css",
+      "reports/training-report.json",
+      "reports/training-report.md"
+    ],
+    "onlyRuntimeDependency": "pngjs@7.0.0",
+    "pngjsMitLicensePresent": true,
+    "referenceCodeFeaturesAndInstallScriptsAbsent": true,
+    "cacheAndHistoricalReportsAbsent": true,
+    "sourceHashesMatchCheckout": true
+  },
+  "desktop": {
+    "namedCalibrationInterfaces": [
+      "newBoard",
+      "visionProfile",
+      "learnVision",
+      "importVision",
+      "resetVision"
+    ],
+    "ipcRestrictedToLocalMainFrame": true,
+    "rendererSandboxed": true,
+    "rendererExternalHttpHttpsWsWssBlocked": true,
+    "calibrationImagesValidated": true,
+    "profileImportDoesNotAcceptPaths": true,
+    "usesLocalUserData": true
+  },
+  "linuxElectronSmoke": {
+    "builtAsar": "/workspace/torchlightinfinite/dist/win-unpacked/resources/app.asar",
+    "asarSha256": "da490ff96f42ea2ea64e9bc1f4c44a336cc4815c1fed5e41a49d200faf38e336",
+    "exitCode": 0,
+    "recommendation": {
+      "tools": 30,
+      "action": {
+        "type": "devour",
+        "to": 4
+      },
+      "samples": 4
+    },
+    "freshDataDirectory": "/tmp/torchlight-built-asar-smoke-fhve91pv/data",
+    "noGitInPath": true,
+    "noTartarusReferenceVariable": true,
+    "actualAsarWorkerAndFsSourceHashVerifiedByBootstrap": true,
+    "windowsExeExecuted": false,
+    "log": "/tmp/torchlight-built-asar-smoke-fhve91pv/electron.log",
+    "scope": "Executed the unchanged ASAR from this exact Windows ZIP using Linux Electron 44.8.0 and Xvfb; Windows executable and game capture were not run."
+  },
+  "passed": true
+}

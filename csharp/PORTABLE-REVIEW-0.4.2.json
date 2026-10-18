@@ -1,0 +1,335 @@
+{
+  "schema": "talos-portable-source-and-bundle-review-v1",
+  "version": "0.4.2",
+  "passed": true,
+  "reviewedAtUtc": "2026-10-17T06:59:08.092951+00:00",
+  "scope": "Independent read-only source review and static PE/bundle/native-sidecar verification from the actual complete ZIP. Windows EXE and WPF were not executed; filesystem migration tests belong to the separate console QA.",
+  "windowsExeExecuted": false,
+  "windowsUiExecuted": false,
+  "productPrivateKeyRead": false,
+  "productSourceEditedByReviewer": false,
+  "sourceHashes": {
+    "csharp/Talos.Host/Program.cs": "7609e8da7bdfe8bedc2a29132f8b73903ccd0901d3fe4b0faccbad71a07b9090",
+    "csharp/Talos.Host/Talos.Host.csproj": "7379a839c812d4ac9d1dec264b9a19394a30dc5f2a754c77e86cd05cbd4a5def",
+    "csharp/Talos.Storage/PortableStorage.cs": "c3416b8d3f4ab31b6df5404ac773202aa8d91cd95f7a96c34eb59e40d60c6f99",
+    "csharp/Talos.Storage/Talos.Storage.csproj": "e2c08643e21eba9123e4b319840fec508efc44b473a7cab491d6188e5f6905ca",
+    "csharp/Talos.Updates/UpdateService.cs": "6606e92b25d304b86369ec6350c2667801d5aee7f824b005216f550b1423806c",
+    "csharp/scripts/InspectBundle/Program.cs": "5bfb53c9dbe50c123291b5dd9ffedf406a132ac7866e459990daed992be5b4aa"
+  },
+  "artifact": {
+    "path": "dist/csharp-0.4.2/TalosHelper-CSharp-0.4.2-Windows-x64.zip",
+    "bytes": 60483870,
+    "sha256": "204eec4cd94a5956504e84ee8f75b7393ce02ed2feef1af5849576718e27bcce",
+    "zipCrcVerified": true,
+    "files": [
+      {
+        "path": "D3DCompiler_47_cor3.dll",
+        "bytes": 4741488,
+        "sha256": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb"
+      },
+      {
+        "path": "PenImc_cor3.dll",
+        "bytes": 157992,
+        "sha256": "007cb9a6781801c5ed071127314d12b40f8778356b1bce4316309a1be8c42c51"
+      },
+      {
+        "path": "PresentationNative_cor3.dll",
+        "bytes": 1235240,
+        "sha256": "091609705a031d5832f21548291c2670f06eadd781d465d3e1a5fad3772adc91"
+      },
+      {
+        "path": "TalosHelper.exe",
+        "bytes": 62500392,
+        "sha256": "313d2af95eb3dbfdb04e39cfce7fd4dd936dad961e11580d33daaf5307cddf45"
+      },
+      {
+        "path": "licenses/microsoft.netcore.app.runtime.win-x64-LICENSE.TXT",
+        "bytes": 1139,
+        "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+      },
+      {
+        "path": "licenses/microsoft.netcore.app.runtime.win-x64-THIRD-PARTY-NOTICES.TXT",
+        "bytes": 78041,
+        "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+      },
+      {
+        "path": "licenses/microsoft.windowsdesktop.app.runtime.win-x64-LICENSE",
+        "bytes": 1137,
+        "sha256": "a89886665765362eb77e0f8e26602c924520041d1711b2eedc136434fe4d01ab"
+      },
+      {
+        "path": "vcruntime140_cor3.dll",
+        "bytes": 124544,
+        "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+      },
+      {
+        "path": "wpfgfx_cor3.dll",
+        "bytes": 1956648,
+        "sha256": "ad1c9dbbc2fcc2b274145727e8f04d5adf49a0c9ae4d1a3c33ec969fcd5b4bf1"
+      },
+      {
+        "path": "开始使用.txt",
+        "bytes": 1390,
+        "sha256": "83726ff80344a205bb80b5b0afd7fff5b8026413d770c20dc622ca1b90905f2a"
+      }
+    ]
+  },
+  "checks": {
+    "zipCrcVerified": true,
+    "tenFilesContainExeFiveNativeAndNotices": true,
+    "independentBundleHeaderHasNoExtractedEntries": true,
+    "storageAssemblyIsBundled": true,
+    "inspectorAndIndependentParserAgree": true,
+    "fiveNativeSidecarsMatchOfficialPack": true,
+    "nativeCoreClrJitMatchesOfficialStaticHost": true,
+    "embeddedFeedSignatureVerified": true,
+    "portableManifestRequiresNewLauncher": true,
+    "embeddedPackageMatchesAuthenticatedManifest": true
+  },
+  "unresolvedBlockersObserved": [],
+  "independentBundleHeader": {
+    "parser": "Independent Python read-only .NET bundle-v6 header parser",
+    "headerOffset": 62478110,
+    "bundleVersion": "6.0",
+    "flags": 0,
+    "entries": 380,
+    "typeCounts": {
+      "1": 378,
+      "4": 1,
+      "3": 1
+    },
+    "requiresExtraction": [],
+    "storageAssemblyBundled": true
+  },
+  "nativeSidecarChecks": [
+    {
+      "name": "D3DCompiler_47_cor3.dll",
+      "bytes": 4741488,
+      "sha256": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb",
+      "officialRuntimePackMatch": true
+    },
+    {
+      "name": "PenImc_cor3.dll",
+      "bytes": 157992,
+      "sha256": "007cb9a6781801c5ed071127314d12b40f8778356b1bce4316309a1be8c42c51",
+      "officialRuntimePackMatch": true
+    },
+    {
+      "name": "PresentationNative_cor3.dll",
+      "bytes": 1235240,
+      "sha256": "091609705a031d5832f21548291c2670f06eadd781d465d3e1a5fad3772adc91",
+      "officialRuntimePackMatch": true
+    },
+    {
+      "name": "vcruntime140_cor3.dll",
+      "bytes": 124544,
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "officialRuntimePackMatch": true
+    },
+    {
+      "name": "wpfgfx_cor3.dll",
+      "bytes": 1956648,
+      "sha256": "ad1c9dbbc2fcc2b274145727e8f04d5adf49a0c9ae4d1a3c33ec969fcd5b4bf1",
+      "officialRuntimePackMatch": true
+    }
+  ],
+  "staticBundleInspection": {
+    "passed": true,
+    "windowsExeExecuted": false,
+    "scope": "Static PE/bundle/resource verification on Linux; Windows UI, capture, hotkeys and execution were not tested.",
+    "executableBytes": 62500392,
+    "executableSha256": "313d2af95eb3dbfdb04e39cfce7fd4dd936dad961e11580d33daaf5307cddf45",
+    "bundleVersion": "6.0",
+    "embeddedFiles": 380,
+    "bundleFlags": 0,
+    "noBundleExtractionRequired": true,
+    "bundleEntryTypes": {
+      "1": 378,
+      "4": 1,
+      "3": 1
+    },
+    "externalNative": {
+      "PresentationNative_cor3.dll": "091609705a031d5832f21548291c2670f06eadd781d465d3e1a5fad3772adc91",
+      "wpfgfx_cor3.dll": "ad1c9dbbc2fcc2b274145727e8f04d5adf49a0c9ae4d1a3c33ec969fcd5b4bf1",
+      "D3DCompiler_47_cor3.dll": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb",
+      "PenImc_cor3.dll": "007cb9a6781801c5ed071127314d12b40f8778356b1bce4316309a1be8c42c51",
+      "vcruntime140_cor3.dll": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+    },
+    "nativeRuntimeMode": "statically-linked-singlefilehost",
+    "staticRuntimeEvidence": {
+      "runtimeVersion": "10.0.13",
+      "linkedLibraries": [
+        "coreclr.dll",
+        "clrjit.dll"
+      ],
+      "runtimePackDropFromSingleFile": true,
+      "officialNativeTextMatches": true,
+      "nativeTextBytes": 6714880,
+      "nativeTextSha256": "d723320c56a8f1b508569988ecff339630f135d8adc0e5d1d1e504716a4d7bee",
+      "runtimeExports": [
+        "CLRJitAttachState",
+        "g_CLREngineMetrics",
+        "g_dacTable",
+        "DotNetRuntimeInfo",
+        "DotNetRuntimeContractDescriptor"
+      ]
+    },
+    "runtimeDependenciesBundled": [
+      "System.Private.CoreLib.dll",
+      "PresentationFramework.dll",
+      "PresentationCore.dll",
+      "WindowsBase.dll",
+      "Talos.Updates.dll",
+      "TalosHelper.dll"
+    ],
+    "includedFrameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "10.0.13"
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App",
+        "version": "10.0.13"
+      }
+    ],
+    "resources": {
+      "Talos.PublicKey": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72",
+      "Talos.BootstrapFeed": "ff648f0fb7298487ecd6008538353e1d6d302374a1f2c5f921efb2404257bee4",
+      "Talos.BootstrapPackage": "e06c636347377a294c3fb6f3dcd64ec0cb085989dd846aee310af74c92b288cf"
+    }
+  },
+  "officialRuntimeAndSdkEvidence": {
+    "sdkPublishTargets": {
+      "path": "/workspace/.dotnet/sdk/10.0.402/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Publish.targets",
+      "sha256": "ea5fe130702f2fc8a4a8cceb81c42d72ceeddb800f615934ee25eedbf7d0bbac",
+      "lines": "1220-1245",
+      "finding": "NativeLibraries false excludes native files from bundle and publishes them as sidecars; IncludeAllContent defaults false."
+    },
+    "runtimeSource": [
+      {
+        "url": "https://raw.githubusercontent.com/dotnet/runtime/v10.0.13/src/native/corehost/bundle/file_entry.cpp",
+        "sha256": "0524eec21bb93d88d8ef3d219ebd50e7f98a5a7d8f3a40f9a29631bdf41be971"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/dotnet/runtime/v10.0.13/src/native/corehost/bundle/header.h",
+        "sha256": "b10c01238c27049163a461793f98637b75c1ae609f13447241555b30a6f122a2"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/dotnet/runtime/v10.0.13/src/native/corehost/bundle/runner.cpp",
+        "sha256": "bb902e004adadc1784c56a696d0a1bc4be64bc06ce49eae1630265559a3125d3"
+      }
+    ],
+    "interpretation": "Flags=0 and only assembly/deps_json/runtime_config_json types mean files_need_extraction is false; runner then does not create the bundle extractor.",
+    "nativeFiles": [
+      {
+        "name": "D3DCompiler_47_cor3.dll",
+        "metadata": {
+          "Type": "Native",
+          "Path": "runtimes/win-x64/native/D3DCompiler_47_cor3.dll",
+          "FileVersion": "10.0.26100.7705",
+          "Profile": "WPF"
+        },
+        "bytes": 4741488,
+        "sha256": "a05f99734f7c4822fefc12b367af21fd0976ed6608752fb1e1e80b6ece7ecbbb"
+      },
+      {
+        "name": "PenImc_cor3.dll",
+        "metadata": {
+          "Type": "Native",
+          "Path": "runtimes/win-x64/native/PenImc_cor3.dll",
+          "FileVersion": "10.0.1326.50504",
+          "Profile": "WPF"
+        },
+        "bytes": 157992,
+        "sha256": "007cb9a6781801c5ed071127314d12b40f8778356b1bce4316309a1be8c42c51"
+      },
+      {
+        "name": "PresentationNative_cor3.dll",
+        "metadata": {
+          "Type": "Native",
+          "Path": "runtimes/win-x64/native/PresentationNative_cor3.dll",
+          "FileVersion": "10.0.726.45202",
+          "Profile": "WPF"
+        },
+        "bytes": 1235240,
+        "sha256": "091609705a031d5832f21548291c2670f06eadd781d465d3e1a5fad3772adc91"
+      },
+      {
+        "name": "vcruntime140_cor3.dll",
+        "metadata": {
+          "Type": "Native",
+          "Path": "runtimes/win-x64/native/vcruntime140_cor3.dll",
+          "FileVersion": "14.44.35211.0",
+          "Profile": "WPF"
+        },
+        "bytes": 124544,
+        "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+      },
+      {
+        "name": "wpfgfx_cor3.dll",
+        "metadata": {
+          "Type": "Native",
+          "Path": "runtimes/win-x64/native/wpfgfx_cor3.dll",
+          "FileVersion": "10.0.1326.50504",
+          "Profile": "WPF"
+        },
+        "bytes": 1956648,
+        "sha256": "ad1c9dbbc2fcc2b274145727e8f04d5adf49a0c9ae4d1a3c33ec969fcd5b4bf1"
+      }
+    ]
+  },
+  "embeddedFeed": {
+    "sha256": "ff648f0fb7298487ecd6008538353e1d6d302374a1f2c5f921efb2404257bee4",
+    "version": "0.4.2",
+    "launcherMin": "1.1.0",
+    "package": {
+      "url": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/1fb91de3fe067b2a116da924ddcad500ddabf979/csharp/releases/0.4.2/TalosHelper-CSharp-0.4.2-update.zip",
+      "bytes": 1284563,
+      "sha256": "e06c636347377a294c3fb6f3dcd64ec0cb085989dd846aee310af74c92b288cf"
+    },
+    "signatureVerification": {
+      "verified": true,
+      "algorithm": "ES256",
+      "verifier": "Node built-in crypto, developer audit only",
+      "publicKeySha256": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72"
+    }
+  },
+  "sourceReview": [
+    {
+      "area": "portable location",
+      "status": "reviewed",
+      "finding": "Host resolves its executable directory from Environment.ProcessPath and uses EXEdir/data. The working directory does not select data placement. Startup error diagnostics go beside EXE, not into an incomplete data target."
+    },
+    {
+      "area": "no legacy fallback",
+      "status": "reviewed",
+      "finding": "Unwritable app/data directories stop with a local error; Host and PortableStorage do not switch writes to AppData."
+    },
+    {
+      "area": "legacy migration and original retention",
+      "status": "reviewed",
+      "finding": "State/calibration/releases/logs are copied into a sibling staging tree, flushed and published by a same-volume Directory.Move. Existing nonempty data is never merged or overwritten. Legacy stable files are not modified or deleted."
+    },
+    {
+      "area": "migration boundaries",
+      "status": "reviewed",
+      "finding": "Destination/source locks, overlap/link rejection, bounded file counts and sizes, cancellation before publish and temporary cleanup were reviewed. Root unknown files and temporary data are left in legacy storage. A missing legacy .update.lock may be created for synchronization; this is not a zero-write claim about the old directory."
+    },
+    {
+      "area": "launcher compatibility",
+      "status": "reviewed",
+      "finding": "UpdateService LauncherVersion is 1.1.0 and the existing authenticated launcherMin comparison remains intact. New manifest requires 1.1.0, so old 1.0.0 launchers reject it before installing. New launcher can still authenticate signed 1.0.0 history. The requirement to replace the complete launcher/runtime package is not bypassed."
+    },
+    {
+      "area": "relocation",
+      "status": "reviewed",
+      "finding": "State stores signed version identities and relative release files; startup recomputes data and version directories from the relocated EXE. Calibration coordinates are copied as user data. The full folder, including the five native sidecars, must move together."
+    }
+  ],
+  "limitations": [
+    "No Windows startup, WPF/native-DLL loading, F8 capture, high-DPI or overlay rendering was executed here.",
+    "The no-extraction conclusion concerns .NET bundle extraction, supported by actual bundle flags/types and official runtime code. It does not claim that Windows, GPU drivers or other system services never maintain their own caches.",
+    "Original stable legacy files are retained; migration may create the legacy synchronization lock. Only the documented stable-data whitelist is migrated.",
+    "This review does not rerun the separate console migration suite or make OCR, training-return or global-optimality claims."
+  ]
+}

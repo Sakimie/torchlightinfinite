@@ -1,0 +1,81 @@
+{
+  "schema": "talos-csharp-static-review-v1",
+  "status": "reviewed-source-with-explicit-runtime-limits",
+  "windowsUiExecuted": false,
+  "windowsExeExecuted": false,
+  "productPrivateKeyRead": false,
+  "networkRequestsPerformedByThisReview": false,
+  "sourceHashes": {
+    "csharp/Talos.Host/Program.cs": "3a229c9aec06158cfda14b717e2e1316df85aaa98d16925baf6467f85676d351",
+    "csharp/Talos.Host/Talos.Host.csproj": "a09ed76ea3e4a221042a6c17e43ed45e1a3694b8e8ceedd342f05ffed4cbe88d",
+    "csharp/Talos.Host/app.manifest": "8d756c48fb4452027084e1cd56b4feaa575909aa50cc66a82cb386938771fc89",
+    "csharp/Talos.Updates/Models.cs": "38b22e078fcd389124889d6dc2e30c1d98c5742e5595001492b8e1812b149ecc",
+    "csharp/Talos.Updates/UpdateService.cs": "4b8604adb767ce0d3351d301c332c0fdd28b4f07c09f28d38a20e030f0144fad",
+    "csharp/Talos.App/AppHost.cs": "16068e02e140b2ce537a925ca147af6548765faf88de1aa7c3ec357d02ac0048",
+    "csharp/Talos.App/MainWindow.cs": "5e1699f48c87acde5022d93cf496c76f7cc81bd0972ab61eb0edc3fdd803a4eb",
+    "csharp/Talos.App/NativeCapture.cs": "b35b19b62a3cf92a1e7347e2bb581172e8339defd620914c7f92c6d7567e5d8a",
+    "csharp/Talos.App/OverlayWindow.cs": "0d40d280111e6d1bc7d9d7defae3cc0795a32badd341a462044b5fda5d801ac4",
+    "csharp/Talos.App/UpdateWindow.cs": "7c2f24af1ec509612ee3fb2ea5421a107ad55684a480cd2c0ee1e612400baff5",
+    "csharp/Talos.App/UiModels.cs": "034e4c9e6c52b16e0e5c52737df6a3d8cbf243fc025110a83290544b01a10348"
+  },
+  "checks": [
+    {
+      "area": "host loading",
+      "observation": "Offline embedded bootstrap is verified by UpdateService; GetActiveDirectoryAsync verifies active version files before fixed Talos.App.dll load. Only fixed Talos.Core/Talos.App assembly resolution from that version directory is added. Updates remains host shared. No arbitrary plugin-directory scanning is present."
+    },
+    {
+      "area": "native signature chain",
+      "observation": "Native ECDSA P-256 verifies SHA-256 over exact decoded payload bytes with 64-byte IEEE-P1363 signatures. Manifest schema/duplicates, entry identity, lengths/hashes and file list are validated. Install reauthenticates its immutable manifest envelope."
+    },
+    {
+      "area": "network boundary",
+      "observation": "Update HTTP calls are confined to CheckAsync and InstallAsync. Host startup bootstrap, StatusAsync, RollbackAsync and GetActiveDirectoryAsync only read/verify local data. App screenshots and advice do not reference HTTP or a Python/Node subprocess. Explicit update restart launches only the supplied fixed host path without a shell."
+    },
+    {
+      "area": "transaction and ZIP boundaries",
+      "observation": "Reviewed file locks, staged complete file extraction, member whitelist, per-file hashing, Windows path/device/ADS aliases, symlink/reparse rejection, expansion bounds, atomic state replacement, healthy rollback and repair-backup restoration. This is source review; executable update cases are owned by Talos.Tests."
+    },
+    {
+      "area": "manual review and stale advice",
+      "observation": "Unknown rooms, invalid controller fields, unsupported flags and scratch state cannot bypass manual confirmation. Field/source changes invalidate recommendations. Import/capture/recognition/advice workers compare revision or cancellation identity before applying results; failed capture cannot automatically recognize the previous image."
+    },
+    {
+      "area": "Windows screen and hotkey path",
+      "observation": "Capture reads the selected client-area screen rectangle or selected monitor using BitBlt; it does not click the game. Minimized/lost windows and oversized dimensions reject. Per-monitor DPI context is restored and GDI objects are released. F8 registration is removed on close. GetDIBits now runs after unselecting its bitmap."
+    }
+  ],
+  "findingsResolvedByOwners": [
+    {
+      "id": "UI-GDI-001",
+      "finding": "GetDIBits was called with the bitmap selected into a DC.",
+      "resolution": "Owner now unselects after BitBlt, reads using the screen DC, and requires all scan lines."
+    },
+    {
+      "id": "UI-STALE-001",
+      "finding": "Failed image import preserved old advice; asynchronous import/capture lacked generation guards.",
+      "resolution": "Owner invalidates before acquisition and checks revision before applying delayed images."
+    },
+    {
+      "id": "UI-STALE-002",
+      "finding": "Failed capture could automatically re-recognize the previous screenshot.",
+      "resolution": "Owner recognizes only the successfully added current image from that capture."
+    },
+    {
+      "id": "UI-SOURCE-001",
+      "finding": "Capture-source changes did not invalidate prior advice.",
+      "resolution": "Owner now resets image, board and suggestions when the selected source changes."
+    },
+    {
+      "id": "UPDATE-REPAIR-001",
+      "finding": "Old repair directory moved to backup could remain displaced if staging publish failed before the published flag.",
+      "resolution": "Owner had independently fixed the branch; final cleanup now restores backup whenever uncommitted and target is absent, independent of published."
+    }
+  ],
+  "unresolvedBlockersObserved": [],
+  "limitations": [
+    "Linux source review and .NET console strategy execution do not establish Windows WPF startup, native hotkey, screenshot, high-DPI or overlay rendering success.",
+    "BitBlt reads visible screen pixels; occluding windows or protected/exclusive rendering can affect the captured client-area image. Manual review remains required.",
+    "No live Chinese game OCR accuracy, full-game return, global-optimality or training claim is supported by this audit.",
+    "No update private key was read, no Windows PE was executed, and no external repository was modified by this audit."
+  ]
+}

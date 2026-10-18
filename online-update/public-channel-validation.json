@@ -1,0 +1,20 @@
+{
+  "schema": "talos-live-public-channel-v1",
+  "passed": true,
+  "realHttpsTransport": true,
+  "explicitDeveloperVerification": true,
+  "windowsExeExecuted": false,
+  "productPrivateKeyRead": false,
+  "checks": {
+    "public_https_bytes_TalosHelper-0.3.3-update.zip": true,
+    "public_https_bytes_latest.json": true,
+    "public_https_bytes_TalosHelper-Online-Update-0.3.3.zip": true,
+    "old_032_signed_install": true,
+    "real_https_feed_and_ed25519": true,
+    "real_https_download_and_install": true,
+    "local_status_without_https": true,
+    "offline_rollback_and_old_exe_unchanged": true,
+    "offline_return_to_new_version": true
+  },
+  "releaseUrl": "https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.3.3"
+}

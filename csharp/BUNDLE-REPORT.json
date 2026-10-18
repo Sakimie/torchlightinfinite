@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "windowsExeExecuted": false,
+  "scope": "Static PE/bundle/resource verification on Linux; Windows UI, capture, hotkeys and execution were not tested.",
+  "executableBytes": 66208673,
+  "executableSha256": "9f9b9039b8c0130b58c3e74d796cbb10c45e7bc5a2a76a85da4384fcad9a10d2",
+  "bundleVersion": "6.0",
+  "embeddedFiles": 384,
+  "nativeRuntimeMode": "statically-linked-singlefilehost",
+  "staticRuntimeEvidence": {
+    "runtimeVersion": "10.0.13",
+    "linkedLibraries": [
+      "coreclr.dll",
+      "clrjit.dll"
+    ],
+    "runtimePackDropFromSingleFile": true,
+    "officialNativeTextMatches": true,
+    "nativeTextBytes": 6714880,
+    "nativeTextSha256": "d723320c56a8f1b508569988ecff339630f135d8adc0e5d1d1e504716a4d7bee",
+    "runtimeExports": [
+      "CLRJitAttachState",
+      "g_CLREngineMetrics",
+      "g_dacTable",
+      "DotNetRuntimeInfo",
+      "DotNetRuntimeContractDescriptor"
+    ]
+  },
+  "runtimeDependenciesBundled": [
+    "System.Private.CoreLib.dll",
+    "PresentationFramework.dll",
+    "PresentationCore.dll",
+    "WindowsBase.dll",
+    "PresentationNative_cor3.dll",
+    "wpfgfx_cor3.dll",
+    "D3DCompiler_47_cor3.dll",
+    "PenImc_cor3.dll",
+    "vcruntime140_cor3.dll",
+    "Talos.Updates.dll",
+    "TalosHelper.dll"
+  ],
+  "includedFrameworks": [
+    {
+      "name": "Microsoft.NETCore.App",
+      "version": "10.0.13"
+    },
+    {
+      "name": "Microsoft.WindowsDesktop.App",
+      "version": "10.0.13"
+    }
+  ],
+  "resources": {
+    "Talos.PublicKey": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72",
+    "Talos.BootstrapFeed": "62e4465907beb2c72adff874ba93200902fdbd401b6487be055901f9e2398250",
+    "Talos.BootstrapPackage": "151152231e7742cdf11059f4c43f4b7b62dcd804a9662a8770c748a5dec40cc8"
+  }
+}

@@ -1,0 +1,579 @@
+{
+  "schema": "talos-window-source-review-v2",
+  "version": "0.4.3",
+  "reviewedAtUtc": "2026-10-17T07:13:16.098609+00:00",
+  "status": "no-blockers-found-in-independent-static-review",
+  "passed": true,
+  "scope": "独立只读审查最终WPF主题与三个窗口源码；执行XML/资源解析、色值对比计算、基线逐方法及SHA256核对。未运行Windows、WPF、PE或DPI截图验收。",
+  "windowsUiExecuted": false,
+  "windowsExeExecuted": false,
+  "sourceEditedByReviewer": false,
+  "sourceHashes": {
+    "csharp/Talos.App/MainWindow.cs": "3ef30518520633861ca02d94569a337af0c821e469bb8e7d982eb9622996e218",
+    "csharp/Talos.App/UpdateWindow.cs": "ee0c772a3436e99bc0d20b9728f8c89067816c21338eb80899f7a9c81102dcba",
+    "csharp/Talos.App/OverlayWindow.cs": "4ab73e1250d6a2c49976ee062e1f86063b6b335f98d4cca66c66951efb0cf80b",
+    "csharp/Talos.App/Theme.cs": "55e12c5bceb73a1b785f50a6bda3ba2a132fabf0dbf38543b1a064620e88de5b",
+    "csharp/Talos.App/Themes/Dark.xaml": "8ce41b3cdc7df94326027f6d3488c290a797df5b29422270a577a506e02738e8",
+    "csharp/Talos.App/AppHost.cs": "d0f112bcae821b7850eeaf4e026aa73382adf70ca0483273e2fa59026992a60d"
+  },
+  "crossBuildEvidence": {
+    "verification": "各owner报告最终Talos.App Release交叉编译0警告0错误；本审查未重复运行WPF。",
+    "reportedFinalAppDllSha256": "aa258df8a802f93bcf8ca98456578b592017a871fba52423d067632b6cae1456",
+    "baml": "owner确认Dark.baml由WPF编译生成，静态XML检查不代替运行时控件验收"
+  },
+  "automatedStaticEvidence": {
+    "xmlParsed": true,
+    "explicitResourceKeyCount": 43,
+    "talosReferenceCount": 30,
+    "missingResourceKeys": [],
+    "staticOpaqueContrast": [
+      {
+        "foreground": "Talos.Text",
+        "background": "Talos.Surface",
+        "ratio": 15.95
+      },
+      {
+        "foreground": "Talos.Muted",
+        "background": "Talos.Surface",
+        "ratio": 7.63
+      },
+      {
+        "foreground": "Talos.Accent",
+        "background": "Talos.AccentSoft",
+        "ratio": 6.71
+      },
+      {
+        "foreground": "Talos.Background",
+        "background": "Talos.Accent",
+        "ratio": 10.77
+      },
+      {
+        "foreground": "Talos.Gold",
+        "background": "Talos.Raised",
+        "ratio": 9.21
+      }
+    ],
+    "contrastLimit": "不包含抗锯齿、屏幕亮度、禁用opacity或系统高对比主题；不构成完整可访问性认证。",
+    "methodComparisonCount": 37,
+    "unchangedMethodCount": 34,
+    "intentionalChangedMethods": [
+      "RecommendAsync:动作前置与产品文案，不改执行/过期保护",
+      "OpenDataDirectory:错误提示指向折叠说明",
+      "DrawCalibration:使用同一主题色值，不改坐标"
+    ],
+    "methodComparisons": [
+      {
+        "file": "MainWindow.cs",
+        "method": "LoadState",
+        "unchanged": true,
+        "beforeSha256": "85e6f6513ea54397056c16f29ec96c577915f1ecf969f2a2e271b8ac6dad6c17",
+        "afterSha256": "85e6f6513ea54397056c16f29ec96c577915f1ecf969f2a2e271b8ac6dad6c17"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "SourceChanged",
+        "unchanged": true,
+        "beforeSha256": "cb4c9217d0629f2524576dc34a89233ca538d3de8007a4a122c5be958887dc4e",
+        "afterSha256": "cb4c9217d0629f2524576dc34a89233ca538d3de8007a4a122c5be958887dc4e"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "Invalidate",
+        "unchanged": true,
+        "beforeSha256": "858fe37e6304e7d07d7efc05ce643aa42b09adaa1b3bc85aa9bd34cf328e16ce",
+        "afterSha256": "858fe37e6304e7d07d7efc05ce643aa42b09adaa1b3bc85aa9bd34cf328e16ce"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "SetBusy",
+        "unchanged": true,
+        "beforeSha256": "a3ba8057ed96cbdad5cd60201a5951378f8de4d75264fec6d3116e084b6eed22",
+        "afterSha256": "a3ba8057ed96cbdad5cd60201a5951378f8de4d75264fec6d3116e084b6eed22"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "WindowMessage",
+        "unchanged": true,
+        "beforeSha256": "fc68ef5ae9321ee83f3d4cc4b2a0870ef5fb4d64dd17e48c6ec29435845d16e9",
+        "afterSha256": "fc68ef5ae9321ee83f3d4cc4b2a0870ef5fb4d64dd17e48c6ec29435845d16e9"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ResetSource",
+        "unchanged": true,
+        "beforeSha256": "5752a11b46068030089e8e58ba035188183a53fa94a15c5c774f6e82fb843dfb",
+        "afterSha256": "5752a11b46068030089e8e58ba035188183a53fa94a15c5c774f6e82fb843dfb"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "RefreshSources",
+        "unchanged": true,
+        "beforeSha256": "6805e8e8eed1bf4c52450982a7690322f8f5bd7d8ccbbe2884856839ece55d77",
+        "afterSha256": "6805e8e8eed1bf4c52450982a7690322f8f5bd7d8ccbbe2884856839ece55d77"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "CaptureAsync",
+        "unchanged": true,
+        "beforeSha256": "622b1277963ce34bb27c0c96530b22b3be63956d43538882b731710d632d204a",
+        "afterSha256": "622b1277963ce34bb27c0c96530b22b3be63956d43538882b731710d632d204a"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ReadImage",
+        "unchanged": true,
+        "beforeSha256": "2e7062d380306889e0c83574caafc20a9a4f37c2b187827503be0ee6e75af4d5",
+        "afterSha256": "2e7062d380306889e0c83574caafc20a9a4f37c2b187827503be0ee6e75af4d5"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ImportAsync",
+        "unchanged": true,
+        "beforeSha256": "c1fc06ccf832a186b1c95bd5b8ba4988fc1fdbb15dcb22a1b2d15b439322df66",
+        "afterSha256": "c1fc06ccf832a186b1c95bd5b8ba4988fc1fdbb15dcb22a1b2d15b439322df66"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "PasteAsync",
+        "unchanged": true,
+        "beforeSha256": "39378a1d30d548cd679008975d3f200529dd21c0d60265c8524ffd4a714565a9",
+        "afterSha256": "39378a1d30d548cd679008975d3f200529dd21c0d60265c8524ffd4a714565a9"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "Pixels",
+        "unchanged": true,
+        "beforeSha256": "19b3abde1379eb12274e67f1cbd6837edc563d6303d45b00019b0a299b6d10b0",
+        "afterSha256": "19b3abde1379eb12274e67f1cbd6837edc563d6303d45b00019b0a299b6d10b0"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "LoadRecognizer",
+        "unchanged": true,
+        "beforeSha256": "920927d04b1930af40a0cdc53e4b601abb2d5da3a91eb58254ba8488cfc074c7",
+        "afterSha256": "920927d04b1930af40a0cdc53e4b601abb2d5da3a91eb58254ba8488cfc074c7"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "RecognizeAsync",
+        "unchanged": true,
+        "beforeSha256": "427daadded30267dbd7d2dd9470ec9b6fcdb468dd1ebb773adc08c455de846ff",
+        "afterSha256": "427daadded30267dbd7d2dd9470ec9b6fcdb468dd1ebb773adc08c455de846ff"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "Collect",
+        "unchanged": true,
+        "beforeSha256": "bd631d33caf629b7e9060e208dd883b6cca438a64cbd082bb9ffa609aafef85f",
+        "afterSha256": "bd631d33caf629b7e9060e208dd883b6cca438a64cbd082bb9ffa609aafef85f"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "RecommendAsync",
+        "unchanged": false,
+        "beforeSha256": "8616878b1bb071c962b58f2132f0047584ec1b709789afbed52751da8312c6e3",
+        "afterSha256": "c39ecd21dfa4121867d543f3047a4a9d4c95512f3ff9aed76739cc9de8b61713"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "HasValidationError",
+        "unchanged": true,
+        "beforeSha256": "a02d03d85086d83459503b0e778a6893928eb18f6293da8b73ed81d27c013c24",
+        "afterSha256": "a02d03d85086d83459503b0e778a6893928eb18f6293da8b73ed81d27c013c24"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "OpenDataDirectory",
+        "unchanged": false,
+        "beforeSha256": "ec5cb0dcd73d454d4cdce166cc515c33da412c3efe230c3ed9cc3eb5433a3734",
+        "afterSha256": "47619c9b360e2f6663f9422844c007fa51f8e409b09f3feddb60ebb43ee53663"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ShowUpdates",
+        "unchanged": true,
+        "beforeSha256": "36d207a95ac67b6a203f3133ed805107f49d74d79e0b9df414eab234ad1b8d35",
+        "afterSha256": "36d207a95ac67b6a203f3133ed805107f49d74d79e0b9df414eab234ad1b8d35"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ReturnFromUpdates",
+        "unchanged": true,
+        "beforeSha256": "63f9544f8b670f5e005394ac90463d4f804d622304bcae21d3cb7034e3bd6ccb",
+        "afterSha256": "63f9544f8b670f5e005394ac90463d4f804d622304bcae21d3cb7034e3bd6ccb"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ShowCompact",
+        "unchanged": true,
+        "beforeSha256": "f04ac723aa69efc6da3dd5fe1790fec77eaa11994bd9fc926c3b8d995141d48b",
+        "afterSha256": "f04ac723aa69efc6da3dd5fe1790fec77eaa11994bd9fc926c3b8d995141d48b"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "DisplayRect",
+        "unchanged": true,
+        "beforeSha256": "b32c9b47195950da63fbba2300856c864cf5ecf085565fa9b8d110a1a94f5c48",
+        "afterSha256": "b32c9b47195950da63fbba2300856c864cf5ecf085565fa9b8d110a1a94f5c48"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "ImagePoint",
+        "unchanged": true,
+        "beforeSha256": "12ffdfc5a99b58f01685ff7da2cf39027cedd392f1a2b9db4052ece2bc09d0ce",
+        "afterSha256": "12ffdfc5a99b58f01685ff7da2cf39027cedd392f1a2b9db4052ece2bc09d0ce"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "PreviewDown",
+        "unchanged": true,
+        "beforeSha256": "a48a53f08b3199f293641c7bb0736a29e398e440fe70b718cced1ca7ff01c38e",
+        "afterSha256": "a48a53f08b3199f293641c7bb0736a29e398e440fe70b718cced1ca7ff01c38e"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "PreviewMove",
+        "unchanged": true,
+        "beforeSha256": "fac901fb666465fb006e00b90736423ddcb0d4b9aad054013b1c66b96f8eb9b6",
+        "afterSha256": "fac901fb666465fb006e00b90736423ddcb0d4b9aad054013b1c66b96f8eb9b6"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "PreviewUp",
+        "unchanged": true,
+        "beforeSha256": "99785989fcafe36a3963e641275dbca45ce6c2fefc1f5066d038e9273f0a480f",
+        "afterSha256": "99785989fcafe36a3963e641275dbca45ce6c2fefc1f5066d038e9273f0a480f"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "DrawCalibration",
+        "unchanged": false,
+        "beforeSha256": "5f6b425d6eeee58932381a2051b842b836c009bfba7c065ca3eefad7cc7fd2ab",
+        "afterSha256": "f2a4a8dfeaed81793a79ff46330e7ccbfef967073913813acc770f130b6e591f"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "SaveCalibration",
+        "unchanged": true,
+        "beforeSha256": "96f3cfa294ccd55d0984a27bbc1ca5c5be277a09f8083accb05f6ee3af7aad5b",
+        "afterSha256": "96f3cfa294ccd55d0984a27bbc1ca5c5be277a09f8083accb05f6ee3af7aad5b"
+      },
+      {
+        "file": "MainWindow.cs",
+        "method": "LoadCalibration",
+        "unchanged": true,
+        "beforeSha256": "bdeaf7e04758f06e4170e38368b7798a6b7e6537b6fd2dfd027bd40bd99cec5b",
+        "afterSha256": "bdeaf7e04758f06e4170e38368b7798a6b7e6537b6fd2dfd027bd40bd99cec5b"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "NewProgress",
+        "unchanged": true,
+        "beforeSha256": "bf80e73c1ec617cf212e701ba67d2a757606f067a7d89cac4d07fa29525ba036",
+        "afterSha256": "bf80e73c1ec617cf212e701ba67d2a757606f067a7d89cac4d07fa29525ba036"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "CancelOrReturn",
+        "unchanged": true,
+        "beforeSha256": "8a065da2ddbe33fcfdf992e8d3f8e15b85a379c59ff1725b7f3d375b34b648bd",
+        "afterSha256": "8a065da2ddbe33fcfdf992e8d3f8e15b85a379c59ff1725b7f3d375b34b648bd"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "RequestCancellation",
+        "unchanged": true,
+        "beforeSha256": "9b67b68ed822c710cf732a7279d817e85f64720303cef9c05cdac4dc60cee620",
+        "afterSha256": "9b67b68ed822c710cf732a7279d817e85f64720303cef9c05cdac4dc60cee620"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "DisposeService",
+        "unchanged": true,
+        "beforeSha256": "e9580946f3a22d66190421b9c3eca17ec5a1e308ae38eeb9d273aba35a77d2f9",
+        "afterSha256": "e9580946f3a22d66190421b9c3eca17ec5a1e308ae38eeb9d273aba35a77d2f9"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "RunAsync",
+        "unchanged": true,
+        "beforeSha256": "c1363c6b6d604c7e59d5a06048cd15667846298e1f4c26f32cd881897589e18f",
+        "afterSha256": "c1363c6b6d604c7e59d5a06048cd15667846298e1f4c26f32cd881897589e18f"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "ImportLocalAsync",
+        "unchanged": true,
+        "beforeSha256": "fa637c932fe4755355f8373235737e7b7f18658fc977bec8f1f356da730a782a",
+        "afterSha256": "fa637c932fe4755355f8373235737e7b7f18658fc977bec8f1f356da730a782a"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "ReadBoundedAsync",
+        "unchanged": true,
+        "beforeSha256": "da891d83f07ea3313c5512f546f8bd3c28bf379833404dbb09b663a4b086dbf6",
+        "afterSha256": "da891d83f07ea3313c5512f546f8bd3c28bf379833404dbb09b663a4b086dbf6"
+      },
+      {
+        "file": "UpdateWindow.cs",
+        "method": "Restart",
+        "unchanged": true,
+        "beforeSha256": "17d88f56d18fd559c524e6b4bf72cf4eb74bf088ae564fc11d7e4d4d416e30b9",
+        "afterSha256": "17d88f56d18fd559c524e6b4bf72cf4eb74bf088ae564fc11d7e4d4d416e30b9"
+      }
+    ],
+    "immutableSourceCount": 15,
+    "immutableSourceHashes": [
+      {
+        "path": "csharp/Talos.Core/GameState.cs",
+        "beforeSha256": "ec763e42e7189aac20dfa7405de608fa4ed1553ffa31ba9151ada388d85ae62f",
+        "afterSha256": "ec763e42e7189aac20dfa7405de608fa4ed1553ffa31ba9151ada388d85ae62f",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/GameAdvisor.cs",
+        "beforeSha256": "28f40123de0591a174f5f3f1328f4e7d2026d8619cd2c15a749ca52f438e4a70",
+        "afterSha256": "28f40123de0591a174f5f3f1328f4e7d2026d8619cd2c15a749ca52f438e4a70",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/Talos.Core.csproj",
+        "beforeSha256": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+        "afterSha256": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/EngineCatalog.cs",
+        "beforeSha256": "2f5589484ec27317f5d224e02f8971df1a21d1a544359583c23319912d820264",
+        "afterSha256": "2f5589484ec27317f5d224e02f8971df1a21d1a544359583c23319912d820264",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/GameRules.cs",
+        "beforeSha256": "508988e407c3a6309447f9c6807e24a585523186e8fa8f475e13479a4bb0b933",
+        "afterSha256": "508988e407c3a6309447f9c6807e24a585523186e8fa8f475e13479a4bb0b933",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/Vision/PixelOperations.cs",
+        "beforeSha256": "c5a4ece9db3a54877c18be118936d7597badfbd32589b197631bb8fae18c88d2",
+        "afterSha256": "c5a4ece9db3a54877c18be118936d7597badfbd32589b197631bb8fae18c88d2",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/Vision/PixelTypes.cs",
+        "beforeSha256": "2ff447963a00fc3fcc7915fbc5f5aec8cfc11ce2c2a560b85090a8396af5f5d4",
+        "afterSha256": "2ff447963a00fc3fcc7915fbc5f5aec8cfc11ce2c2a560b85090a8396af5f5d4",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Core/Vision/ScreenshotRecognizer.cs",
+        "beforeSha256": "5c57bbf1149b722d23796688aa7155e4a34fb894d7f3ab36f5f4717a094c710c",
+        "afterSha256": "5c57bbf1149b722d23796688aa7155e4a34fb894d7f3ab36f5f4717a094c710c",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Host/Program.cs",
+        "beforeSha256": "7609e8da7bdfe8bedc2a29132f8b73903ccd0901d3fe4b0faccbad71a07b9090",
+        "afterSha256": "7609e8da7bdfe8bedc2a29132f8b73903ccd0901d3fe4b0faccbad71a07b9090",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Host/Talos.Host.csproj",
+        "beforeSha256": "7379a839c812d4ac9d1dec264b9a19394a30dc5f2a754c77e86cd05cbd4a5def",
+        "afterSha256": "7379a839c812d4ac9d1dec264b9a19394a30dc5f2a754c77e86cd05cbd4a5def",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Updates/Models.cs",
+        "beforeSha256": "38b22e078fcd389124889d6dc2e30c1d98c5742e5595001492b8e1812b149ecc",
+        "afterSha256": "38b22e078fcd389124889d6dc2e30c1d98c5742e5595001492b8e1812b149ecc",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Updates/UpdateService.cs",
+        "beforeSha256": "6606e92b25d304b86369ec6350c2667801d5aee7f824b005216f550b1423806c",
+        "afterSha256": "6606e92b25d304b86369ec6350c2667801d5aee7f824b005216f550b1423806c",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Updates/Talos.Updates.csproj",
+        "beforeSha256": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+        "afterSha256": "3472fccce5613343d3b55f6c2bbc48cbfd3de01f9cf32fd8607b8ac3a7e26395",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Storage/Talos.Storage.csproj",
+        "beforeSha256": "e2c08643e21eba9123e4b319840fec508efc44b473a7cab491d6188e5f6905ca",
+        "afterSha256": "e2c08643e21eba9123e4b319840fec508efc44b473a7cab491d6188e5f6905ca",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.Storage/PortableStorage.cs",
+        "beforeSha256": "c3416b8d3f4ab31b6df5404ac773202aa8d91cd95f7a96c34eb59e40d60c6f99",
+        "afterSha256": "c3416b8d3f4ab31b6df5404ac773202aa8d91cd95f7a96c34eb59e40d60c6f99",
+        "unchanged": true
+      }
+    ],
+    "additionalUnchangedFiles": [
+      {
+        "path": "csharp/Talos.App/NativeCapture.cs",
+        "sha256": "b35b19b62a3cf92a1e7347e2bb581172e8339defd620914c7f92c6d7567e5d8a",
+        "unchanged": true
+      },
+      {
+        "path": "csharp/Talos.App/UiModels.cs",
+        "sha256": "034e4c9e6c52b16e0e5c52737df6a3d8cbf243fc025110a83290544b01a10348",
+        "unchanged": true
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "substantive-visual-hierarchy",
+      "passed": true,
+      "location": "MainWindow.Build / BuildCapture / BuildReview / BuildTools",
+      "finding": "深色背景、三层卡片、青色主操作与金色来源标识形成一致层级；获取画面、牢房核对、刑具候选三步与建议区分离。操作优先级、空白预览引导和控制侧栏均有结构变化，不只更换颜色。"
+    },
+    {
+      "id": "resource-resolution",
+      "passed": true,
+      "location": "Theme.Initialize / AppHost.Run / Themes/Dark.xaml",
+      "finding": "App级资源在MainWindow构造前载入；使用带Talos.App程序集的component URI。XML可解析，全部Talos.*资源引用均可在字典中找到。AppHost除初始化主题外与0.4.2基线一致。"
+    },
+    {
+      "id": "text-input-contract",
+      "passed": true,
+      "location": "Dark.xaml TextBox ControlTemplate",
+      "finding": "保留PART_ContentHost；焦点、只读、禁用和Validation.HasError显示有独立触发器，保留输入/选区/插入光标属性。"
+    },
+    {
+      "id": "combo-edit-popup-contract",
+      "passed": true,
+      "location": "Dark.xaml ComboBox / ComboBoxItem ControlTemplate",
+      "finding": "保留PART_Popup与PART_EditableTextBox，Toggle对IsDropDownOpen双向绑定且不进入Tab序列；editable时仅箭头区域切换下拉，SelectionBoxItem/模板绑定与选项键盘导航仍在。"
+    },
+    {
+      "id": "long-source-title",
+      "passed": true,
+      "location": "MainWindow.Build sources.ItemTemplate / Dark.xaml SelectionPresenter",
+      "finding": "窗口来源位于Star列；长标题单行省略并有完整tooltip，选中呈现区域ClipToBounds，避免标题侵占右侧截图操作。"
+    },
+    {
+      "id": "check-mixed-and-focus",
+      "passed": true,
+      "location": "Dark.xaml CheckBox / Talos.FocusVisual",
+      "finding": "勾选有青色底和深色勾；未勾选有边框；null三态显示金色横线，不与空值混淆。按钮、勾选、ComboBox、Tab和列表保留焦点提示，按钮/勾选/Tab内容支持访问键。"
+    },
+    {
+      "id": "scrollbar-contract",
+      "passed": true,
+      "location": "Dark.xaml ScrollBar / ScrollThumb / ScrollPage",
+      "finding": "保留PART_Track、Thumb拖动、min/max/viewport与双向Value。垂直方向PageUp/Down，水平方向恢复正确IsDirectionReversed及PageLeft/Right；只替换表现，未移除滚动命令。"
+    },
+    {
+      "id": "tab-and-list-contract",
+      "passed": true,
+      "location": "Dark.xaml TabControl / TabItem / ListBoxItem",
+      "finding": "保留IsItemsHost TabPanel及PART_SelectedContentHost；选中项、悬停、键盘焦点与禁用状态可区分；ListBox仍使用原生多选与滚动机制。"
+    },
+    {
+      "id": "data-grid-editing",
+      "passed": true,
+      "location": "MainWindow.BuildReview / AddCheckColumn / AddComboColumn / Collect",
+      "finding": "文本、复选框与ComboBox列分别显式设置共享display/edit样式，避免DataGrid自带列样式覆盖全局主题；只禁用display命中，编辑样式可用。保留TwoWay/PropertyChanged/ValidatesOnExceptions、CommitEdit和递归验证错误拦截。"
+    },
+    {
+      "id": "selection-and-static-contrast",
+      "passed": true,
+      "location": "Dark.xaml palette / DataGrid / ComboBoxItem / ListBoxItem",
+      "finding": "表格、下拉、多选列表有不同选中背景及明确文字色。所列不透明正文、次要文字、主操作与选中强调静态对比度均超过6:1；这不是系统高对比模式或实际屏幕可读性认证。"
+    },
+    {
+      "id": "progress-animation-cleanup",
+      "passed": true,
+      "location": "Dark.xaml ProgressBar",
+      "finding": "保留PART_Track/PART_Indicator，indeterminate命名Storyboard在退出触发器时StopStoryboard，避免状态切换后继续脉动。"
+    },
+    {
+      "id": "low-height-main-layout",
+      "passed": true,
+      "location": "MainWindow.Build / BuildReview / BuildTools",
+      "finding": "主Grid使用有限高度并随viewport扩展；低高度以整体Auto滚动兜底，展开说明时提高内容高度。表格/右控制/工具列表仍在有限Star区域中各自滚动；来源及操作栏宽度预算适合1280x800逻辑布局，900逻辑宽下来源仍有150最小宽。该结论为静态布局审查。"
+    },
+    {
+      "id": "image-preview-state",
+      "passed": true,
+      "location": "MainWindow.BuildEmptyPreview / ClearImage / SetScreenshot",
+      "finding": "无图时显示16格顺时针示意与下一步引导；截图成功时隐藏空态，清空时恢复。空态不接收命中，标定Canvas仍置于图片之上，16点/ROI坐标算法未改。"
+    },
+    {
+      "id": "recommendation-remains-visible",
+      "passed": true,
+      "location": "MainWindow.Build / RecommendAsync / OverlayWindow constructor",
+      "finding": "主界面推荐动作置于输出首行，输出可滚动；浮窗使用Star建议滚动区和Auto按钮/脚注，长理由不会挤掉读取和展开按钮；未训练、相对评分及来源说明仍保留。"
+    },
+    {
+      "id": "update-window-short-height",
+      "passed": true,
+      "location": "UpdateWindow constructor",
+      "finding": "标题、版本恢复卡、可用更新卡与固定底部状态/取消形成层次；中部内容滚动，长状态单独限高滚动，取消/返回始终在独立列。ShowInTaskbar=false和NoResize保持。"
+    },
+    {
+      "id": "cancel-close-and-commit-regression",
+      "passed": true,
+      "location": "UpdateWindow.RunAsync / RequestCancellation / NewProgress / Closed",
+      "finding": "对0.4.2基线8个后台/取消/关闭方法逐方法一致。worker只返回UI Action，closed+epoch挡迟回调；已提交安装/回退/导入仍应用实际UpdateStatus；等待CancelAsync回调后释放CTS与service。空闲返回按钮可Close。"
+    },
+    {
+      "id": "update-ui-version-preflight",
+      "passed": true,
+      "location": "UpdateWindow.CompareCandidate / CanDownload / CandidateMessage / install handler",
+      "finding": "新授权UI预检拒绝线上低版本、拒绝同版健康重复安装；允许同版损坏修复及更高版。null状态不下载，缺active时以运行版本保底；下载前重新读取本地Status。仅为UI预检，未改变签名协议或Core更新事务。"
+    },
+    {
+      "id": "owner-focus-lifecycle-regression",
+      "passed": true,
+      "location": "MainWindow.ShowUpdates / ReturnFromUpdates / CaptureAsync / ShowCompact / constructor lifecycle handlers",
+      "finding": "单实例owned更新窗、实例身份+generation、ContextIdle双检、关闭/退出/compact/capture阻断、Maximized原状态恢复均保留。旧窗口延后回调不能激活新窗口；截图仅恢复同一更新窗且不抢焦点。"
+    },
+    {
+      "id": "screenshot-staleness-regression",
+      "passed": true,
+      "location": "MainWindow.Invalidate / ResetSource / CaptureAsync / ImportAsync / RecognizeAsync / RecommendAsync",
+      "finding": "关键截图/来源/识图方法与0.4.2基线一致，成功截图身份、revision、取消与closed检查保留。RecommendAsync仅更改输出排版文案，迟返回保护与GameAdvisor调用未改。"
+    },
+    {
+      "id": "portable-data-root-regression",
+      "passed": true,
+      "location": "MainWindow.LoadCalibration / SaveCalibration / OpenDataDirectory / Build details",
+      "finding": "校准仍只通过context.DataRoot保存读取；数据目录入口仍显示实际路径、支持复制及打开。Host/Storage源码15份基线核对未变，未引入AppData新路径。"
+    },
+    {
+      "id": "native-titlebar-fallback",
+      "passed": true,
+      "location": "Theme.ApplyTitleBar",
+      "finding": "仅Windows通过标准DwmSetWindowAttribute20请求暗色标题栏；缺失DLL/入口安全回退，未自绘窗口边框、拦截消息或改变owner/窗口状态。"
+    },
+    {
+      "id": "business-scope-preserved",
+      "passed": true,
+      "location": "Core / Host / Updates / Storage plus NativeCapture / UiModels",
+      "finding": "15份不可变源码/项目文件SHA256均与审查前0.4.2一致；NativeCapture与UiModels字节也一致。未把此次视觉更新描述为策略收益或识图准确率改进。"
+    }
+  ],
+  "unresolvedBlockersObserved": [],
+  "resolvedReviewFindings": [
+    "DataGrid列显式指定display/edit主题样式，未禁用编辑控件。",
+    "长截图来源增加省略和完整tooltip；选中呈现ClipToBounds。",
+    "空截图示意与真实截图显隐联动完整。",
+    "低高度采用有限布局配整体滚动，避免通过无限Star测量堆叠内容。",
+    "不确定进度动画离开状态时停止。"
+  ],
+  "runtimeAcceptanceStillRequired": [
+    "Windows正常与最大化主窗在1280x800及125%/150%缩放下检查布局、系统标题栏、长来源和滚动可达性。",
+    "Windows使用键盘Tab/方向键/Alt+Down操作下拉、复选框/三态及DataGrid文本/数值编辑；确认选中、焦点、验证红框和工具多选。",
+    "Windows更新窗X/空闲返回、忙碌取消/关闭、提交后取消、快速重开与截图/compact期间关闭，确认状态及焦点。",
+    "Windows真实长建议和错误内容核查主窗/浮窗滚动及按钮不被遮挡；检查真实截图标定和来源切换。"
+  ]
+}

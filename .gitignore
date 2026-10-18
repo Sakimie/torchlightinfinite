@@ -1,0 +1,23 @@
+node_modules/
+.cache/
+dist/
+artifacts/
+*.log
+.env
+.env.*
+!.env.example
+coverage/
+__pycache__/
+*.pyc
+csharp/**/bin/
+csharp/**/obj/
+
+# Local user data and signing secrets do not belong in the source repository.
+/data/
+**/user-data/
+*.pfx
+*.p12
+*.key
+*private-key*.pem
+*private*.pem
+

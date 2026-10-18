@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>狱策 · 火炬之光助手</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="titlebar">
+    <a class="brand" href="#" aria-label="狱策主页"><span class="brand-mark">狱</span><span>狱策 <small>TARTARUS ASSISTANT</small></span></a>
+    <div class="window-actions">
+      <span class="local-badge"><i></i> 本地运行</span>
+      <button id="pin-button" class="icon-button" title="窗口置顶" aria-pressed="false">⌖ <span>置顶</span></button>
+      <button id="compact-button" class="icon-button" aria-pressed="false">▣ <span>精简悬浮</span></button>
+    </div>
+  </header>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div class="section-kicker">当前目标</div>
+      <h1>把下一步，走得更好。</h1>
+      <p class="muted intro">普通 20 天 · 优先增加绮彩囚犯<br>截图识别局面，比较可行动作。</p>
+      <div class="objective-card"><span class="objective-icon">✦</span><div><strong>绮彩优先</strong><small>规则模拟 + 有限次数前瞻</small></div></div>
+      <div class="sidebar-heading"><h2>局面设置</h2><span id="board-source" class="source-badge">尚未加载</span></div>
+      <label class="field-label" for="day-input">当前天数 <span>共 20 天</span></label>
+      <div class="day-control"><button id="day-minus" aria-label="前一天">−</button><input id="day-input" type="number" min="1" max="20" value="1" aria-label="当前天数"><span>/ 20</span><button id="day-plus" aria-label="后一天">＋</button></div>
+      <label class="field-label" for="phase-input">当前阶段</label>
+      <select id="phase-input"><option value="patrol">选择巡逻目的地</option><option value="manage">管理牢房 / 吞噬 / 替换</option><option value="chain">连吃 · 选择目标</option><option value="ratway">鼠道 · 选择牢房</option><option value="event">处理事件</option><option value="office">审讯室</option><option value="tool">选择刑具</option><option value="gift">选择恩赐</option></select>
+      <label class="field-label" for="destinations-input">可到达的格子 <span>按棋盘编号</span></label>
+      <input id="destinations-input" placeholder="例如 2, 4, 6" inputmode="numeric">
+      <div class="input-hint">用逗号分隔；1 号为审讯室。</div>
+      <label class="field-label" for="tools-input">已有刑具 <span>可多选</span></label>
+      <select id="tools-input" multiple size="4" aria-label="已有刑具"></select>
+      <div class="input-hint">按住 Ctrl / ⌘ 选择多项。</div>
+      <div class="advanced-settings">
+        <label class="field-label" for="objective-input">本局任务</label>
+        <select id="objective-input"><option value="other">未确认 / 其他</option><option value="king">至臻囚犯任务</option><option value="walk">移动任务</option><option value="incidents">事件任务</option><option value="consume">吞噬任务</option></select>
+        <div class="two-fields"><label>任务进度<input id="progress-input" type="number" min="0" value="0"></label><label>已捕获绮彩<input id="vault-input" type="number" min="0" value="0"></label></div>
+        <label class="check-label"><input type="checkbox" id="milestone-input"> 本局里程碑已完成</label>
+        <label class="check-label"><input type="checkbox" id="used-action-input"> 本回合管理操作已使用</label>
+        <label class="check-label"><input type="checkbox" id="no-swap-input"> 当前不可替换</label>
+        <label class="check-label"><input type="checkbox" id="no-devour-input"> 当前不可吞噬</label>
+        <label class="check-label"><input type="checkbox" id="chain-armed-input"> 连锁反应效果已激活</label>
+        <label class="field-label" for="event-input">当前事件</label><select id="event-input"><option value="">无 / 未确认</option></select>
+        <label class="field-label" for="usurp-stage">僭越事件进度</label><select id="usurp-stage"><option value="unknown">未确认</option><option value="1">尚未触发其一</option><option value="2">下一次为其二</option><option value="3">下一次为其三</option><option value="4">下一次为其四</option><option value="done">其四已完成</option></select>
+        <label class="field-label" for="resume-phase">选完刑具 / 恩赐后返回</label><select id="resume-phase"><option value="">未确认</option><option value="patrol">选择巡逻目的地</option><option value="manage">管理牢房</option><option value="chain">连吃 · 选择目标</option><option value="office">审讯室</option></select><p class="input-hint">选择刑具或恩赐时，确认弹窗结束后实际返回的阶段。</p>
+        <label class="field-label" for="offers-input">可选刑具 / 恩赐</label><select id="offers-input" multiple size="3"></select>
+      </div>
+      <button id="demo-button" class="secondary full">↗ 加载示例局面</button>
+      <button id="new-board-button" class="secondary full">＋ 创建空棋盘 / 手工录入</button>
+      <button id="reset-button" class="secondary full">新局 / 清空局面</button>
+      <div class="sidebar-footer"><button id="report-button" class="text-button">查看训练与评估报告 ↗</button><p>不会自动点击游戏或执行操作。</p></div>
+    </aside>
+
+    <section class="workspace">
+      <div class="workspace-heading"><div><div class="section-kicker">LIVE ASSIST</div><h2>战局观察台</h2></div><div class="service-connection"><div id="connection-status" class="connection-status">正在连接本地服务…</div><button id="service-retry" class="text-button" hidden>重试连接</button></div></div>
+      <div id="service-error" class="service-error" role="alert" hidden></div>
+      <section class="capture-panel panel" aria-labelledby="capture-heading">
+        <div class="panel-header"><h3 id="capture-heading"><span class="step-number">01</span> 获取当前画面</h3><span class="privacy-note">截图仅在本机处理</span></div>
+        <div class="capture-toolbar"><select id="source-input" aria-label="选择游戏窗口"><option value="">选择游戏窗口或屏幕</option></select><button id="refresh-sources" class="icon-button" title="刷新窗口列表" aria-label="刷新窗口列表">↻</button><button id="capture-button" class="primary">▣ 截图并分析</button><label class="secondary file-button" tabindex="0">导入截图<input id="image-input" type="file" accept="image/*" hidden></label></div>
+        <div class="capture-content"><div id="screenshot-area" class="screenshot-area" role="img" aria-label="截图预览"><div class="empty-preview"><span>▧</span><strong>让当前局面进入视野</strong><p>选择游戏窗口，或导入 / Ctrl+V 粘贴截图</p></div><img id="screenshot-preview" alt="当前游戏截图" hidden></div><div class="capture-settings"><div class="auto-row"><div><strong>定时识别</strong><small>只分析画面，不操作游戏</small></div><label class="switch"><input id="auto-input" type="checkbox" aria-label="启用定时识别"><span></span></label></div><label class="field-label" for="interval-input">识别间隔</label><select id="interval-input"><option value="3">3 秒</option><option value="5" selected>5 秒</option><option value="10">10 秒</option><option value="20">20 秒</option></select><div id="capture-status" class="capture-status" role="status">等待截图</div><p class="small-note">识别后请核对刑具、阶级与可移动位置；不确定的信息会单独标出。</p></div></div>
+      </section>
+
+      <section class="vision-panel panel" aria-labelledby="vision-heading">
+        <div class="panel-header"><h3 id="vision-heading">离线识图校准</h3><span id="vision-status" class="status-tag stale">首次需教会识图</span></div>
+        <div class="vision-content"><p id="vision-summary">首次需教会识图；尚未验证真实准确率。全程在本机运行，无需联网。</p><ol class="vision-steps"><li>导入或截取完整游戏画面，依次标定 16 个房间中心。</li><li>创建空棋盘，手工录入本张截图的牢房状态、种族与阶级。</li><li>逐格核对后学习样本，再重新识别截图；后续可继续添加不同局面的样本。</li></ol><div class="vision-actions"><button id="calibrate-button" class="secondary">校准牢房位置</button><button id="rescan-button" class="secondary">重新识别当前截图</button><label class="check-label"><input id="vision-confirm" type="checkbox"> 我已逐格核对本张截图与棋盘</label><button id="learn-vision-button" class="primary">学习已核对样本</button></div><div class="vision-profile-actions"><button id="export-vision-button" class="text-button">导出校准 / 样本 JSON</button><label class="text-button file-button" tabindex="0">导入朋友的 JSON<input id="vision-profile-input" type="file" accept="application/json,.json" hidden></label><button id="reset-vision-button" class="text-button">清除本机识图样本</button></div><p class="small-note">导出的 JSON 仅含位置与数值特征，不含原始截图。识别后仍需人工核对位置、天数、刑具与阶段；不会自动操作游戏。</p></div>
+      </section>
+
+      <div class="analysis-grid">
+        <section class="board-panel panel" aria-labelledby="board-heading"><div class="panel-header"><h3 id="board-heading"><span class="step-number">02</span> 核对牢房</h3><button id="edit-state-button" class="text-button">编辑更多信息</button></div><div class="board-summary"><span id="board-day">第 1 / 20 天</span><span class="position-legend"><i></i> 当前所在</span></div><div id="board" class="prison-board" aria-label="16 格监狱棋盘"></div><div class="board-legend"><span><i class="tier-dot tier-0"></i>普通</span><span><i class="tier-dot tier-1"></i>魔法</span><span><i class="tier-dot tier-2"></i>稀有</span><span><i class="tier-dot tier-3"></i>传奇</span><span><i class="tier-dot tier-4"></i>至臻</span><span><i class="tier-dot tier-5"></i>绮彩</span></div><div id="issues" class="issues" aria-live="polite"></div><p class="board-help">点击牢房修正识别结果；点击中间指示可修改当前位置。</p></section>
+        <section class="recommend-panel panel" aria-labelledby="recommend-heading"><div class="panel-header"><h3 id="recommend-heading"><span class="step-number">03</span> 下一步建议</h3><span id="recommend-status" class="status-tag">等待局面</span></div><div id="recommendation" class="recommendation"><div class="recommend-empty"><span>✧</span><h4>先确认，再出发。</h4><p>导入游戏画面或加载示例，<br>我们会比较当前可行的选择。</p></div></div><button id="recommend-button" class="primary full">比较下一步</button><p class="recommend-disclaimer">建议来自已实现规则与抽样前瞻；未知房间、识别误差和随机事件会影响结果，不保证全局最优。</p></section>
+      </div>
+      <footer class="workspace-footer"><span><i></i> 手动执行建议 · 随时核对局面</span><span id="policy-label">普通 20 天策略</span></footer>
+    </section>
+  </main>
+  <dialog id="cell-dialog"><form id="cell-form"><div class="dialog-heading"><h2 id="cell-title">编辑牢房</h2><button type="button" id="close-cell" class="icon-button" aria-label="关闭">×</button></div><label class="field-label" for="cell-kind">房间状态</label><select id="cell-kind"><option value="locked">未开启</option><option value="inmate">囚犯</option><option value="empty">空牢房</option><option value="nest">巢穴</option><option value="office">审讯室</option></select><label class="field-label" for="cell-beast">囚犯种族</label><select id="cell-beast"><option value="mammoth">猛犸</option><option value="lion">雄狮</option><option value="wolf">狼</option><option value="rat">鼠</option></select><label class="field-label" for="cell-tier">囚犯阶级</label><select id="cell-tier"><option value="0">普通</option><option value="1">魔法</option><option value="2">稀有</option><option value="3">传奇</option><option value="4">至臻</option><option value="5">绮彩（请核对是否已入库）</option></select><p class="input-hint">绮彩入库后请改为未开启，并更新左侧“已捕获绮彩”。</p><label class="check-label"><input id="cell-event" type="checkbox"> 此格有事件</label><label class="field-label" for="cell-event-kind">房间事件类型</label><select id="cell-event-kind"><option value="">未确认的随机事件</option></select><label class="field-label" for="cell-due">巢穴孵化天数</label><input id="cell-due" type="number" min="2" max="30" value="3"><div class="two-fields"><label>狂狮猎物格号<input id="cell-prey" type="number" min="2" max="16" placeholder="无标记留空"></label><label>标记剩余天数<input id="cell-prey-rounds" type="number" min="1" max="9" value="1"></label></div><label class="check-label"><input id="cell-ivory" type="checkbox"> 象牙标记</label><label class="check-label"><input id="cell-scratch" type="checkbox"> 抓痕标记</label><label class="check-label"><input id="cell-position" type="checkbox"> 我当前在此格</label><button type="submit" class="primary full">保存并重新比较</button></form></dialog>
+  <dialog id="report-dialog"><div class="dialog-heading"><h2>训练与评估报告</h2><button id="close-report" class="icon-button" aria-label="关闭">×</button></div><div id="report-content" class="report-content"></div></dialog>
+  <dialog id="calibration-dialog"><div class="dialog-heading"><h2>校准牢房位置</h2><button id="close-calibration" class="icon-button" aria-label="关闭校准">×</button></div><p class="calibration-instruction">从左上角 <strong>01 审讯室</strong> 开始，沿棋盘顺时针，依次点击 16 个房间的中心。请使用与实际游玩相同的分辨率和界面缩放。</p><div class="calibration-progress"><strong id="calibration-progress">请点击 01 · 审讯室中心</strong><span id="calibration-dimensions"></span></div><div class="calibration-canvas-wrap"><canvas id="calibration-canvas" aria-label="依次点击16个房间中心"></canvas></div><div class="calibration-toolbar"><button id="undo-calibration" class="secondary">撤销上一点</button><button id="clear-calibration" class="secondary">重新标定</button><button id="save-calibration" class="primary" disabled>保存 16 个位置</button></div><p class="small-note">保存位置后，请先手工录入并核对这张截图的棋盘，再学习样本。位置尚未教会软件识别囚犯。调整已存位置后，下一次学习会重新建立样本；可先导出 JSON 留存。</p></dialog>
+  <div id="toast" class="toast" role="alert" hidden></div>
+  <script src="./app.js"></script>
+</body>
+</html>

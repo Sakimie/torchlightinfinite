@@ -1,0 +1,394 @@
+{
+  "schema": "talos-online-integration-v1",
+  "passed": true,
+  "platform": "linux",
+  "python": "3.12.14",
+  "windowsExeExecuted": false,
+  "productPrivateKeyRead": false,
+  "realNetworkTransportUsed": false,
+  "realGameOcrAccuracyClaimed": false,
+  "scope": "Actual signed bootstrap and pinned launcher modules; real Tk buttons and Node crypto; simulated online transport; Windows process launches observed only.",
+  "limitations": [
+    "Windows PE launch and native Windows rendering were not tested on this Linux host.",
+    "HTTPS delivery was simulated through the transport API; no public update host was contacted.",
+    "Manual game fields and controlled recognition failure are not a real-game OCR accuracy benchmark."
+  ],
+  "checks": {
+    "final_bundle_exists": {
+      "passed": true,
+      "detail": "dist/online-0.3.2/TalosHelper-Online-Update-0.3.2.zip"
+    },
+    "real_node_available": {
+      "passed": true
+    },
+    "bundle_crc": {
+      "passed": true
+    },
+    "stable_entry_pins_exact_core_and_ui": {
+      "passed": true
+    },
+    "loaded_modules_carry_verified_hash": {
+      "passed": true
+    },
+    "stable_entry_rejects_tampered_talos_update_core": {
+      "passed": true,
+      "detail": {
+        "type": "RuntimeError",
+        "message": "更新组件校验失败：talos_update_core。请重新解压首次启动器包。"
+      }
+    },
+    "stable_entry_rejects_tampered_launcher_ui": {
+      "passed": true,
+      "detail": {
+        "type": "RuntimeError",
+        "message": "更新组件校验失败：launcher_ui。请重新解压首次启动器包。"
+      }
+    },
+    "stable_entry_forwards_only_local_ui": {
+      "passed": true
+    },
+    "actual_signed_bootstrap_installs_offline": {
+      "passed": true,
+      "detail": {
+        "active": "0.3.2",
+        "active_valid": true,
+        "history": [],
+        "installed": {
+          "0.3.2": {
+            "version": "0.3.2",
+            "entry": "TalosHelper-App-0.3.2.exe",
+            "notes": [
+              "新增检查更新、下载小版本包及回退功能；首次请使用 TalosHelper-启动器.exe。",
+              "游戏截图、识别和策略建议继续离线运行；只有手动检查或下载更新时联网。",
+              "沿用 0.3.1 已复验的 baseline 策略；截图后仍须核对状态，再计算下一步。"
+            ],
+            "published_at": "2026-10-17T05:08:07.592733Z"
+          }
+        },
+        "unavailable": []
+      }
+    },
+    "stable_public_key_matches_published_public_key": {
+      "passed": true
+    },
+    "actual_product_bootstrap_files_complete": {
+      "passed": true
+    },
+    "temporary_signed_bootstrap_has_zero_transport": {
+      "passed": true
+    },
+    "local_status_and_launch_do_not_connect": {
+      "passed": true
+    },
+    "explicit_check_only_fetches_feed": {
+      "passed": true
+    },
+    "real_crypto_rejects_invalid_feed_signature": {
+      "passed": true,
+      "detail": {
+        "type": "AuthenticationError",
+        "message": "更新发布签名无效，已拒绝安装。"
+      }
+    },
+    "modified_manifest_cannot_bypass_signature": {
+      "passed": true,
+      "detail": {
+        "type": "AuthenticationError",
+        "message": "安装清单未验签或已被修改，请重新检查更新。"
+      }
+    },
+    "unauthenticated_install_never_downloads": {
+      "passed": true
+    },
+    "explicit_install_downloads_then_atomically_activates": {
+      "passed": true
+    },
+    "per_version_files_are_isolated": {
+      "passed": true
+    },
+    "pinned_base_copied_locally_0.3.2": {
+      "passed": true
+    },
+    "pinned_base_copied_locally_0.3.3": {
+      "passed": true
+    },
+    "rollback_is_local_and_retains_newer_files": {
+      "passed": true
+    },
+    "download_failure_is_reported": {
+      "passed": true,
+      "detail": {
+        "type": "NetworkError",
+        "message": "更新下载失败，请稍后重试。"
+      }
+    },
+    "download_failure_keeps_active_state_bytes": {
+      "passed": true
+    },
+    "package_hash_failure_is_reported": {
+      "passed": true,
+      "detail": {
+        "type": "ValidationError",
+        "message": "更新包字节数或SHA-256不匹配，原版本保持不变。"
+      }
+    },
+    "hash_failure_keeps_active_state_bytes": {
+      "passed": true
+    },
+    "signed_unsafe_zip_is_rejected": {
+      "passed": true,
+      "detail": {
+        "type": "ValidationError",
+        "message": "更新ZIP文件列表与签名清单不一致。"
+      }
+    },
+    "unsafe_zip_does_not_activate_or_escape": {
+      "passed": true
+    },
+    "cancel_before_activation_is_reported": {
+      "passed": true,
+      "detail": {
+        "type": "UpdateCancelled",
+        "message": "更新已取消，原版本继续保留。"
+      }
+    },
+    "cancelled_install_cleans_and_keeps_active": {
+      "passed": true
+    },
+    "incompatible_signed_release_is_rejected": {
+      "passed": true,
+      "detail": {
+        "type": "ValidationError",
+        "message": "此更新需要其他启动器或基础版本，当前不能安装。"
+      }
+    },
+    "all_failed_updates_preserve_active": {
+      "passed": true
+    },
+    "transaction_lock_released_and_staging_cleaned": {
+      "passed": true
+    },
+    "hard_interruption_exercised_after_partial_publish": {
+      "passed": true,
+      "detail": {
+        "type": "HardProcessLoss",
+        "message": ""
+      }
+    },
+    "interruption_keeps_old_active_and_state_bytes": {
+      "passed": true
+    },
+    "matching_partial_orphan_recovered_on_retry": {
+      "passed": true
+    },
+    "damaged_history_does_not_block_valid_active": {
+      "passed": true
+    },
+    "damaged_history_cannot_be_rollback_target": {
+      "passed": true,
+      "detail": {
+        "type": "ValidationError",
+        "message": "没有可回退的完整本地版本。"
+      }
+    },
+    "valid_active_launch_with_bad_history_is_offline": {
+      "passed": true
+    },
+    "damaged_active_status_preserves_healthy_rollback_options": {
+      "passed": true
+    },
+    "damaged_active_is_never_launched": {
+      "passed": true,
+      "detail": {
+        "type": "ValidationError",
+        "message": "文件大小校验失败：talos_game_update.py"
+      }
+    },
+    "damaged_active_recovers_by_offline_rollback": {
+      "passed": true
+    },
+    "launcher_initialization_and_refresh_are_offline": {
+      "passed": true
+    },
+    "refresh_local_state_has_zero_transport": {
+      "passed": true
+    },
+    "launcher_launch_button_is_offline": {
+      "passed": true
+    },
+    "check_button_fetches_feed_and_displays_verified_notes": {
+      "passed": true
+    },
+    "download_button_upgrades_through_real_core": {
+      "passed": true
+    },
+    "rollback_button_never_connects": {
+      "passed": true
+    },
+    "cancelled_check_is_not_applied": {
+      "passed": true
+    },
+    "launcher_disables_damaged_active_and_offers_healthy_rollback": {
+      "passed": true
+    },
+    "launcher_recovers_damaged_active_without_network": {
+      "passed": true
+    },
+    "actual_app_release_and_base_roots_are_separate": {
+      "passed": true
+    },
+    "actual_game_advice_uses_signed_isolated_backend_offline": {
+      "passed": true,
+      "detail": "已核对局面 · 普通20天 / 绮彩优先\n来源：无图手工 / 示例研究（非游戏实况）\n当前策略：修正规则基线（历史参数复验未胜出）\n\n建议：吞噬5号牢房的囚犯\n• 本地读取原v0.3的固定版本源码，原文件保持不变。\n• 已在内存中修正僭越II一人升两阶、煽动一个事件、口枷人数不超过三；口枷按吞噬后人数判断仍是待实机确认的时点假设。\n• 旧工具组合收益表已停用；历史参数不等于在修正规则下已验证。\n• 截图和操作阶段必须先人工核对；建议不保证真实游戏的绝对最优。\n• 已读取与当前源码及历史策略哈希匹配的新规则独立验证报告；结论只适用于报告的模拟范围。\n• 当前为单步规则策略建议，未将启发式评分当作"
+    },
+    "game_recognition_failure_remains_offline_and_expires_advice": {
+      "passed": true
+    },
+    "game_update_button_only_opens_local_launcher": {
+      "passed": true
+    },
+    "no_worker_tk_variable_writes": {
+      "passed": true,
+      "detail": []
+    },
+    "no_thread_or_tk_callback_errors": {
+      "passed": true,
+      "detail": {
+        "workers": [],
+        "tk": []
+      }
+    },
+    "no_real_network_attempts": {
+      "passed": true,
+      "detail": []
+    },
+    "windows_launches_are_argument_lists_without_shell": {
+      "passed": true
+    },
+    "original_user_executable_is_unchanged": {
+      "passed": true
+    }
+  },
+  "errors": [],
+  "bundleSha256": "ee30df0b0aee7922b871ed9ca1ca6ef1dfcb296da217dfdad32dcd8ee653d145",
+  "bundleBytes": 10398795,
+  "temporaryTestPublicKeySha256": "2b09dc9747e43e614b387c46212d48e0aaae1a6350cd16d5f5b706582fe3f9fa",
+  "launcherModulePins": {
+    "talos_update_core": "2feb236352f6d7286b127bc9ecc6498eaaf81cc36367bac3959355178402a217",
+    "launcher_ui": "488019389a5dfc19c1705e4ff428543feb784bad7dcf1503953aad535030d983"
+  },
+  "productPublicKeySha256": "f49b8db23e0701cd974f4fe7deb3e48c652f995c29720b1d10c6b43ef13c855d",
+  "bootstrapPayloadSha256": "c979b6884b6c564aabb51f0e393496d7d2542935ae6126e79144dd9ff6d65648",
+  "tkVersion": "9.0.4",
+  "screenshotLimitations": "Linux X11/Tk with task-local Unifont fallback; layout evidence only, not Windows rendering or real-game OCR accuracy.",
+  "launcherScreenshot": "/workspace/torchlightinfinite/artifacts/talos-online-launcher.png",
+  "simulatedTransportCalls": [
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/0.3.3.zip",
+      "limit": 390,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/0.3.4.zip",
+      "limit": 390,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/0.3.4.zip",
+      "limit": 390,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/0.3.5.zip",
+      "limit": 516,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/0.3.6.zip",
+      "limit": 390,
+      "thread": 139952706922304
+    },
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952706922304
+    }
+  ],
+  "uiTransportCalls": [
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952639116992
+    },
+    {
+      "url": "https://updates.example.test/0.3.3.zip",
+      "limit": 390,
+      "thread": 139952639116992
+    },
+    {
+      "url": "https://updates.example.test/latest.json",
+      "limit": 1048576,
+      "thread": 139952639116992
+    }
+  ],
+  "observedWindowsLaunchRequests": [
+    {
+      "command": [
+        "/tmp/talos-online-integration-xvy1lysj/transactions/TalosHelper-App-0.3.2.exe"
+      ],
+      "cwd": "/tmp/talos-online-integration-xvy1lysj/transactions",
+      "shell": false
+    },
+    {
+      "command": [
+        "/tmp/talos-online-integration-xvy1lysj/interrupted-installation/TalosHelper-App-0.3.3.exe"
+      ],
+      "cwd": "/tmp/talos-online-integration-xvy1lysj/interrupted-installation",
+      "shell": false
+    },
+    {
+      "command": [
+        "/tmp/talos-online-integration-xvy1lysj/ui-installation/TalosHelper-App-0.3.2.exe"
+      ],
+      "cwd": "/tmp/talos-online-integration-xvy1lysj/ui-installation",
+      "shell": false
+    },
+    {
+      "command": [
+        "/tmp/talos-online-integration-xvy1lysj/product/TalosHelper-启动器.exe",
+        "--updates"
+      ],
+      "cwd": "/tmp/talos-online-integration-xvy1lysj/product",
+      "shell": false
+    }
+  ],
+  "gameSourceHash": "e7a9873efd415a50cff1b7b4a9a7368e87b38abc6a9916c9f13788809950c383",
+  "workerErrors": [],
+  "tkErrors": [],
+  "networkAttempts": []
+}

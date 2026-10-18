@@ -1,0 +1,17 @@
+'use strict';
+const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
+const {signRelease} = require('./sign-release.cjs');
+const pair = crypto.generateKeyPairSync('ed25519');
+const other = crypto.generateKeyPairSync('ed25519');
+const privatePem = pair.privateKey.export({type:'pkcs8',format:'pem'});
+const publicPem = pair.publicKey.export({type:'spki',format:'pem'});
+const raw = Buffer.from(JSON.stringify({schema:'talos-release-v1',app:'TalosHelper',version:'0.3.2',notes:['离线截图']}));
+const signed = JSON.parse(signRelease(raw,privatePem,publicPem));
+assert.equal(signed.schema,'talos-signed-feed-v1');
+assert.deepEqual(Buffer.from(signed.payload,'base64'),raw);
+assert.equal(crypto.verify(null,raw,pair.publicKey,Buffer.from(signed.signature,'base64')),true);
+assert.equal(crypto.verify(null,Buffer.concat([raw,Buffer.from(' ')]),pair.publicKey,Buffer.from(signed.signature,'base64')),false);
+assert.throws(()=>signRelease(raw,privatePem,other.publicKey.export({type:'spki',format:'pem'})),/does not match/);
+assert.throws(()=>signRelease(Buffer.from('{}'),privatePem,publicPem),/Invalid/);
+console.log('6 release signing checks passed');

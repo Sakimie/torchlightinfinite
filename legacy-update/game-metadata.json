@@ -1,0 +1,276 @@
+{
+  "schema": "talos-game-metadata-v1",
+  "sourceCommit": "49bcc6d7b5a52293adf0d225f349dfbb9504ad55",
+  "tools": [
+    {
+      "id": "revenge",
+      "name": "复仇者之匣"
+    },
+    {
+      "id": "muzzle",
+      "name": "狂兽的剧痛口枷"
+    },
+    {
+      "id": "saw",
+      "name": "锈锯"
+    },
+    {
+      "id": "keys",
+      "name": "遗落的钥匙串"
+    },
+    {
+      "id": "rope",
+      "name": "绞首绳"
+    },
+    {
+      "id": "fire",
+      "name": "灼痛的烙铁"
+    },
+    {
+      "id": "ironbox",
+      "name": "蠕动铁盒：硕鼠"
+    },
+    {
+      "id": "skewer",
+      "name": "鼠头串：硕鼠"
+    },
+    {
+      "id": "hook",
+      "name": "挑拣钩"
+    },
+    {
+      "id": "pestle",
+      "name": "铁杵"
+    },
+    {
+      "id": "scales",
+      "name": "典狱官的天平"
+    },
+    {
+      "id": "tongs",
+      "name": "恶欲铁钳：巨象"
+    },
+    {
+      "id": "guillotine",
+      "name": "狼牙铡刀：头狼"
+    },
+    {
+      "id": "axe",
+      "name": "狱卒的行刑巨斧"
+    },
+    {
+      "id": "shackles",
+      "name": "长链脚镣"
+    },
+    {
+      "id": "collar",
+      "name": "疯兽的倒刺项圈"
+    },
+    {
+      "id": "forged",
+      "name": "伪造钥匙"
+    },
+    {
+      "id": "dogtag",
+      "name": "重刑铭牌"
+    },
+    {
+      "id": "cage",
+      "name": "拥挤兽笼"
+    },
+    {
+      "id": "blacklist",
+      "name": "执行官的黑名册"
+    },
+    {
+      "id": "shortchain",
+      "name": "短链脚镣"
+    },
+    {
+      "id": "maiden",
+      "name": "切开的人形棺"
+    },
+    {
+      "id": "whip",
+      "name": "棘刺铁鞭"
+    },
+    {
+      "id": "ravenous",
+      "name": "凶兽的饥饿绞链"
+    },
+    {
+      "id": "scapegoat",
+      "name": "替罪人的断头台"
+    },
+    {
+      "id": "stake",
+      "name": "火刑柱"
+    },
+    {
+      "id": "coin",
+      "name": "手足的命运硬币"
+    },
+    {
+      "id": "crown",
+      "name": "狱王的铁冠：狂狮"
+    }
+  ],
+  "events": [
+    {
+      "id": "chain",
+      "name": "连锁反应"
+    },
+    {
+      "id": "execution",
+      "name": "处刑效率"
+    },
+    {
+      "id": "trickster",
+      "name": "暗箱操作"
+    },
+    {
+      "id": "appetite",
+      "name": "贪婪食欲"
+    },
+    {
+      "id": "convict",
+      "name": "高危囚犯"
+    },
+    {
+      "id": "crow",
+      "name": "鸦语"
+    },
+    {
+      "id": "freedom",
+      "name": "自由的滋味"
+    },
+    {
+      "id": "usurp1",
+      "name": "僭越·其一"
+    },
+    {
+      "id": "usurp2",
+      "name": "僭越·其二"
+    },
+    {
+      "id": "usurp3",
+      "name": "僭越·其三"
+    },
+    {
+      "id": "usurp4",
+      "name": "僭越·其四"
+    },
+    {
+      "id": "ratway",
+      "name": "暗渠鼠道"
+    }
+  ],
+  "gifts": [
+    {
+      "id": "ring",
+      "name": "三首扳指"
+    },
+    {
+      "id": "horn",
+      "name": "斗争铜号"
+    },
+    {
+      "id": "wine",
+      "name": "赤色佳酿"
+    },
+    {
+      "id": "brand",
+      "name": "原罪烙印"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "king",
+      "name": "一名至臻囚犯"
+    },
+    {
+      "id": "walk",
+      "name": "累计移动18格"
+    },
+    {
+      "id": "incident",
+      "name": "触发2次事件"
+    },
+    {
+      "id": "consume",
+      "name": "累计吞噬4次"
+    },
+    {
+      "id": "other",
+      "name": "其他任务（不模拟任务奖励）"
+    }
+  ],
+  "phases": [
+    {
+      "id": "patrol",
+      "name": "选择巡逻目的地"
+    },
+    {
+      "id": "manage",
+      "name": "选择吞噬、替换或结束"
+    },
+    {
+      "id": "office",
+      "name": "审讯室"
+    },
+    {
+      "id": "event",
+      "name": "处理当前事件"
+    },
+    {
+      "id": "tool",
+      "name": "选择刑具"
+    },
+    {
+      "id": "gift",
+      "name": "选择珍藏"
+    },
+    {
+      "id": "chain",
+      "name": "正在连吃"
+    },
+    {
+      "id": "ratway",
+      "name": "鼠道自由移动"
+    }
+  ],
+  "unsupported": [
+    {
+      "id": "lion-trap",
+      "name": "染红的捕兽夹：狂狮"
+    },
+    {
+      "id": "shared-fortune",
+      "name": "有福同享"
+    },
+    {
+      "id": "nemesis",
+      "name": "宿敌"
+    },
+    {
+      "id": "shared-transfer",
+      "name": "同罪移押"
+    },
+    {
+      "id": "scratch",
+      "name": "划痕吞噬"
+    },
+    {
+      "id": "prey",
+      "name": "猎物标记"
+    },
+    {
+      "id": "usedExtra",
+      "name": "额外行动"
+    },
+    {
+      "id": "startEvent",
+      "name": "特殊开局"
+    }
+  ]
+}

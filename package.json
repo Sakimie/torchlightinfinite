@@ -1,0 +1,33 @@
+{
+  "name": "torchlight-prison-coach",
+  "productName": "典狱助手",
+  "version": "0.2.0",
+  "description": "完全离线的典狱截图校准与策略助手",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "desktop/main.js",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "start": "node scripts/launch.js",
+    "dev": "node scripts/dev-server.js",
+    "train": "node scripts/train.js",
+    "test": "node --test test/*.test.js",
+    "dist:win": "electron-builder --win zip --x64 --publish never"
+  },
+  "dependencies": {
+    "pngjs": "7.0.0"
+  },
+  "devDependencies": {
+    "electron": "44.8.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.torchlight.prison.coach",
+    "asar": true,
+    "directories": { "output": "dist" },
+    "files": ["desktop/**", "renderer/**", "lib/**", "models/**", "reports/training-report.*", "package.json", "README.md", "THIRD_PARTY.md"],
+    "extraFiles": [{"from": "README.md", "to": "使用说明.md"}, {"from": "THIRD_PARTY.md", "to": "第三方说明.md"}],
+    "win": { "target": ["zip"], "signAndEditExecutable": false },
+    "artifactName": "Torchlight-Coach-Offline-${version}-Windows-${arch}.${ext}"
+  }
+}

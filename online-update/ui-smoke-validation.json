@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "checks": [
+    "real Tk startup performs local status only",
+    "explicit check button displays Chinese notes and size without download",
+    "explicit install button activates update through worker queue",
+    "rollback button restores previous local version",
+    "launch button does not trigger another network operation"
+  ],
+  "schema": "talos-online-ui-smoke-v1",
+  "scope": "Real Tk/Xvfb UI and button/main-thread queue integration with a fake updater core",
+  "usesFakeCore": true,
+  "usesRealTkMainloop": true,
+  "signatureOrRealDownloadValidated": false,
+  "windowsExecutableValidated": false,
+  "finalCoreQaRequired": true,
+  "screenshot": "artifacts/talos-online-launcher-smoke.png"
+}

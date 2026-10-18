@@ -1,0 +1,186 @@
+{
+  "schema": "talos-csharp-public-download-audit-v1",
+  "passed": true,
+  "checkedAtUtc": "2026-10-17T06:22:42.116734+00:00",
+  "scope": "Read-only public HTTPS download and GitHub metadata verification, static examination of the downloaded PE/bundle and ES256 public-feed signature verification. No public writes or Windows execution.",
+  "windowsExeExecuted": false,
+  "windowsUiExecuted": false,
+  "productPrivateKeyRead": false,
+  "publicWritesPerformed": false,
+  "checks": {
+    "publicCompleteZipBytesAndSha": true,
+    "zipContainsExactlyFiveExpectedFiles": true,
+    "publicExeShaMatches": true,
+    "publicExeStaticBundleMatchesRecordedReport": true,
+    "publicFeedShaMatches": true,
+    "publicFeedSignatureValid": true,
+    "embeddedFeedExactlyEqualsPublicFeed": true,
+    "embeddedPackageMatchesAuthenticatedManifest": true,
+    "pythonStableFeedUnchanged": true,
+    "pythonRemainsLatestStableRelease": true,
+    "csharpPreviewPublishedAsPrerelease": true,
+    "publicMainSourceCommitMatches": true
+  },
+  "completePackage": {
+    "url": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/4687e95798832047caeaefbb795a37e747a2bfef/csharp/TalosHelper-CSharp-0.4.0-Windows-x64.zip",
+    "bytes": 60458862,
+    "sha256": "d92016696886ccc2b5f142ba92d6c3618076ab1389b04312769a953ccb1c5f50",
+    "zipCrcVerified": true,
+    "files": [
+      {
+        "path": "TalosHelper.exe",
+        "bytes": 66208673,
+        "sha256": "9f9b9039b8c0130b58c3e74d796cbb10c45e7bc5a2a76a85da4384fcad9a10d2"
+      },
+      {
+        "path": "licenses/microsoft.netcore.app.runtime.win-x64-LICENSE.TXT",
+        "bytes": 1139,
+        "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+      },
+      {
+        "path": "licenses/microsoft.netcore.app.runtime.win-x64-THIRD-PARTY-NOTICES.TXT",
+        "bytes": 78041,
+        "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+      },
+      {
+        "path": "licenses/microsoft.windowsdesktop.app.runtime.win-x64-LICENSE",
+        "bytes": 1137,
+        "sha256": "a89886665765362eb77e0f8e26602c924520041d1711b2eedc136434fe4d01ab"
+      },
+      {
+        "path": "开始使用.txt",
+        "bytes": 1024,
+        "sha256": "105789e85395adcaf84d0ee01e2a12ee04be20ac788afc7d51baa5e5ea4c4c62"
+      }
+    ]
+  },
+  "publicCsharpFeed": {
+    "url": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/talos-updates/csharp/latest.json",
+    "bytes": 34038,
+    "sha256": "62e4465907beb2c72adff874ba93200902fdbd401b6487be055901f9e2398250",
+    "version": "0.4.0",
+    "package": {
+      "url": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/fa7899bec1796fff931cc5e53fedcf2aa7d4231a/csharp/releases/0.4.0/TalosHelper-CSharp-0.4.0-update.zip",
+      "bytes": 1282648,
+      "sha256": "151152231e7742cdf11059f4c43f4b7b62dcd804a9662a8770c748a5dec40cc8"
+    },
+    "signature": {
+      "algorithm": "ES256",
+      "verified": true,
+      "publicKeySha256": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72",
+      "verifier": "Node built-in crypto, audit tool only; native C# update verification is reported separately by the root task"
+    }
+  },
+  "publicPythonFeed": {
+    "url": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/talos-updates/latest.json",
+    "bytes": 3363,
+    "sha256": "7e11930bb99b09421f3b9d6e958ab42a9dc35ed97ceaf700a31be96784564406",
+    "version": "0.3.3"
+  },
+  "previewRelease": {
+    "url": "https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.4.0-csharp-preview",
+    "tag": "v0.4.0-csharp-preview",
+    "draft": false,
+    "prerelease": true
+  },
+  "latestStableRelease": {
+    "url": "https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.3.3",
+    "tag": "v0.3.3",
+    "draft": false,
+    "prerelease": false
+  },
+  "publicMainSourceCommit": "529b6c3094486290a47c8219b23dbdad19415bca",
+  "publicDownloadMetadata": [
+    {
+      "file": "csharp-feed.json",
+      "httpStatus": 200,
+      "bytes": 34038,
+      "finalUrl": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/talos-updates/csharp/latest.json"
+    },
+    {
+      "file": "python-feed.json",
+      "httpStatus": 200,
+      "bytes": 3363,
+      "finalUrl": "https://raw.githubusercontent.com/Sakimie/torchlightinfinite/talos-updates/latest.json"
+    },
+    {
+      "file": "latest-release.json",
+      "httpStatus": 200,
+      "bytes": 3784,
+      "finalUrl": "https://api.github.com/repos/Sakimie/torchlightinfinite/releases/latest"
+    },
+    {
+      "file": "preview-release.json",
+      "httpStatus": 200,
+      "bytes": 3654,
+      "finalUrl": "https://api.github.com/repos/Sakimie/torchlightinfinite/releases/tags/v0.4.0-csharp-preview"
+    },
+    {
+      "file": "main-commit.json",
+      "httpStatus": 200,
+      "bytes": 4673,
+      "finalUrl": "https://api.github.com/repos/Sakimie/torchlightinfinite/commits/main"
+    }
+  ],
+  "downloadedExeStaticBundleInspection": {
+    "passed": true,
+    "windowsExeExecuted": false,
+    "scope": "Static PE/bundle/resource verification on Linux; Windows UI, capture, hotkeys and execution were not tested.",
+    "executableBytes": 66208673,
+    "executableSha256": "9f9b9039b8c0130b58c3e74d796cbb10c45e7bc5a2a76a85da4384fcad9a10d2",
+    "bundleVersion": "6.0",
+    "embeddedFiles": 384,
+    "nativeRuntimeMode": "statically-linked-singlefilehost",
+    "staticRuntimeEvidence": {
+      "runtimeVersion": "10.0.13",
+      "linkedLibraries": [
+        "coreclr.dll",
+        "clrjit.dll"
+      ],
+      "runtimePackDropFromSingleFile": true,
+      "officialNativeTextMatches": true,
+      "nativeTextBytes": 6714880,
+      "nativeTextSha256": "d723320c56a8f1b508569988ecff339630f135d8adc0e5d1d1e504716a4d7bee",
+      "runtimeExports": [
+        "CLRJitAttachState",
+        "g_CLREngineMetrics",
+        "g_dacTable",
+        "DotNetRuntimeInfo",
+        "DotNetRuntimeContractDescriptor"
+      ]
+    },
+    "runtimeDependenciesBundled": [
+      "System.Private.CoreLib.dll",
+      "PresentationFramework.dll",
+      "PresentationCore.dll",
+      "WindowsBase.dll",
+      "PresentationNative_cor3.dll",
+      "wpfgfx_cor3.dll",
+      "D3DCompiler_47_cor3.dll",
+      "PenImc_cor3.dll",
+      "vcruntime140_cor3.dll",
+      "Talos.Updates.dll",
+      "TalosHelper.dll"
+    ],
+    "includedFrameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "10.0.13"
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App",
+        "version": "10.0.13"
+      }
+    ],
+    "resources": {
+      "Talos.PublicKey": "f753f951eb75a0077a0a00cd28c3f4c7abf1aa827a063bd8b3a7df61dad1dd72",
+      "Talos.BootstrapFeed": "62e4465907beb2c72adff874ba93200902fdbd401b6487be055901f9e2398250",
+      "Talos.BootstrapPackage": "151152231e7742cdf11059f4c43f4b7b62dcd804a9662a8770c748a5dec40cc8"
+    }
+  },
+  "limitations": [
+    "Windows startup, WPF UI, game capture, F8 hotkeys, high-DPI and overlay rendering were not executed on this Linux host.",
+    "This audit did not repeat the root task native C# HTTPS installation test; the separately downloaded signed feed was verified here with Node crypto as a development audit tool.",
+    "No real-game OCR accuracy, global-optimality or full-game training-return claim is made."
+  ]
+}
