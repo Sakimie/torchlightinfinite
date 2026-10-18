@@ -27,4 +27,25 @@ python csharp/scripts/publish_component_release.py --version 0.4.4 --publish
 
 进度收据位于对应 `dist/csharp-版本/component-publish-receipt.json`，绑定离线计划指纹；同一命令可在中断后重试，先前版本文件不能被替换。若在线验证失败，操作会停在对应步骤，不宣称已成功；已经推进的通道仍可通过收据恢复后续验证。
 
-2026-10-17 当前环境在创建网络 socket 时即被运行层拒绝（EPERM），因此本轮只能完成离线检查和发布计划。此限制解除前不要执行 `--publish`；本地检查通过不代表 GitHub 已发布。
+历史限制：2026-10-17 的云端环境在创建网络 socket 时被运行层拒绝（EPERM），当时只完成了离线检查和发布计划。本地检查通过不代表 GitHub 已发布。
+
+## Windows 本地发布
+
+Windows 使用新增的 `publish_component_release_windows.py`，复用上面的签名、文件哈希、版本、公开下载和原生升级检查。它使用 Windows 文件锁、UTF-8 命令输出和独立发布检出目录；Git 只进行普通快进推送，不丢弃已有工作区修改。
+
+开发机需要 Python 3.11+、Git / Git Credential Manager 和 Node.js。先完成 GitHub 登录，例如 `git credential-manager github login --device`。发布 API 通过已配置的凭据提供程序认证，不输出 Token、不把 Token 写入脚本，也不需要更新签名私钥。
+
+在源码仓库根目录安装锁定的官方 Windows SDK（默认放在上级 `.tools/dotnet`，按官方元数据校验 SHA512，不改系统 PATH）：
+
+```powershell
+python csharp/scripts/setup_sdk_windows.py
+```
+
+发布目录必须是干净的已签名交付副本。运行过的程序目录可能含 `data` 和 `.storage.lock`，不要从该目录打包或删除其中的用户数据。可以解压原迁移备份到另一处，并运行其 `prepare-local.py`，然后指定其中的项目目录：
+
+```powershell
+python csharp/scripts/publish_component_release_windows.py --version 0.4.4 --release-root D:\TalosHelper-clean\torchlightinfinite --check
+python csharp/scripts/publish_component_release_windows.py --version 0.4.4 --release-root D:\TalosHelper-clean\torchlightinfinite --publish
+```
+
+SDK 在其他位置时添加 `--dotnet D:\tools\dotnet\dotnet.exe`。发布入口先锁定还原并编译开发用的 `VerifyChannel`，不重建或重签应用；其余发布顺序、幂等收据和完成报告沿用原入口。最终报告在交付目录的 `dist/csharp-0.4.4/component-publication-report.json`。只有该报告通过并核验真实线上 feed 后，才视为发布完成。

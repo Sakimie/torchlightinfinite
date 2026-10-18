@@ -4,9 +4,9 @@
 
 本地开发时可直接打开本目录。C# 项目使用 `csharp/global.json` 指定的 .NET SDK；旧构建脚本仍有云端绝对路径，适配时可使用仓库内 `assets/` 替代原 `/workspace/legacy-talos-v03/assets`。朋友使用现成便携包无需安装 SDK。
 
-**0.4.4 日志跟随与整局模拟版已完成本地离线交付，尚未发布 GitHub**：在深色 C# 界面上增加主动开启的日志触发截图、20 天整局模拟、抽样误差及悬浮状态。已有 0.4.2/0.4.3 便携版可导入约 1.3 MB 的 [离线更新包](dist/csharp-0.4.4/TalosHelper-CSharp-0.4.4-Offline-Update.zip)，首次使用可下载 [完整便携包](dist/csharp-0.4.4/TalosHelper-CSharp-0.4.4-Windows-x64.zip)。真实签名包 109 项检查及离线升级/回退已通过，国服日志、Windows 捕获和实机收益尚未验证。更新说明见 [0.4.4](csharp/RELEASE-NOTES-0.4.4.md)，验证范围见 [验证记录](csharp/VALIDATION-0.4.4.md)。
+**[0.4.4 日志跟随与整局模拟测试版已发布](https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.4.4-csharp-preview)**：在深色 C# 界面上增加主动开启的日志触发截图、20 天整局模拟、抽样误差及悬浮状态。已有 0.4.2/0.4.3 便携版可通过“检查更新 → 下载并安装 → 重启并使用”升级；也可导入约 1.3 MB 的 [离线更新包](https://raw.githubusercontent.com/Sakimie/torchlightinfinite/1f22cc6a0a5e2e172cfddc50fa6da1283710cb72/csharp/releases/0.4.4/TalosHelper-CSharp-0.4.4-Offline-Update.zip)，首次使用下载 [完整便携包](https://raw.githubusercontent.com/Sakimie/torchlightinfinite/1f22cc6a0a5e2e172cfddc50fa6da1283710cb72/csharp/releases/0.4.4/TalosHelper-CSharp-0.4.4-Windows-x64.zip)。真实 HTTPS 升级、重启保留新版及离线回退已验证；国服日志、Windows 捕获和实机收益仍待验证。更新说明见 [0.4.4](csharp/RELEASE-NOTES-0.4.4.md)，本次 Windows 发布验证见 [验证记录](csharp/VALIDATION-WINDOWS-0.4.4.md)。
 
-**本任务已确认发布到 GitHub 的 Windows C# 便携版为 0.4.2**。程序数据统一保存在 EXE 旁的 `data`，首次可复制旧校准和版本数据并保留原件。0.4.0/0.4.1 需要完整便携包；已有便携启动器可在程序内导入本次离线更新。下载和使用说明见 [C# 测试版](csharp/README.md)。截图与建议离线执行，只有手动检查和下载更新时联网。
+程序数据统一保存在 EXE 旁的 `data`，更新会保留原有校准和数据。0.4.0/0.4.1 需要完整便携包；0.4.2 起的便携启动器支持当前在线组件更新。下载和使用说明见 [C# 测试版](csharp/README.md)。截图与建议离线执行，只有手动检查和下载更新时联网。
 
 以下保留早期独立 v0.2 原型说明；其中训练结果和操作步骤不适用于新的 C# 预览。
 

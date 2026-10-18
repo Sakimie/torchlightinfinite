@@ -1,6 +1,6 @@
 # TalosHelper C# 便携测试版 0.4.4
 
-**0.4.4 已完成本地离线交付，尚未发布 GitHub。** 保留深色界面，新增默认关闭的日志触发截图、整局模拟和动态悬浮状态。已有 0.4.2/0.4.3 便携版可使用 [签名离线更新包](../dist/csharp-0.4.4/TalosHelper-CSharp-0.4.4-Offline-Update.zip)，解压后在更新窗口依次导入 JSON 与更新 ZIP，完成后重启；首次使用可运行 [0.4.4 完整便携包](../dist/csharp-0.4.4/TalosHelper-CSharp-0.4.4-Windows-x64.zip)。当前环境禁止网络 socket，因此没有在线发布。功能与操作见 [更新说明](RELEASE-NOTES-0.4.4.md)，源码审查见 [集成检查](../dist/csharp-0.4.4/integration-review.json)。Windows 实际观感、国服日志与截图仍待实机验证。
+**[0.4.4 已发布到独立 C# 预览通道](https://github.com/Sakimie/torchlightinfinite/releases/tag/v0.4.4-csharp-preview)。** 保留深色界面，新增默认关闭的日志触发截图、整局模拟和动态悬浮状态。已有 0.4.2/0.4.3 便携版打开“检查更新”，再选择“检查更新 → 下载并安装 → 重启并使用”即可升级并保留 `data`。也可使用 [签名离线更新包](https://raw.githubusercontent.com/Sakimie/torchlightinfinite/1f22cc6a0a5e2e172cfddc50fa6da1283710cb72/csharp/releases/0.4.4/TalosHelper-CSharp-0.4.4-Offline-Update.zip)，解压后在更新窗口依次导入 JSON 与更新 ZIP；首次使用下载 [0.4.4 完整便携包](https://raw.githubusercontent.com/Sakimie/torchlightinfinite/1f22cc6a0a5e2e172cfddc50fa6da1283710cb72/csharp/releases/0.4.4/TalosHelper-CSharp-0.4.4-Windows-x64.zip)。功能与操作见 [更新说明](RELEASE-NOTES-0.4.4.md)，线上升级验证见 [Windows 发布记录](VALIDATION-WINDOWS-0.4.4.md)。窗口观感、国服日志与截图仍待实机验证。
 
 Windows 10/11 x64 桌面助手，支持截图、逐格核对、本地策略建议、置顶悬浮窗，以及手动检查更新。程序、截图识别、规则和更新器均使用 C#；开发机的 Python/Node 构建工具不随产品分发。
 
@@ -8,7 +8,7 @@ GitHub 历史版入口（0.4.2）：https://github.com/Sakimie/torchlightinfinit
 
 ## 使用
 
-下载 `TalosHelper-CSharp-0.4.4-Windows-x64.zip`，全部解压到**可写的新文件夹**，保留所有 DLL 文件，双击 `TalosHelper.exe`。完整包内含 .NET 运行环境及初始应用组件，无需安装 Python、Node、Git、.NET，也无需原版目录。0.4.0/0.4.1 用户需要换一次完整启动器；0.4.2/0.4.3 便携版可在原程序内离线导入，保留已有 `data`。
+下载 `TalosHelper-CSharp-0.4.4-Windows-x64.zip`，全部解压到**可写的新文件夹**，保留所有 DLL 文件，双击 `TalosHelper.exe`。完整包内含 .NET 运行环境及初始应用组件，无需安装 Python、Node、Git、.NET，也无需原版目录。0.4.0/0.4.1 用户需要换一次完整启动器；0.4.2/0.4.3 便携版可在原程序内在线更新或离线导入，保留已有 `data`。
 
 程序自行管理的校准、版本文件和更新状态保存在 `TalosHelper.exe` 旁的 `data` 文件夹，启动诊断在程序旁 `last-startup-error.txt`；界面显示真实数据路径，并有“打开数据目录”按钮。完整移动或备份整个程序文件夹即可带走数据。运行组件使用旁置 DLL，不需要 .NET bundle 向系统临时目录自解压。
 
